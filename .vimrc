@@ -17,6 +17,7 @@
  
   colorscheme one
 
+  autocmd vimenter * NERDTree
 
   set number
 

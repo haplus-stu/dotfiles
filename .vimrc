@@ -30,13 +30,17 @@
     Plug 'sheerun/vim-polyglot'
     Plug 'itchyny/lightline.vim',{
                   \ 'colorscheme': 'wombat'
-                  \ }
+  		  \ }
+    Plug 'neoclide/coc.nvim',{'branch':'release'}
+    Plug 'wadackel/vim-dogrun'
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'Shougo/neosnippet.vim' 
+
     call plug#end()
  
  
  
-    colorscheme dracula
- 
+    colorscheme dracula 
     set t_Co=256
     "#show statusbar
     set laststatus=2
@@ -55,3 +59,4 @@
     nnoremap ss :<C-u>sp<CR>
     nnoremap sv :<C-u>vs<CR>
 
+set vb t_vb=

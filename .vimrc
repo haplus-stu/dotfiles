@@ -35,6 +35,7 @@
     Plug 'wadackel/vim-dogrun'
     Plug 'altercation/vim-colors-solarized'
     Plug 'Shougo/neosnippet.vim' 
+    Plug 'flrnd/candid.vim'
 
     call plug#end()
  
@@ -49,6 +50,7 @@
  
     set number
  
+    tnoremap <Esc> <C-w><S-n>
  
     map <C-n> :NERDTreeToggle<CR>
     map <sv> :vsplit<CR>
@@ -59,4 +61,14 @@
     nnoremap ss :<C-u>sp<CR>
     nnoremap sv :<C-u>vs<CR>
 
-set vb t_vb=
+    " important:
+set termguicolors
+
+set background=dark
+syntax on
+colorscheme candid
+
+"" if you use lightline
+" Lightline
+let g:lightline = { 'colorscheme': 'candid' }
+

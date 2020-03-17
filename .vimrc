@@ -1,14 +1,14 @@
-  set rtp+=~/.vim/plugged/vim-plug
-  install vim-pulg
- if has('vim_starting')
-   set rtp+=~/.vim/plugged/vim-plug
-   if !isdirectory(expand('~/.vim/plugged/vim-plug'))
-     echo 'install vim-plug...'
-     call system('mkdir -p ~/.vim/plugged/vim-plug')
-      call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
-    end
-  endif
- 
+	set rtp+=~/.vim/plugged/vim-plug
+	install vim-pulg
+	if has('vim_starting')
+		set rtp+=~/.vim/plugged/vim-plug
+		if !isdirectory(expand('~/.vim/plugged/vim-plug'))
+			echo 'install vim-plug...'
+			call system('mkdir -p ~/.vim/plugged/vim-plug')
+			call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
+		end
+	endif
+	 
  
     call plug#begin('~/.vim/plugged')
     Plug 'Shougo/unite.vim'
@@ -49,6 +49,11 @@
     set noshowmode
  
     set number
+
+    set modifiable
+
+    set tabstop=4
+    set shiftwidth=4
  
     tnoremap <Esc> <C-w><S-n>
  
@@ -62,13 +67,12 @@
     nnoremap sv :<C-u>vs<CR>
 
     " important:
-set termguicolors
+	set termguicolors
 
-set background=dark
-syntax on
-colorscheme candid
+	set background=dark
+	syntax on
+	colorscheme candid
 
-"" if you use lightline
-" Lightline
-let g:lightline = { 'colorscheme': 'candid' }
-
+	"" if you use lightline
+	" Lightline
+	let g:lightline = { 'colorscheme': 'candid' }

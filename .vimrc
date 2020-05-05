@@ -40,6 +40,11 @@
     call plug#end()
  
  
+	let g:prettier#autoformat = 0
+	if filereadable(findfile('.prettierrc.js', '.;'))
+		echo "Using prettier..."
+		autocmd BufWritePre *.js,*.jsx,*mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+	endif
  
     colorscheme dracula 
     set t_Co=256
@@ -51,11 +56,16 @@
     set number
 
     set modifiable
+	set write
+
+	"ビープ音すべてを無効にする
+	set visualbell t_vb=
+	set noerrorbells "エラーメッセージの表示時にビープを鳴らさない
 
     set tabstop=4
     set shiftwidth=4
  
-    tnoremap <Esc> <C-w><S-n>
+    "tnoremap <Esc> <C-w><S-n>
  
     map <C-n> :NERDTreeToggle<CR>
     map <sv> :vsplit<CR>
@@ -65,6 +75,10 @@
     nnoremap sh <C-w>h
     nnoremap ss :<C-u>sp<CR>
     nnoremap sv :<C-u>vs<CR>
+
+
+	autocmd Colorscheme * highlight FullWidthSpace ctermbg=white
+	autocmd VimEnter * match FullWidthSpace /　/
 
     " important:
 	set termguicolors
@@ -76,3 +90,9 @@
 	"" if you use lightline
 	" Lightline
 	let g:lightline = { 'colorscheme': 'candid' }
+
+	command! Terminal call popup_create(term_start([&shell], #{ hidden: 1, term_finish: 'close'}), #{ border: [], minwidth: winwidth(0)/2, minheight: &lines/2 })
+
+	"全角スペースの背景白に
+	autocmd Colorscheme * highlight FullWidthSpace ctermbg=white
+	autocmd VimEnter * match FullWidthSpace /　/

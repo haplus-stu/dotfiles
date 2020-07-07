@@ -75,6 +75,7 @@
     nnoremap sh <C-w>h
     nnoremap ss :<C-u>sp<CR>
     nnoremap sv :<C-u>vs<CR>
+	inoremap <silent> jj <ESC>
 
 
 	autocmd Colorscheme * highlight FullWidthSpace ctermbg=white

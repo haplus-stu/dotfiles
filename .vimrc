@@ -26,18 +26,20 @@
     \ 'do': 'yarn install',
     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
  
-    Plug 'gosukiwi/vim-atom-dark'
-    Plug 'dracula/vim',{'as':'dracula'}
     Plug 'rakr/vim-one'
     Plug 'sheerun/vim-polyglot'
     Plug 'itchyny/lightline.vim',{
                   \ 'colorscheme': 'wombat'
   		  \ }
     Plug 'neoclide/coc.nvim',{'branch':'release'}
-    Plug 'wadackel/vim-dogrun'
-    Plug 'altercation/vim-colors-solarized'
     Plug 'Shougo/neosnippet.vim' 
-    Plug 'flrnd/candid.vim'
+	Plug 'prabirshrestha/async.vim'
+	Plug 'prabirshrestha/asyncomplete.vim'
+	Plug 'prabirshrestha/asyncomplete-lsp.vim'
+	Plug 'prabirshrestha/vim-lsp'
+	Plug 'mattn/vim-lsp-settings'
+	Plug 'mattn/vim-goimports'
+	Plug 'seesleestak/duo-mini' 
 
     call plug#end()
 
@@ -45,6 +47,11 @@
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
+	let g:ycm_global_ycm_extra_conf = '${HOME}/.ycm_extra_conf.py'
+let g:ycm_auto_trigger = 1
+let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_autoclose_preview_window_after_insertion = 1
+set splitbelow
 
 " SuperTab like snippets behavior.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
@@ -99,16 +106,12 @@ let g:neosnippet#snippets_directory='~/dotfiles/snippets/'
     nnoremap sv :<C-u>vs<CR>
 	inoremap <silent> jj <ESC>
 
-
-	autocmd Colorscheme * highlight FullWidthSpace ctermbg=white
-	autocmd VimEnter * match FullWidthSpace /　/
-
     " important:
 	set termguicolors
 
 	set background=dark
 	syntax on
-	colorscheme candid
+	colorscheme duo-mini 
 
 	"" if you use lightline
 	" Lightline
@@ -119,3 +122,14 @@ let g:neosnippet#snippets_directory='~/dotfiles/snippets/'
 	"全角スペースの背景白に
 	autocmd Colorscheme * highlight FullWidthSpace ctermbg=white
 	autocmd VimEnter * match FullWidthSpace /　/
+
+	nmap <silent> gd :LspDefinition<CR>
+	nmap <silent> <f2> :LspRename<CR>
+	nmap <silent> <Leader>d :LspTypeDefinition<CR>
+	nmap <silent> <Leader>r :LspReferences<CR>
+	nmap <silent> <Leader>i :LspImplementation<CR>
+	let g:lsp_diagnostics_enabled = 1
+	let g:lsp_diagnostics_echo_cursor = 1
+	let g:asyncomplete_popup_delay = 200
+	let g:lsp_text_edit_enabled = 0
+

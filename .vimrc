@@ -40,6 +40,9 @@
 	Plug 'mattn/vim-lsp-settings'
 	Plug 'mattn/vim-goimports'
 	Plug 'seesleestak/duo-mini' 
+	Plug 'mbbill/undotree'
+	Plug 'mattn/vim-lexiv'
+
 
     call plug#end()
 

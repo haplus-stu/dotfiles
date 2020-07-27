@@ -107,7 +107,8 @@ let g:neosnippet#snippets_directory='~/dotfiles/snippets/'
     nnoremap sh <C-w>h
     nnoremap ss :<C-u>sp<CR>
     nnoremap sv :<C-u>vs<CR>
-	inoremap <silent> jj <ESC>
+    inoremap <silent> jj <ESC>
+    nnoremap ut :UndotreeToggle
 
     " important:
 	set termguicolors

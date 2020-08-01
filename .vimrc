@@ -34,42 +34,49 @@
     Plug 'neoclide/coc.nvim',{'branch':'release'}
     Plug 'Shougo/neosnippet.vim' 
 	Plug 'prabirshrestha/async.vim'
-	Plug 'prabirshrestha/asyncomplete.vim'
-	Plug 'prabirshrestha/asyncomplete-lsp.vim'
-	Plug 'prabirshrestha/vim-lsp'
-	Plug 'mattn/vim-lsp-settings'
-	Plug 'mattn/vim-goimports'
 	Plug 'seesleestak/duo-mini' 
 	Plug 'mbbill/undotree'
 	Plug 'mattn/vim-lexiv'
+	Plug 'w0ng/vim-hybrid'
+	Plug 'tyru/caw.vim'
 
 
     call plug#end()
 
+	"setting of caw.vim 
+	caw:hatpos:toggle
+	nmap <C-z> <Plug>(caw:hatpos:toggle)
+	vmap <C-z> <Plug>(caw:hatpos:toggle)
+
+
 	" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+	imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+	smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+	xmap <C-k>     <Plug>(neosnippet_expand_target)
 	let g:ycm_global_ycm_extra_conf = '${HOME}/.ycm_extra_conf.py'
-let g:ycm_auto_trigger = 1
-let g:ycm_min_num_of_chars_for_completion = 3
-let g:ycm_autoclose_preview_window_after_insertion = 1
-set splitbelow
+	let g:ycm_auto_trigger = 1
+	let g:ycm_min_num_of_chars_for_completion = 3
+	let g:ycm_autoclose_preview_window_after_insertion = 1
+	set splitbelow
 
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+	" show all hiddenfile
+	let NERDTreeShowHidden=1
 
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-let g:neosnippet#snippets_directory='~/dotfiles/snippets/'
+
+	" SuperTab like snippets behavior.
+	" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+	"imap <expr><TAB>
+	" \ pumvisible() ? "\<C-n>" :
+	" \ neosnippet#expandable_or_jumpable() ?
+	" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+	smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+	\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+	" For conceal markers.
+	if has('conceal')
+	  set conceallevel=2 concealcursor=niv
+	endif
+	let g:neosnippet#snippets_directory='~/dotfiles/snippets/'
  
  
 	let g:prettier#autoformat = 0
@@ -78,7 +85,6 @@ let g:neosnippet#snippets_directory='~/dotfiles/snippets/'
 		autocmd BufWritePre *.js,*.jsx,*mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 	endif
  
-    colorscheme dracula 
     set t_Co=256
     "#show statusbar
     set laststatus=2
@@ -108,14 +114,17 @@ let g:neosnippet#snippets_directory='~/dotfiles/snippets/'
     nnoremap ss :<C-u>sp<CR>
     nnoremap sv :<C-u>vs<CR>
     inoremap <silent> jj <ESC>
-    nnoremap ut :UndotreeToggle
+    nnoremap ut :UndotreeToggle<cr>
+
+
+
 
     " important:
 	set termguicolors
 
 	set background=dark
 	syntax on
-	colorscheme duo-mini 
+	colorscheme hybrid 
 
 	"" if you use lightline
 	" Lightline

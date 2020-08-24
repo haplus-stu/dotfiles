@@ -45,8 +45,8 @@
 
 	"setting of caw.vim 
 	caw:hatpos:toggle
-	nmap <C-z> <Plug>(caw:hatpos:toggle)
-	vmap <C-z> <Plug>(caw:hatpos:toggle)
+	 nmap <C-q> <Plug>(caw:hatpos:toggle)
+	 vmap <C-q> <Plug>(caw:hatpos:toggle)
 
 
 	" Note: It must be "imap" and "smap".  It uses <Plug> mappings.

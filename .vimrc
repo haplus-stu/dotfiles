@@ -8,6 +8,9 @@
 			call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
 		end
 	endif
+
+	set list
+	set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 	 
  
     call plug#begin('~/.vim/plugged')
@@ -15,6 +18,7 @@
     Plug 'ujihisa/unite-colorscheme'
     Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-fugitive'
+	Plug 'tpope/vim-surround'
     Plug 'mattn/emmet-vim'
     Plug 'Shougo/neocomplete.vim'
 	Plug 'Shougo/neocomplcache'
@@ -39,14 +43,20 @@
 	Plug 'mattn/vim-lexiv'
 	Plug 'w0ng/vim-hybrid'
 	Plug 'tyru/caw.vim'
-
-
+	Plug 'ctrlpvim/ctrlp.vim'
+	Plug 'turbio/bracey.vim'
+	Plug 'editorconfig/editorconfig-vim'
+	Plug 'sainnhe/edge'
+	Plug 'flrnd/plastic.vim'
     call plug#end()
 
 	"setting of caw.vim 
 	caw:hatpos:toggle
 	 nmap <C-q> <Plug>(caw:hatpos:toggle)
 	 vmap <C-q> <Plug>(caw:hatpos:toggle)
+
+	 let g:bracey_brower_command = open
+	 let g:bracey_server_port = 8000
 
 
 	" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
@@ -76,6 +86,9 @@
 	if has('conceal')
 	  set conceallevel=2 concealcursor=niv
 	endif
+
+	let g:ctrlp_working_path_mode = 'ra'
+
 	let g:neosnippet#snippets_directory='~/dotfiles/snippets/'
  
  
@@ -145,4 +158,14 @@
 	let g:lsp_diagnostics_echo_cursor = 1
 	let g:asyncomplete_popup_delay = 200
 	let g:lsp_text_edit_enabled = 0
+	"viとの互換性を無効にする(INSERT中にカーソルキーが有効になる)
+	set nocompatible
+	"カーソルを行頭，行末で止まらないようにする
+	set whichwrap=b,s,h,l,<,>,[,]
+	"BSで削除できるものを指定する
+	" indent  : 行頭の空白
+	" eol     : 改行
+	" start   : 挿入モード開始位置より手前の文字
+	set backspace=indent,eol,start
+
 

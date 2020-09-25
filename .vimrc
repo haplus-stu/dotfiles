@@ -11,12 +11,13 @@
 
 	set list
 	set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+	set cursorline 
 	 
  
     call plug#begin('~/.vim/plugged')
     Plug 'Shougo/unite.vim'
     Plug 'ujihisa/unite-colorscheme'
-    Plug 'scrooloose/nerdtree'
+    " Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-surround'
     Plug 'mattn/emmet-vim'
@@ -32,9 +33,7 @@
  
     Plug 'rakr/vim-one'
     Plug 'sheerun/vim-polyglot'
-    Plug 'itchyny/lightline.vim',{
-                  \ 'colorscheme': 'wombat'
-  		  \ }
+    Plug 'itchyny/lightline.vim'
     Plug 'neoclide/coc.nvim',{'branch':'release'}
     Plug 'Shougo/neosnippet.vim' 
 	Plug 'prabirshrestha/async.vim'
@@ -48,6 +47,10 @@
 	Plug 'editorconfig/editorconfig-vim'
 	Plug 'sainnhe/edge'
 	Plug 'flrnd/plastic.vim'
+	Plug 'skanehira/preview-markdown.vim'
+	Plug 'MichaelMure/mdr'
+	Plug 'lambdalisue/fern.vim'
+	
     call plug#end()
 
 	"setting of caw.vim 
@@ -71,13 +74,19 @@
 
 	" show all hiddenfile
 	let NERDTreeShowHidden=1
+	
+	let g:lightline = {
+     \ 'colorscheme': 'wombat',
+     \ 'component': {
+     \   'readonly': '%{&readonly?"\u2b64":""}',
+     \ },
+     \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" },
+     \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
+     \ }
 
 
 	" SuperTab like snippets behavior.
 	" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-	"imap <expr><TAB>
-	" \ pumvisible() ? "\<C-n>" :
-	" \ neosnippet#expandable_or_jumpable() ?
 	" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 	smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 	\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
@@ -116,9 +125,8 @@
     set tabstop=4
     set shiftwidth=4
  
-    "tnoremap <Esc> <C-w><S-n>
  
-    map <C-n> :NERDTreeToggle<CR>
+    map <C-n> :Fern .<CR>
     map <sv> :vsplit<CR>
     nnoremap sj <C-w>j
     nnoremap sk <C-w>k
@@ -141,7 +149,6 @@
 
 	"" if you use lightline
 	" Lightline
-	let g:lightline = { 'colorscheme': 'candid' }
 
 	command! Terminal call popup_create(term_start([&shell], #{ hidden: 1, term_finish: 'close'}), #{ border: [], minwidth: winwidth(0)/2, minheight: &lines/2 })
 
@@ -149,11 +156,27 @@
 	autocmd Colorscheme * highlight FullWidthSpace ctermbg=white
 	autocmd VimEnter * match FullWidthSpace /　/
 
-	nmap <silent> gd :LspDefinition<CR>
-	nmap <silent> <f2> :LspRename<CR>
-	nmap <silent> <Leader>d :LspTypeDefinition<CR>
-	nmap <silent> <Leader>r :LspReferences<CR>
-	nmap <silent> <Leader>i :LspImplementation<CR>
+	"Fernをデフォルトディレクトリブラウザに指定
+	 Disable netrw
+	 let g:loaded_netrw             = 1
+	 let g:loaded_netrwPlugin       = 1
+	 let g:loaded_netrwSettings     = 1
+	 let g:loaded_netrwFileHandlers = 1
+
+	 augroup my-fern-hijack
+		 autocmd!
+		 autocmd BufEnter * ++nested call s:hijack_directory()
+	 augroup END
+
+	 function! s:hijack_directory() abort
+		 let path = expand('%:p')
+		 if !isdirectory(path)
+			 return
+		 endif
+		 bwipeout %
+		 execute printf('Fern %s', fnameescape(path))
+	 endfunction
+
 	let g:lsp_diagnostics_enabled = 1
 	let g:lsp_diagnostics_echo_cursor = 1
 	let g:asyncomplete_popup_delay = 200
@@ -167,5 +190,20 @@
 	" eol     : 改行
 	" start   : 挿入モード開始位置より手前の文字
 	set backspace=indent,eol,start
+	
+	"ペースト時のインデント補正
+	if &term =~ "xterm"
+    let &t_SI .= "\e[?2004h"
+    let &t_EI .= "\e[?2004l"
+    let &pastetoggle = "\e[201~"
+
+    function XTermPasteBegin(ret)
+        set paste
+        return a:ret
+    endfunction
+
+    inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
+	endif
+	set directory = ~/vim_backup_item
 
 

@@ -17,13 +17,9 @@
     call plug#begin('~/.vim/plugged')
     Plug 'Shougo/unite.vim'
     Plug 'ujihisa/unite-colorscheme'
-    " Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-surround'
     Plug 'mattn/emmet-vim'
-    Plug 'Shougo/neocomplete.vim'
-	Plug 'Shougo/neocomplcache'
-	Plug 'Shougo/neosnippet-snippets'
     Plug 'scrooloose/syntastic'
     Plug 'osyo-manga/vim-watchdogs'
     Plug 'cohama/lexima.vim'
@@ -37,7 +33,6 @@
     Plug 'neoclide/coc.nvim',{'branch':'release'}
     Plug 'Shougo/neosnippet.vim' 
 	Plug 'prabirshrestha/async.vim'
-	Plug 'seesleestak/duo-mini' 
 	Plug 'mbbill/undotree'
 	Plug 'mattn/vim-lexiv'
 	Plug 'w0ng/vim-hybrid'
@@ -50,30 +45,28 @@
 	Plug 'skanehira/preview-markdown.vim'
 	Plug 'MichaelMure/mdr'
 	Plug 'lambdalisue/fern.vim'
+	Plug 'https://github.com/MichaelMure/mdr'
 	
     call plug#end()
+
+	let mapleader = "\<Space>"
+	nnoremap <Leader>w :w<cr>
+
+	"setting of preview_markdown
+	let g:preview_markdown_vertical = 1
+	let g:preview_markdown_auto_update = 1
 
 	"setting of caw.vim 
 	caw:hatpos:toggle
 	 nmap <C-q> <Plug>(caw:hatpos:toggle)
 	 vmap <C-q> <Plug>(caw:hatpos:toggle)
 
+	 "setting of Bracey
 	 let g:bracey_brower_command = open
 	 let g:bracey_server_port = 8000
 
 
-	" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-	imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-	smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-	xmap <C-k>     <Plug>(neosnippet_expand_target)
-	let g:ycm_global_ycm_extra_conf = '${HOME}/.ycm_extra_conf.py'
-	let g:ycm_auto_trigger = 1
-	let g:ycm_min_num_of_chars_for_completion = 3
-	let g:ycm_autoclose_preview_window_after_insertion = 1
-	set splitbelow
 
-	" show all hiddenfile
-	let NERDTreeShowHidden=1
 	
 	let g:lightline = {
      \ 'colorscheme': 'wombat',
@@ -98,8 +91,6 @@
 
 	let g:ctrlp_working_path_mode = 'ra'
 
-	let g:neosnippet#snippets_directory='~/dotfiles/snippets/'
- 
  
 	let g:prettier#autoformat = 0
 	if filereadable(findfile('.prettierrc.js', '.;'))
@@ -136,7 +127,7 @@
     nnoremap sv :<C-u>vs<CR>
     inoremap <silent> jj <ESC>
     nnoremap ut :UndotreeToggle<cr>
-
+	nmap pm :PreviewMarkdown<cr><C-w>x
 
 
 
@@ -147,8 +138,6 @@
 	syntax on
 	colorscheme hybrid 
 
-	"" if you use lightline
-	" Lightline
 
 	command! Terminal call popup_create(term_start([&shell], #{ hidden: 1, term_finish: 'close'}), #{ border: [], minwidth: winwidth(0)/2, minheight: &lines/2 })
 
@@ -177,10 +166,6 @@
 		 execute printf('Fern %s', fnameescape(path))
 	 endfunction
 
-	let g:lsp_diagnostics_enabled = 1
-	let g:lsp_diagnostics_echo_cursor = 1
-	let g:asyncomplete_popup_delay = 200
-	let g:lsp_text_edit_enabled = 0
 	"viとの互換性を無効にする(INSERT中にカーソルキーが有効になる)
 	set nocompatible
 	"カーソルを行頭，行末で止まらないようにする
@@ -207,3 +192,20 @@
 	set directory = ~/vim_backup_item
 
 
+	nnoremap <Leader>m :<C-u>call EditDailyMemo()<CR>
+	function! EditDailyMemo()
+		let l:daily_memo_dir = '/tmp'
+		if isdirectory($DAILY_MEMO_DIR)
+			let l:daily_memo_dir = $DAILY_MEMO_DIR
+		endif
+		let l:memo_dir = l:daily_memo_dir.'/'.strftime('%Y/%m')
+		let l:memo_file = l:memo_dir.'/'.strftime('%d').'.txt'
+		call mkdir(l:memo_dir, 'p')
+		execute "tabnew ".l:memo_file
+	endfunction
+
+	"setting of Todo
+	abbreviate tl - []
+	abbreviate done x
+
+	nnoremap qq :qall<CR>

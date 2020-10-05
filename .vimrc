@@ -46,6 +46,17 @@
 	Plug 'MichaelMure/mdr'
 	Plug 'lambdalisue/fern.vim'
 	Plug 'https://github.com/MichaelMure/mdr'
+	Plug 'junegunn/vim-easy-align'
+	Plug 'hashue/greeting-vim-plugin'
+	Plug 'godlygeek/tabular'
+	Plug 'plasticboy/vim-markdown'
+	Plug 'previm/previm'
+
+	let g:vim_markdown_folding_disabled = 1
+
+	let g:previm_enable_realtime = 1
+
+	let g:previm_open_cmd = 'open -a Firefox'
 	
     call plug#end()
 
@@ -60,6 +71,12 @@
 	caw:hatpos:toggle
 	 nmap <C-q> <Plug>(caw:hatpos:toggle)
 	 vmap <C-q> <Plug>(caw:hatpos:toggle)
+
+	 " Start interactive EasyAlign in visual mode (e.g. vipga)
+	 xmap ga <Plug>(EasyAlign)
+
+	 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+	 nmap ga <Plug>(EasyAlign)
 
 	 "setting of Bracey
 	 let g:bracey_brower_command = open

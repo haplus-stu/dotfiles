@@ -12,6 +12,9 @@
 	set list
 	set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 	set cursorline 
+	set clipboard+=unnamed
+	set hls
+
 	 
  
     call plug#begin('~/.vim/plugged')
@@ -24,10 +27,10 @@
     Plug 'osyo-manga/vim-watchdogs'
     Plug 'cohama/lexima.vim'
     Plug 'prettier/vim-prettier', {
-    \ 'do': 'yarn install',
-    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+		\ 'do': 'yarn install',
+		\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] 
+		\}
  
-    Plug 'rakr/vim-one'
     Plug 'sheerun/vim-polyglot'
     Plug 'itchyny/lightline.vim'
     Plug 'neoclide/coc.nvim',{'branch':'release'}
@@ -35,13 +38,11 @@
 	Plug 'prabirshrestha/async.vim'
 	Plug 'mbbill/undotree'
 	Plug 'mattn/vim-lexiv'
-	Plug 'w0ng/vim-hybrid'
 	Plug 'tyru/caw.vim'
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'turbio/bracey.vim'
 	Plug 'editorconfig/editorconfig-vim'
 	Plug 'sainnhe/edge'
-	Plug 'flrnd/plastic.vim'
 	Plug 'skanehira/preview-markdown.vim'
 	Plug 'MichaelMure/mdr'
 	Plug 'lambdalisue/fern.vim'
@@ -51,14 +52,27 @@
 	Plug 'godlygeek/tabular'
 	Plug 'plasticboy/vim-markdown'
 	Plug 'previm/previm'
+	Plug 'ghifarit53/tokyonight-vim'
+
+	 let g:tokyonight_style = 'night' " available: night, storm
+	 let g:tokyonight_disable_italic_comment = 1
 
 	let g:vim_markdown_folding_disabled = 1
 
 	let g:previm_enable_realtime = 1
 
 	let g:previm_open_cmd = 'open -a Firefox'
-	
-    call plug#end()
+
+	"colorscheme
+	Plug 'w0ng/vim-hybrid'
+    Plug 'rakr/vim-one'
+	Plug 'flrnd/plastic.vim'
+	Plug 'koirand/tokyo-metro.vim'
+	call plug#end()
+ 
+
+	 colorscheme tokyonight
+
 
 	let mapleader = "\<Space>"
 	nnoremap <Leader>w :w<cr>
@@ -145,6 +159,7 @@
     inoremap <silent> jj <ESC>
     nnoremap ut :UndotreeToggle<cr>
 	nmap pm :PreviewMarkdown<cr><C-w>x
+	nmap mu Markdown_EditUrlUnderCursor
 
 
 
@@ -153,7 +168,7 @@
 
 	set background=dark
 	syntax on
-	colorscheme hybrid 
+	" colorscheme tokyo-metro 
 
 
 	command! Terminal call popup_create(term_start([&shell], #{ hidden: 1, term_finish: 'close'}), #{ border: [], minwidth: winwidth(0)/2, minheight: &lines/2 })

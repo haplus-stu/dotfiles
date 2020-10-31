@@ -42,17 +42,14 @@
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'turbio/bracey.vim'
 	Plug 'editorconfig/editorconfig-vim'
-	Plug 'sainnhe/edge'
 	Plug 'skanehira/preview-markdown.vim'
 	Plug 'MichaelMure/mdr'
 	Plug 'lambdalisue/fern.vim'
-	Plug 'https://github.com/MichaelMure/mdr'
 	Plug 'junegunn/vim-easy-align'
-	Plug 'hashue/greeting-vim-plugin'
-	Plug 'godlygeek/tabular'
 	Plug 'plasticboy/vim-markdown'
 	Plug 'previm/previm'
 	Plug 'ghifarit53/tokyonight-vim'
+	Plug 'mattn/vim-maketable'
 
 	 let g:tokyonight_style = 'night' " available: night, storm
 	 let g:tokyonight_disable_italic_comment = 1
@@ -61,7 +58,7 @@
 
 	let g:previm_enable_realtime = 1
 
-	let g:previm_open_cmd = 'open -a Firefox'
+	let g:previm_open_cmd = 'open -a Google\ Chrome'
 
 	"colorscheme
 	Plug 'w0ng/vim-hybrid'
@@ -82,7 +79,7 @@
 	let g:preview_markdown_auto_update = 1
 
 	"setting of caw.vim 
-	caw:hatpos:toggle
+	 caw:hatpos:toggle
 	 nmap <C-q> <Plug>(caw:hatpos:toggle)
 	 vmap <C-q> <Plug>(caw:hatpos:toggle)
 
@@ -154,12 +151,16 @@
     nnoremap sk <C-w>k
     nnoremap sl <C-w>l
     nnoremap sh <C-w>h
+    nnoremap ww <C-w>w
     nnoremap ss :<C-u>sp<CR>
     nnoremap sv :<C-u>vs<CR>
     inoremap <silent> jj <ESC>
     nnoremap ut :UndotreeToggle<cr>
-	nmap pm :PreviewMarkdown<cr><C-w>x
-	nmap mu Markdown_EditUrlUnderCursor
+	nmap pm :PreviewMarkdown<cr>
+	nnoremap qq :qall<CR>
+	nmap vd <Plug>(coc-definition)
+	nmap K :<C-u>call CocAction('doHover')<cr>
+	map <Leader>rn <Plug>(coc-rename)
 
 
 
@@ -168,7 +169,6 @@
 
 	set background=dark
 	syntax on
-	" colorscheme tokyo-metro 
 
 
 	command! Terminal call popup_create(term_start([&shell], #{ hidden: 1, term_finish: 'close'}), #{ border: [], minwidth: winwidth(0)/2, minheight: &lines/2 })
@@ -222,22 +222,3 @@
     inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
 	endif
 	set directory = ~/vim_backup_item
-
-
-	nnoremap <Leader>m :<C-u>call EditDailyMemo()<CR>
-	function! EditDailyMemo()
-		let l:daily_memo_dir = '/tmp'
-		if isdirectory($DAILY_MEMO_DIR)
-			let l:daily_memo_dir = $DAILY_MEMO_DIR
-		endif
-		let l:memo_dir = l:daily_memo_dir.'/'.strftime('%Y/%m')
-		let l:memo_file = l:memo_dir.'/'.strftime('%d').'.txt'
-		call mkdir(l:memo_dir, 'p')
-		execute "tabnew ".l:memo_file
-	endfunction
-
-	"setting of Todo
-	abbreviate tl - []
-	abbreviate done x
-
-	nnoremap qq :qall<CR>

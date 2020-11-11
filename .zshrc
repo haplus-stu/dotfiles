@@ -5,6 +5,6 @@ alias memo="rusmo"
 alias g="git"
 
 #start tmux
-[[ -z "$TMUX" && ! -z "$PS1" ]] && ide 
+[[ -z "$TMUX" && ! -z "$PS1" ]] 
 
 

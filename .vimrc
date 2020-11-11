@@ -26,10 +26,10 @@
     Plug 'scrooloose/syntastic'
     Plug 'osyo-manga/vim-watchdogs'
     Plug 'cohama/lexima.vim'
-    Plug 'prettier/vim-prettier', {
-		\ 'do': 'yarn install',
-		\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] 
-		\}
+	Plug 'prettier/vim-prettier', {
+				\ 'do': 'yarn install',
+				\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] 
+				\}
  
     Plug 'sheerun/vim-polyglot'
     Plug 'itchyny/lightline.vim'
@@ -50,9 +50,10 @@
 	Plug 'previm/previm'
 	Plug 'ghifarit53/tokyonight-vim'
 	Plug 'mattn/vim-maketable'
+	Plug 'kato-k/vim-colorscheme-settings'
 
-	 let g:tokyonight_style = 'night' " available: night, storm
-	 let g:tokyonight_disable_italic_comment = 1
+	let g:tokyonight_style = 'night' " available: night, storm
+	let g:tokyonight_disable_italic_comment = 1
 
 	let g:vim_markdown_folding_disabled = 1
 
@@ -65,6 +66,7 @@
     Plug 'rakr/vim-one'
 	Plug 'flrnd/plastic.vim'
 	Plug 'koirand/tokyo-metro.vim'
+	Plug 'adrian5/oceanic-next-vim'
 	call plug#end()
  
 
@@ -79,8 +81,7 @@
 	let g:preview_markdown_auto_update = 1
 
 	"setting of caw.vim 
-	 caw:hatpos:toggle
-	 nmap <C-q> <Plug>(caw:hatpos:toggle)
+	 caw:hatpos:toggle nmap <C-q> <Plug>(caw:hatpos:toggle) 
 	 vmap <C-q> <Plug>(caw:hatpos:toggle)
 
 	 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -158,7 +159,7 @@
     nnoremap ut :UndotreeToggle<cr>
 	nmap pm :PreviewMarkdown<cr>
 	nnoremap qq :qall<CR>
-	nmap vd <Plug>(coc-definition)
+	nmap vd :w<cr><Plug>(coc-definition)
 	nmap K :<C-u>call CocAction('doHover')<cr>
 	map <Leader>rn <Plug>(coc-rename)
 
@@ -208,17 +209,3 @@
 	" start   : 挿入モード開始位置より手前の文字
 	set backspace=indent,eol,start
 	
-	"ペースト時のインデント補正
-	if &term =~ "xterm"
-    let &t_SI .= "\e[?2004h"
-    let &t_EI .= "\e[?2004l"
-    let &pastetoggle = "\e[201~"
-
-    function XTermPasteBegin(ret)
-        set paste
-        return a:ret
-    endfunction
-
-    inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
-	endif
-	set directory = ~/vim_backup_item

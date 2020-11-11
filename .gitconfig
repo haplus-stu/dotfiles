@@ -6,3 +6,5 @@
 [alias]
 	ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
 	ad = "add"
+	ci = "commit -m"
+	st = "status"

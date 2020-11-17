@@ -8,3 +8,4 @@
 	ad = "add"
 	ci = "commit -m"
 	st = "status"
+	cl = "clone"

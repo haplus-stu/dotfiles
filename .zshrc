@@ -3,7 +3,7 @@ alias ide="~/workspace/scripts/ide.sh"
 alias tkill="tmux kill-server"
 alias memo="rusmo"
 alias g="git"
-alias ls="exa -a"
+alias ls="exa"
 alias cat="bat"
 #only ubuntu kindle setting
 alias kindle="cd ~/docker-kindle && docker-compose run --rm kindle"

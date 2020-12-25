@@ -1,9 +1,8 @@
 # fpath+=$HOME/.zsh/pure
 # 
 # # PROMPT='%F{blue}%U%~%u%f$ '
-# autoload -U promptinit; promptinit
-# prompt pure
-alias tkill="tmux kill-server"
+# autoload -U promptinit; promptinit prompt pure 
+alias tkill="tmux kill-server" 
 alias memo="rusmo"
 alias g="git"
 alias ls="exa"
@@ -20,6 +19,8 @@ alias yga="yarn global add"
 alias alldel="bash ~/dotfiles/docker/all_down.sh"
 alias fdown="docker-compose down --rmi all --volumes --remove-orphans"
 alias vim="nvim"
+alias recon="source ~/.${SHELL##*/}rc"
+alias shconf="$EDITOR ~/.${SHELL##*/}rc"
 
 
 #only Linux
@@ -86,3 +87,10 @@ eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /home/hasu/Downloads/alacritty/extra/completions/alacritty.bash
+export EDITOR=vim
+
+# export PATH="/home/hasu/.cargo/bin:/home/hasu/.yarn/bin:/home/hasu/.config/yarn/global/node_modules/.bin:/usr/local/bin:/usr/local/sbin:/home/hasu/.cargo/bin:/home/hasu/.yarn/bin:/home/hasu/.config/yarn/global/node_modules/.bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/hasu/.fzf/bin"
+export PATH=~/.npm-global/bin:$PATH
+
+
+

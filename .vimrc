@@ -1,4 +1,5 @@
-"----------------------------------------------------------------------------------
+"----------------------------------------------------------------------------------  
+"
 "init.vim
 "----------------------------------------------------------------------------------
 "
@@ -17,7 +18,6 @@ set runtimepath+=/usr/share/nvim/runtime
         end
     endif
 " }}}
-
 
 let g:mapleader = "\<Space>"
 exec 'source' expand('~/.plugin.vim')
@@ -58,8 +58,10 @@ set shiftwidth=4
 " important:
 set termguicolors
 set background=dark
-syntax on
+syntax enable
+filetype plugin indent on
 colorscheme tokyonight
+
 " ヘルプ言語日本語優先表示
 
 set helplang=ja 
@@ -70,6 +72,10 @@ if has("mac") | set clipboard+=unnamed | else | set clipboard^=unnamedplus | end
 set clipboard+=unnamed
 
 au FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+au FileType markdown nnoremap \<Enter> <Leader>o :normal <Leader>o <CR>
+
+
+
 
 
 "viとの互換性を無効にする(INSERT中にカーソルキーが有効になる)
@@ -125,19 +131,9 @@ endfunction
     augroup END
 " }}}
 
+let g:asyncomplete_matchfuzzy = 1
 
 "eskk.vim
-autocmd User eskk-initialize-pre call s:eskk_initial_pre()
-function! s:eskk_initial_pre()
-let t = eskk#table#new('rom_to_hira*', 'rom_to_hira')
-call t.add_map(',', '，')
-call t.add_map('.', '．')
-call eskk#register_mode_table('hira', t)
-let t = eskk#table#new('rom_to_kata*', 'rom_to_kata')
-call t.add_map(',', '，')
-call t.add_map('.', '．')
-call eskk#register_mode_table('kata', t)
-endfunction
 
 let g:eskk#directory  = "~/.eskk"
 let g:eskk#dictionary = {'path':"~/.skk-jisyo",'sorted':0,'encoding':'utf-8'}
@@ -343,12 +339,7 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 
-" command! Terminal call popup_create(term_start([&shell], #{ hidden: 1, term_finish: 'close'}), #{ border: [], minwidth: winwidth(0)/2, minheight: &lines/2 })
-" if has('vim')
-  " command! Terminal call popup_create(term_start([&shell], #{ hidden: 1, term_finish: 'close'}), #{ border: [], minwidth: winwidth(0)/2, minheight: &lines/2 })
-" elseif has('nvim')
-  command! Terminal call s:neovimTerminal()
-" endif
+  command! Terminal call popup_create(term_start([&shell], #{ hidden: 1, term_finish: 'close'}), #{ border: [], minwidth: winwidth(0)/2, minheight: &lines/2 })
 
 
 function! s:www(word) abort
@@ -356,4 +347,12 @@ function! s:www(word) abort
 endfunction
 
 command! -nargs=1 WWW call s:www(<f-args>)
+
+function! s:insert_double_space() abort
+  let position = getpos('.')  
+  execute ":normal A\<Space>\<Space>"
+  execute ":normal o"
+endfunction
+
+command! InsertEmptyLine call s:insert_double_space()
 "}}}

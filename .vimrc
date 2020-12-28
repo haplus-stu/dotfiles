@@ -139,10 +139,10 @@ let g:asyncomplete_matchfuzzy = 1
 let g:eskk#dictionary        = {'path':"~/.skk-jisyo",'sorted':0,'encoding':'utf-8'}
 let g:eskk#enable_completion = 1
 " Use yaskkserv
-let g:eskk#server = {
-      \	'host': 'localhost',
-      \	'port': 1178,
-      \}
+" let g:eskk#server = {
+"      \	'host': 'localhost',
+"      \	'port': 1178,
+"      \}
 
 "nvim-treesitter
 lua <<EOF

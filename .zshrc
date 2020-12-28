@@ -22,6 +22,8 @@ alias vim="nvim"
 alias recon="source ~/.${SHELL##*/}rc"
 alias shconf="$EDITOR ~/.${SHELL##*/}rc"
 
+alias cl="clear"
+
 
 #only Linux
 alias open="xdg-open"

@@ -135,8 +135,9 @@ let g:asyncomplete_matchfuzzy = 1
 
 "eskk.vim
 
-let g:eskk#directory  = "~/.eskk"
-let g:eskk#dictionary = {'path':"~/.skk-jisyo",'sorted':0,'encoding':'utf-8'}
+" let g:eskk#directory         = "~/.eskk"
+let g:eskk#dictionary        = {'path':"~/.skk-jisyo",'sorted':0,'encoding':'utf-8'}
+let g:eskk#enable_completion = 1
 " Use yaskkserv
 let g:eskk#server = {
       \	'host': 'localhost',
@@ -164,7 +165,7 @@ let g:EasyMotion_smartcase = 1
 
 "token
 let g:adtd_token = '56f285f749d5d2b22491433742c258984d99d05d'
-let g:gh_token = '60ba1701d317c137ecabe819c55920de2d16917c'
+let g:gh_token = '8a4a4756565995384eee9177efe22f27d214a1e7'
 
 " gh.vim
 function! s:gh(...) abort

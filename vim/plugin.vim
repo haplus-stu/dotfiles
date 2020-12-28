@@ -44,6 +44,27 @@ Plug 'mattn/vim-maketable'
 Plug 'kato-k/vim-colorscheme-settings'
 Plug 'machakann/vim-sandwich'
 Plug 'simeji/winresizer'
+Plug 'simnalamburt/vim-mundo'
+Plug 'skanehira/gh.vim'
+Plug 'lambdalisue/gina.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'skamsie/vim-lineletters'
+Plug 'segeljakt/vim-silicon'
+Plug 'tyru/eskk.vim'
+Plug 'lambdalisue/pinkyless.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'higashi000/sarahck.vim'
+
+
+
+
+
+
+
+
+"for nvim
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_disable_italic_comment = 1
@@ -61,4 +82,10 @@ Plug 'flrnd/plastic.vim'
 Plug 'koirand/tokyo-metro.vim'
 Plug 'ulwlu/elly.vim'
 Plug 'adrian5/oceanic-next-vim'
+Plug 'drewtempelmeyer/palenight.vim'
+
+
+
 call plug#end()
+
+

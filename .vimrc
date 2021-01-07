@@ -3,8 +3,20 @@
 "init.vim
 "----------------------------------------------------------------------------------
 "
+if has('mac')
+  let $VIMRUNTIME="/usr/share/vim/vim82"
+  set runtimepath+=/usr/share/vim/vim82
+endif
+
+if has('linux')
+
 let $VIMRUNTIME="/usr/share/nvim/runtime"
 set runtimepath+=/usr/share/nvim/runtime
+endif
+
+
+let $NOTE_DIR '~/google_drive/Docs'
+
 
 "vim 初回起動時vim-plug自動インストール{{{
     " set rtp+=~/.vim/plugged/vim-plug
@@ -107,7 +119,7 @@ endfunction
 
 "" lsp settings {{{
     let g:lsp_signs_error = {'text': 'E'}
-    let g:lsp_signs_warning = {'text': '🍌'}
+    let g:lsp_signs_warning = {'text': 'W'}
     if !has('nvim')
         let g:lsp_diagnostics_float_cursor = 1
     endif
@@ -136,7 +148,7 @@ let g:asyncomplete_matchfuzzy = 1
 "eskk.vim
 
 " let g:eskk#directory         = "~/.eskk"
-let g:eskk#dictionary        = {'path':"~/.skk-jisyo",'sorted':0,'encoding':'utf-8'}
+let g:eskk#large_dictionary        = {'path':"~/SKK-JISYO.L",'sorted':1,'encoding':'euc-jp'}
 let g:eskk#enable_completion = 1
 " Use yaskkserv
 " let g:eskk#server = {
@@ -178,7 +190,7 @@ command! -nargs=* GH call s:gh(<f-args>)
 let g:preview_markdown_vertical = 1
 let g:preview_markdown_auto_update = 1
 if has('mac')
-  let g:previm_open_cmd = 'open -a Google\ Chrome'
+  let g:previm_open_cmd = 'open'
 elseif has('linux')
   let g:previm_open_cmd = 'xdg-open'
 endif
@@ -248,6 +260,29 @@ if (has("nvim"))
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
+
+"deno lsp
+"
+if executable("typescript-language-server")
+  " グローバルインストールされたnpmモジュールの保存場所
+  let s:npm_root = trim(system("npm root -g"))
+
+  " vim-lspのinitialization_optionsを使用して、typescript-deno-pluginのインストール場所をtypescript-language-serverへ伝えます
+  let s:has_typescript_deno_plugin = isdirectory(s:npm_root . "/typescript-deno-plugin")
+  let s:plugins = s:has_typescript_deno_plugin
+    \ ? [{ "name": "typescript-deno-plugin", "location": s:npm_root }]
+    \ : []
+  augroup LspTypeScript
+    autocmd!
+    autocmd User lsp_setup call lsp#register_server({
+    \   "name": "typescript-language-server",
+    \   "cmd": {server_info -> ["typescript-language-server", "--stdio"]},
+    \   "root_uri": {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
+    \   "whitelist": ["typescript", "typescript.tsx"],
+    \   "initialization_options": { "plugins": s:plugins },
+    \ })
+  augroup END
+endif
 "}}}
 
 "KeyMaps{{{
@@ -339,6 +374,23 @@ nmap s <Plug>(easymotion-overwin-f2)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
+"Go to code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+
+"show documentation
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
 
   command! Terminal call popup_create(term_start([&shell], #{ hidden: 1, term_finish: 'close'}), #{ border: [], minwidth: winwidth(0)/2, minheight: &lines/2 })
 
@@ -356,4 +408,14 @@ function! s:insert_double_space() abort
 endfunction
 
 command! InsertEmptyLine call s:insert_double_space()
+
+"ノート検索
+command! -nargs=1 Ngrep vimgrep "<args>" ~/google_drive/Docs/*.md | cw
+nnoremap <Leader>[ :Ngrep
+
+augroup md
+  autocmd!
+  au BufWrite *.md PrevimOpen
+  au BufNewFile,BufRead *.md nnoremap <Leader> b :normal A <br><cr>
+augroup END
 "}}}

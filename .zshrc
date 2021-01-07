@@ -26,7 +26,7 @@ alias cl="clear"
 
 
 #only Linux
-alias open="xdg-open"
+# alias open="xdg-open"
 
 #about tmux
 if [[ ! -n $TMUX && $- == *l* ]]; then
@@ -91,8 +91,15 @@ eval "$(zoxide init zsh)"
 source /home/hasu/Downloads/alacritty/extra/completions/alacritty.bash
 export EDITOR=vim
 
-# export PATH="/home/hasu/.cargo/bin:/home/hasu/.yarn/bin:/home/hasu/.config/yarn/global/node_modules/.bin:/usr/local/bin:/usr/local/sbin:/home/hasu/.cargo/bin:/home/hasu/.yarn/bin:/home/hasu/.config/yarn/global/node_modules/.bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/hasu/.fzf/bin"
 export PATH=~/.npm-global/bin:$PATH
 
 
+eval "$(starship init zsh)"
 
+
+export DENO_INSTALL="/Users/shuya/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit
+compinit -u

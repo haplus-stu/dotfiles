@@ -113,6 +113,20 @@ function! s:neovimTerminal() abort
     terminal
 endfunction
 
+"nvim pythonインストール
+if has('nvim') && !filereadable(expand('~/.vim_no_python'))
+  let s:python3 = system('which python3')
+  if strlen(s:python3) != 0
+    let s:python3_dir = $HOME . '/.vim/python3'
+    if ! isdirectory(s:python3_dir)
+      call system('python3 -m venv ' . s:python3_dir)
+      call system('source ' . s:python3_dir . '/bin/activate && pip install neovim flake8 jedi')
+    endif
+    let g:python3_host_prog = s:python3_dir . '/bin/python'
+    let $PATH = s:python3_dir . '/bin:' . $PATH
+  endif
+endif
+
 " }}}
 
 "プラグイン設定{{{
@@ -142,6 +156,12 @@ endfunction
         au User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
     augroup END
 " }}}
+let g:ale_fixers = {
+      \ 'javascript': ['prettier'],
+      \ 'scss':['prettier']
+      \ }
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
 
 let g:asyncomplete_matchfuzzy = 1
 
@@ -283,9 +303,13 @@ if executable("typescript-language-server")
     \ })
   augroup END
 endif
+
+
 "}}}
 
 "KeyMaps{{{
+"コマンド履歴を開く
+nnoremap <Leader>cm q:
 " ハイライトを削除する
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
 " 設定ファイルを開く
@@ -364,7 +388,8 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-caw:hatpos:toggle nmap <C-q> <Plug>(caw:hatpos:toggle) 
+"caw:hatpos:toggle 
+nmap <C-q> <Plug>(caw:hatpos:toggle) 
 " Need one more keystroke, but on average, it may be more comfortable.
 nmap s <Plug>(easymotion-overwin-f2)
 
@@ -380,6 +405,18 @@ nmap <silent> gr <Plug>(coc-references)
 
 "show documentation
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+" バッファ一覧
+nnoremap <silent> ,ub :<C-u>Denite buffer<CR>
+" ファイル一覧
+nnoremap <silent> ,uf :<C-u>DeniteBufferDir -buffer-name=files file<CR>
+" レジスタ一覧
+nnoremap <silent> ,ur :<C-u>Denite -buffer-name=register register<CR>
+" 最近使用したファイル一覧
+nnoremap <silent> ,um :<C-u>Denite file_mru<CR>
+" 常用セット
+nnoremap <silent> ,uu :<C-u>Denite buffer file_mru<CR>
+" 全部乗せ
+nnoremap <silent> ,ua :<C-u>DeniteBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -390,6 +427,8 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
+
+
 
 
   command! Terminal call popup_create(term_start([&shell], #{ hidden: 1, term_finish: 'close'}), #{ border: [], minwidth: winwidth(0)/2, minheight: &lines/2 })
@@ -416,6 +455,7 @@ nnoremap <Leader>[ :Ngrep
 augroup md
   autocmd!
   au BufWrite *.md PrevimOpen
-  au BufNewFile,BufRead *.md nnoremap <Leader> b :normal A <br><cr>
+  au BufNewFile,BufRead *.md nnoremap <Leader> b :normal A <br><cr>:normal o<cr>
+
 augroup END
 "}}}

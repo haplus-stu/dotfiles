@@ -5,28 +5,23 @@
 alias tkill="tmux kill-server" 
 alias memo="rusmo"
 alias g="git"
-alias ls="exa"
+alias ls="exa -T -L 1 -a"
 alias ll="exa -alFh --git --time-style=long-iso";
 alias lt="exa -T --git-ignore";
 alias dc="docker-compose"
 alias d="docker"
-# alias cat="bat"
+alias cat="bat"
 alias mkdir="mkdir -p"
 alias cp="cp -r"
-alias c="powered_cd"
-alias ya="yarn add"
-alias yga="yarn global add"
 alias alldel="bash ~/dotfiles/docker/all_down.sh"
 alias fdown="docker-compose down --rmi all --volumes --remove-orphans"
 alias vim="nvim"
 alias recon="source ~/.${SHELL##*/}rc"
 alias shconf="$EDITOR ~/.${SHELL##*/}rc"
 
-alias cl="clear"
-
-
-#only Linux
-# alias open="xdg-open"
+# if has('linux') 
+# 	alias open="xdg-open"
+# fi
 
 #about tmux
 if [[ ! -n $TMUX && $- == *l* ]]; then
@@ -47,39 +42,7 @@ if [[ ! -n $TMUX && $- == *l* ]]; then
   fi
 fi
 
-#for fzf https://qiita.com/arks22/items/8515a7f4eab37cfbfb17
-function powered_cd_add_log() {
-  local i=0
-  cat ~/.powered_cd.log | while read line; do
-    (( i++ ))
-    if [ i = 30 ]; then
-      sed -i -e "30,30d" ~/.powered_cd.log
-    elif [ "$line" = "$PWD" ]; then
-      sed -i -e "${i},${i}d" ~/.powered_cd.log 
-    fi
-  done
-  echo "$PWD" >> ~/.powered_cd.log
-}
 
-function powered_cd() {
-  if [ $# = 0 ]; then
-    cd $(tac ~/.powered_cd.log | fzf)
-  elif [ $# = 1 ]; then
-    cd $1
-  else
-    echo "powered_cd: too many arguments"
-  fi
-}
-
-_powered_cd() {
-  _files -/
-}
-
-compdef _powered_cd powered_cd
-
-[ -e ~/.powered_cd.log ] || touch ~/.powered_cd.log
-
-
 
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -103,3 +66,15 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 fpath=(~/.zsh $fpath)
 autoload -Uz compinit
 compinit -u
+
+function select-history() {
+  BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
+  CURSOR=$#BUFFER
+}
+zle -N select-history
+bindkey '^r' select-history
+
+# $ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+plugins=(zsh-autosuggestions)
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+

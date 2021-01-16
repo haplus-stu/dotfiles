@@ -14,13 +14,12 @@ Plug 'prettier/vim-prettier', {
 
 Plug 'sheerun/vim-polyglot'
 Plug 'itchyny/lightline.vim'
-"Plug 'neoclide/coc.nvim',{'branch':'release'}
-Plug 'prabirshrestha/vim-lsp'
+Plug 'neoclide/coc.nvim',{'branch':'release'}
+" Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'prabirshrestha/asyncomplete.vim'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'lighttiger2505/deoplete-vim-lsp'
-Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/neosnippet.vim' 
 Plug 'Shougo/neosnippet-snippets'
 Pulg 'Shougo/neocomplcache.vim'
@@ -51,17 +50,31 @@ Plug 'easymotion/vim-easymotion'
 Plug 'skamsie/vim-lineletters'
 Plug 'segeljakt/vim-silicon'
 Plug 'tyru/eskk.vim'
-Plug 'lambdalisue/pinkyless.vim'
-Plug 'rust-lang/rust.vim'
-Plug 'higashi000/sarahck.vim'
+Plug 'hashue/adtd.vim'
+Plug 'Shougo/denite.nvim'
+Plug 'luochen1990/rainbow'
+" Plug 'andymass/vim-matchup'
+Plug 'Yggdroot/indentLine'
+Plug 'w0rp/ale'
 
 
 
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+let g:loaded_matchit = 1
 
 
 
-
-
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+  Plug 'Shougo/denite.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 "for nvim
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -83,7 +96,8 @@ Plug 'koirand/tokyo-metro.vim'
 Plug 'ulwlu/elly.vim'
 Plug 'adrian5/oceanic-next-vim'
 Plug 'drewtempelmeyer/palenight.vim'
-
+Plug 'sainnhe/forest-night'
+Plug 'cormacrelf/vim-colors-github'
 
 
 call plug#end()

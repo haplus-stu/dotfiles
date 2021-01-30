@@ -11,8 +11,8 @@
 
 #!/bin/bash
 
-VIM_FILES = (.vimrc .plugin.vim)
-DOT_FILES = (.tmux.conf .zshrc .gitconfig)
+VIM_FILES=(.vimrc .plugin.vim)
+DOT_FILES=(.tmux.conf .zshrc .gitconfig)
 
 for dotfile in ${VIM_FILES[@]}
 do
@@ -27,3 +27,4 @@ done
 mkdir -p ~/.config/nvim/
 ln -s ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 ln -s ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
+

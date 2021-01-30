@@ -15,9 +15,9 @@ alias mkdir="mkdir -p"
 alias cp="cp -r"
 alias alldel="bash ~/dotfiles/docker/all_down.sh"
 alias fdown="docker-compose down --rmi all --volumes --remove-orphans"
-alias vim="nvim"
 alias recon="source ~/.${SHELL##*/}rc"
 alias shconf="$EDITOR ~/.${SHELL##*/}rc"
+# alias vim="nvim"
 
 # if has('linux') 
 # 	alias open="xdg-open"

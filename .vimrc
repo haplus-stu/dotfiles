@@ -3,16 +3,16 @@
 "init.vim
 "----------------------------------------------------------------------------------
 "
-if has('mac')
-  let $VIMRUNTIME="/usr/share/vim/vim82"
-  set runtimepath+=/usr/share/vim/vim82
-endif
-
-if has('linux')
-
-let $VIMRUNTIME="/usr/share/nvim/runtime"
-set runtimepath+=/usr/share/nvim/runtime
-endif
+" if has('mac')
+"   let $VIMRUNTIME="/usr/share/vim/vim82"
+"   set runtimepath+=/usr/share/vim/vim82
+" endif
+" 
+" if has('linux')
+" 
+" let $VIMRUNTIME="/usr/share/nvim/runtime"
+" set runtimepath+=/usr/share/nvim/runtime
+" endif
 
 
 let $NOTE_DIR '~/google_drive/Docs'
@@ -127,6 +127,19 @@ if has('nvim') && !filereadable(expand('~/.vim_no_python'))
   endif
 endif
 
+" }}}
+"
+" {{{ シンタックスをクリア
+augroup fileTypeSyntaxClear
+  au!
+  au FileType go syntax clear
+  au FileType vim syntax clear
+  au FileType html syntax clear
+  au FileType javascript syntax clear
+  au FileType typescript syntax clear
+  au FileType vue  syntax clear
+  au FileType cpp syntax clear
+augroup END
 " }}}
 
 "プラグイン設定{{{
@@ -304,12 +317,13 @@ if executable("typescript-language-server")
   augroup END
 endif
 
+let g:quickrun_config.cpp = {
+  \  'command': 'g++'
+  \}
 
 "}}}
 
 "KeyMaps{{{
-"コマンド履歴を開く
-nnoremap <Leader>cm q:
 " ハイライトを削除する
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
 " 設定ファイルを開く
@@ -349,9 +363,9 @@ nnoremap SH <C-w>>
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>   
 
-"LSP
-map vd :w<cr>:LspDefinition<cr>
-map K <cmd>LspHover<cr>
+" "LSP
+" map vd :w<cr>:LspDefinition<cr>
+" map K <cmd>LspHover<cr>
 
 "Tab設定
 map tts <cmd>set expandtab<cr><cmd>retab 4<cr>

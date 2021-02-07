@@ -1,3 +1,8 @@
 #!/bin/bash
 
-docker stop $(docker ps -q -a)&&docker rm $(docker ps -q -a)
+
+echo "----- docker stopping...-----"
+docker stop $(docker ps -q -a)
+
+echo "----- docker removing...-----"
+docker rm $(docker ps -q -a)

@@ -88,8 +88,6 @@ au FileType markdown nnoremap \<Enter> <Leader>o :normal <Leader>o <CR>
 
 
 
-
-
 "viとの互換性を無効にする(INSERT中にカーソルキーが有効になる)
 set nocompatible
 
@@ -325,12 +323,12 @@ let g:quickrun_config.cpp = {
 
 "KeyMaps{{{
 " ハイライトを削除する
-nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
+map <silent> <Esc><Esc> <cmd>nohlsearch<CR>
 " 設定ファイルを開く
 if has('nvim')
-  nnoremap <Leader>. :new ~/.config/nvim/init.vim<CR>
+ map <Leader>. <cmd>new ~/.config/nvim/init.vim<CR>
 else
-  nnoremap <Leader>. :new ~/.vimrc<CR>
+  map <Leader>. <cmd>new ~/.vimrc<CR>
 endif
 
 "再読込
@@ -371,11 +369,11 @@ nnoremap sv :<C-u>vs<CR>
 map tts <cmd>set expandtab<cr><cmd>retab 4<cr>
 
 
-nmap pm :PreviewMarkdown<cr>
+map pm <cmd>PreviewMarkdown<cr>
 
-nmap <silent>, <Plug>LineLetters
+map <silent>, <cmd><Plug>LineLetters
 
-nnoremap ut :MundoToggle<cr>
+map ut <cmd>MundoToggle<cr>
 
 nnoremap ts :Tsad<cr>
 nnoremap ta :Tsl<cr>
@@ -416,6 +414,8 @@ map <Leader>k <Plug>(easymotion-k)
 "Go to code navigation
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> grn <Plug>(coc-rename)
+
 
 "show documentation
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -472,4 +472,12 @@ augroup md
   au BufNewFile,BufRead *.md nnoremap <Leader> b :normal A <br><cr>:normal o<cr>
 
 augroup END
+
+augroup cpp
+  autocmd!
+  au BufWrite *.cpp ClangFormat
+  au BufNewFile,BufRead *.md nnoremap <Leader> b :normal A <br><cr>:normal o<cr>
+augroup END
+
+
 "}}}

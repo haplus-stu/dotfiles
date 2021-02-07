@@ -1,7 +1,3 @@
-# fpath+=$HOME/.zsh/pure
-# 
-# # PROMPT='%F{blue}%U%~%u%f$ '
-# autoload -U promptinit; promptinit prompt pure 
 alias tkill="tmux kill-server" 
 alias memo="rusmo"
 alias g="git"
@@ -52,6 +48,7 @@ eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /home/hasu/Downloads/alacritty/extra/completions/alacritty.bash
+
 export EDITOR=vim
 
 export PATH=~/.npm-global/bin:$PATH
@@ -71,6 +68,7 @@ function select-history() {
   BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
   CURSOR=$#BUFFER
 }
+
 zle -N select-history
 bindkey '^r' select-history
 
@@ -78,3 +76,11 @@ bindkey '^r' select-history
 plugins=(zsh-autosuggestions)
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+fbr() {
+  local branches branch
+  branches=$(git branch -vv) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+zle -N fbr
+bindkey '^f' fbr

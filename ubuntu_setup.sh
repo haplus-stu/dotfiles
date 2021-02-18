@@ -1,5 +1,5 @@
 #!/bin/bash
-echo"
+echo "
 #===============
 check upgrade of ubuntu
 use command is 
@@ -8,7 +8,7 @@ sudo apt upgrade -y
 #==============="
 sudo apt update -y
 sudo apt upgrade -y
-echo"
+echo "
 # ===============
 install node and more...
 use command is 
@@ -35,7 +35,7 @@ export PATH="$PATH:`yarn global bin`"
 sudo apt install -y screenfetch
 #herokuのインストール
 yarn global add heroku
-echo"
+echo "
 ================
 install vim
 use command is
@@ -51,3 +51,6 @@ sudo apt install -y vim
  sudo add-apt-repository ppa:alessandro-strada/ppa
  sudo apt-get update
  sudo apt-get install google-drive-ocamlfuse
+
+ curl https://sh.rustup.rs -sSf | sh
+

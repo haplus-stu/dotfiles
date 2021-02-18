@@ -1,1 +1,0 @@
-/home/hasu/dotfiles/.vimrc

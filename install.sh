@@ -1,30 +1,17 @@
-# #!/bin/bash -e
-# 
-# IGNORE_PATTERN="^\.(git|travis)"
-# 
-# echo "Create dotfile links."
-# for dotfile in .??*; do
-#     [[ $dotfile =~ $IGNORE_PATTERN ]] && continue
-#     ln -snfv "$(pwd)/$dotfile" "$HOME/$dotfile"
-# done
-# echo "Success"
-
 #!/bin/bash
 
-VIM_FILES=(.vimrc .plugin.vim)
-DOT_FILES=(.tmux.conf .zshrc .gitconfig)
+mkdir -p $HOME/.config/nvim/
+ln -s $HOME/dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim
+ln -s $HOME/dotfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 
-for dotfile in ${VIM_FILES[@]}
-do
-	ln -s $HOME/dotfiles/vim/$file $HOME/$file
-done
+#vim 
+ln -s $HOME/dotfiles/vim/vimrc $HOME/.vimrc
+ln -s $HOME/dotfiles/vim/plugin.vim $HOME/.plugin.vim
+ln -s $HOME/dotfiles/vim/editor.vim $HOME/.editor.vim
+ln -s $HOME/dotfiles/vim/plugin.vim $HOME/.plugin.vim
 
-for dotfile in ${DOT_FILES[@]}
-do
-	ln -s $HOME/dotfiles/$file $HOME/$file
-done
+#terminal
+ln -s $HOME/dotfiles/zshrc $HOME/.zshrc
+ln -s $HOME/dotfiles/.tmux_conf $HOME/.tmux_conf
 
-mkdir -p ~/.config/nvim/
-ln -s ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
-ln -s ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
 

@@ -1,79 +1,52 @@
 call plug#begin('~/.vim/plugged')
 Plug 'Shougo/unite.vim'
-Plug 'ujihisa/unite-colorscheme'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
-Plug 'scrooloose/syntastic'
-Plug 'osyo-manga/vim-watchdogs'
 Plug 'cohama/lexima.vim'
 Plug 'prettier/vim-prettier', {
 			\ 'do': 'yarn install',
 			\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] 
 			\}
 
-Plug 'sheerun/vim-polyglot'
-Plug 'itchyny/lightline.vim'
- Plug 'neoclide/coc.nvim',{'branch':'release'}
+Plug 'neoclide/coc.nvim',{'branch':'release'}
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'lighttiger2505/deoplete-vim-lsp'
 Plug 'Shougo/neosnippet.vim' 
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neocomplcache.vim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'prabirshrestha/async.vim'
 Plug 'mattn/vim-lexiv'
 Plug 'tyru/caw.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'turbio/bracey.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'skanehira/preview-markdown.vim'
 Plug 'MichaelMure/mdr'
 Plug 'lambdalisue/fern.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'plasticboy/vim-markdown'
 Plug 'previm/previm'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'mattn/vim-maketable'
 Plug 'machakann/vim-sandwich'
-Plug 'simeji/winresizer'
 Plug 'simnalamburt/vim-mundo'
 Plug 'skanehira/gh.vim'
 Plug 'lambdalisue/gina.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'skamsie/vim-lineletters'
-Plug 'tyru/eskk.vim'
 Plug 'hashue/adtd.vim'
-" Plug 'luochen1990/rainbow'
-" Plug 'andymass/vim-matchup'
-" Plug 'Yggdroot/indentLine'
 Plug 'rhysd/vim-clang-format'
 Plug 'kana/vim-operator-user'
 Plug 'Shougo/vimproc.vim'
-Plug 'vimcki/vim-quickfile'
-Plug 'tmrekk121/prev-md.vim'
-Plug 'vim-jp/vimdoc-ja'
-Plug 'AndrewRadev/tagalong.vim'
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-  Plug 'Shougo/denite.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-  Plug 'rust-lang/rust.vim'
-endif
+"日本語ヘルプ
+Plug 'vim-jp/vimdoc-ja'
+"高速検索
+Plug 'jremmen/vim-ripgrep'
+Plug 'thinca/vim-quickrun'
+
 "for nvim
 if has('nvim')
+  "シンタックス
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 endif
-Plug 'jremmen/vim-ripgrep'
 
 
 let g:tokyonight_style = 'night' " available: night, storm
@@ -90,13 +63,10 @@ Plug 'w0ng/vim-hybrid'
 Plug 'rakr/vim-one'
 Plug 'flrnd/plastic.vim'
 Plug 'koirand/tokyo-metro.vim'
-Plug 'ulwlu/elly.vim'
 Plug 'adrian5/oceanic-next-vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'sainnhe/forest-night'
 Plug 'cormacrelf/vim-colors-github'
-Plug 'thinca/vim-quickrun'
-Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 
 
 
@@ -232,7 +202,7 @@ function! s:hijack_directory() abort
   execute printf('Fern %s', fnameescape(path))
 endfunction
 
-let g:neosnippet#snippets_directory='~/dotfiles/snippets'
+let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets'
 " For conceal markers.
 if has('conceal')
   set conceallevel=2 concealcursor=niv

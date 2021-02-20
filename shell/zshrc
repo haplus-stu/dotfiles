@@ -42,6 +42,7 @@ export EDITOR=vim
 export PATH=~/.npm-global/bin:$PATH
 export DENO_INSTALL="/Users/shuya/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+export PATH="/usr/local/opt/binutils/bin:$PATH"
 
 eval "$(zoxide init zsh)"
 # eval "$(starship init zsh)"

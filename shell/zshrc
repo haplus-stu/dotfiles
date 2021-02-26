@@ -16,6 +16,10 @@ alias cdv="cd ~/vagrant/"
 # alias vim="nvim"
 
 
+# if [["$(uname)" == 'Darwin']]; then
+#   alias updatedb="/usr/libexec/locate.updatedb"
+# fi
+
 #about tmux
 if [[ ! -n $TMUX && $- == *l* ]]; then
   # get the IDs
@@ -125,3 +129,29 @@ PS1="%F{cyan}%D{%Y-%m-%d}${reset_color%} %F{cyan}$vcs_info_msg_0_%f%F{yellow}%f
 ${isssh} %n@%m: %F{cyan}%~ ${reset_color%} 
 \$ "
 
+# PS1="$ "
+
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+
+export PHPENV_ROOT="$USER/.phpenv"
+if [ -d "${PHPENV_ROOT}" ]; then
+  export PATH="${PHPENV_ROOT}/bin:${PATH}"
+  eval "$(phpenv init -)"
+fi
+echo 'export PATH="/usr/local/opt/bison/bin:$PATH"' >> ~/.zshrc
+
+export PATH="/usr/local/opt/bison/bin:$PATH"
+export RBENV_ROOT="$HOME/.rbenv"
+export PHPENV_ROOT="$HOME/.phpenv"
+export PATH="/usr/local/opt/bison/bin:$PATH"
+
+export PATH="/usr/local/opt/php@7.2/bin:$PATH"
+export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
+export PATH="/usr/local/opt/bison/bin:$PATH"
+export PATH="/usr/local/opt/bison/bin:$PATH"
+export PATH="/usr/local/opt/bison/bin:$PATH"
+export PATH="/usr/local/opt/bison/bin:$PATH"
+export PATH="/usr/local/opt/bison/bin:$PATH"
+export PATH="/usr/local/opt/bison/bin:$PATH"
+export PATH="/usr/local/opt/bison/bin:$PATH"
+export PATH="/usr/local/opt/bison/bin:$PATH"

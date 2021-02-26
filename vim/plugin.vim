@@ -1,3 +1,4 @@
+"Plugin{{{
 call plug#begin('~/.vim/plugged')
 Plug 'Shougo/unite.vim'
 Plug 'tpope/vim-surround'
@@ -9,6 +10,7 @@ Plug 'prettier/vim-prettier', {
 			\}
 
 Plug 'neoclide/coc.nvim',{'branch':'release'}
+"Language Server Protocol
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'lighttiger2505/deoplete-vim-lsp'
@@ -35,8 +37,9 @@ Plug 'hashue/adtd.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'kana/vim-operator-user'
 Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/denite.nvim'
 
-"日本語ヘルプ
+"Japanese Help Document
 Plug 'vim-jp/vimdoc-ja'
 "高速検索
 Plug 'jremmen/vim-ripgrep'
@@ -71,11 +74,11 @@ Plug 'cormacrelf/vim-colors-github'
 
 
 call plug#end()
+"}}}
 
+"Plugin settings{{{
 
-"プラグイン設定{{{
-
-"" lsp settings {{{
+"Lsp settings {{{
     let g:lsp_signs_error = {'text': 'E'}
     let g:lsp_signs_warning = {'text': 'W'}
     if !has('nvim')
@@ -101,9 +104,10 @@ call plug#end()
     augroup END
 " }}}
 
-"eskk.vim
+"eskk.vim{{{
 let g:eskk#large_dictionary        = {'path':"~/SKK-JISYO.L",'sorted':1,'encoding':'euc-jp'}
 let g:eskk#enable_completion = 1
+"}}}
 
 "nvim-treesitter{{{
   if has('nvim')
@@ -120,68 +124,16 @@ EOF
 
 " }}}
 
-"easymotion
-let g:lineletters_settings = {
+"easymotion{{{
+  let g:lineletters_settings = {
       \ 'prefix_chars': [',', 'j', 'f'],
       \ 'highlight_group': 'LineNr',
       \ 'after_jump_do': '^'
       \ }
 let g:EasyMotion_smartcase = 1
-
-"token
-" let g:adtd_token = '56f285f749d5d2b22491433742c258984d99d05d'
-" let g:gh_token = '8a4a4756565995384eee9177efe22f27d214a1e7'
-
-" gh.vim
-function! s:gh(...) abort
-  execute('new gh://'.a:1.'/'.a:2.'/'.a:3)
-endfunction
-
-command! -nargs=* GH call s:gh(<f-args>)
-
-"preview_markdown{{{
-  let g:preview_markdown_vertical = 1
-let g:preview_markdown_auto_update = 1
-if has('mac')
-  let g:previm_open_cmd = 'open'
-elseif has('linux')
-  let g:previm_open_cmd = 'xdg-open'
-endif
-
 "}}}
 
-"setting of Bracey
-let g:bracey_brower_command = "open"
-let g:bracey_server_port = 8000
-
-" lightline
-" let g:lightline = {
-"      \ 'colorscheme': 'wombat',
-"      \ 'component': {
-"      \   'readonly': '%{&readonly?"\u2b64":""}',
-"      \ },
-"      \ 'active': {
-"      \   'left': [ [ 'mode', 'paste' ],
-"      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-"      \ },
-"      \ 'component_function': {
-"      \   'gitbranch': 'gina#component#repo#branch'
-"      \ },
-"      \ }
-
-"ctrlp
-let g:ctrlp_working_path_mode = 'ra'
-
-
-
-"prettier
-if filereadable(findfile('.prettierrc.js', '.;'))
-  echo "Using prettier..."
-  autocmd BufWritePre *.js,*.jsx,*mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-endif
-
-
-"Fern
+"Fern{{{
 let g:loaded_netrw             = 1
 let g:loaded_netrwPlugin       = 1
 let g:loaded_netrwSettings     = 1
@@ -203,17 +155,74 @@ function! s:hijack_directory() abort
 endfunction
 
 let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets'
+
 " For conceal markers.
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
 
+"}}}
+
+" gh.vim{{{
+  function! s:gh(...) abort
+    execute('new gh://'.a:1.'/'.a:2.'/'.a:3)
+  endfunction
+
+  command! -nargs=* GH call s:gh(<f-args>)
+
+"}}}
+
+"preview_markdown{{{
+  let g:preview_markdown_vertical = 1
+let g:preview_markdown_auto_update = 1
+if has('mac')
+  let g:previm_open_cmd = 'open'
+elseif has('linux')
+  let g:previm_open_cmd = 'xdg-open'
+endif
+
+"}}}
+
+" lightline{{{
+" let g:lightline = {
+"      \ 'colorscheme': 'wombat',
+"      \ 'component': {
+"      \   'readonly': '%{&readonly?"\u2b64":""}',
+"      \ },
+"      \ 'active': {
+"      \   'left': [ [ 'mode', 'paste' ],
+"      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+"      \ },
+"      \ 'component_function': {
+"      \   'gitbranch': 'gina#component#repo#branch'
+"      \ },
+"      \ }
+"}}}
+
+" Bracey{{{
+let g:bracey_brower_command = "open"
+let g:bracey_server_port = 8000
+"}}}
+
+"prettier{{{
+if filereadable(findfile('.prettierrc.js', '.;'))
+  echo "Using prettier..."
+  autocmd BufWritePre *.js,*.jsx,*mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+endif
+"}}}
+
+"adtd.vim{{{
+ let g:adtd_token = '56f285f749d5d2b22491433742c258984d99d05d'
+ let g:gh_token = '8a4a4756565995384eee9177efe22f27d214a1e7'
+"}}}
+
+"ctrlp
+let g:ctrlp_working_path_mode = 'ra'
+"rustfmt
+let g:rustfmt_autosave = 1
+
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
-
-"rustfmt
-let g:rustfmt_autosave = 1
-
 "}}}

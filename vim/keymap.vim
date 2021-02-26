@@ -1,36 +1,37 @@
-"<Leader>をスペースに
+"Setting space as <Leader>
 let g:mapleader = "\<Space>"
-" ハイライトを削除する
+" Delete highlight
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
 
-" 設定ファイルを開く
+" Open setting file
 if has('nvim')
   nnoremap <Leader>. :tabe ~/.config/nvim/init.vim<CR>
 else
   nnoremap <Leader>. :tabe ~/.vimrc<CR>
 endif
 
-"再読込
+"Reload
 if has('nvim')
   nnoremap <Leader>s :source ~/.config/nvim/init.vim<CR>
 else
   nnoremap <Leader>s :source ~/.vimrc<CR>
 endif
 
-"保存
+"Save
 nnoremap <Leader>w :w<cr>
-"終了
+"Exit
 nnoremap qq :qall<CR>
 "replace
 nnoremap <Leader>rep :%s;\<<C-R><C-W>\>;g<Left><Left>;
-"全削除
+"All delete
 noremap DD :%d<cr>
-"全てヤンク
+"All yank
 noremap YY :%y<cr>
 
+"Open file browse
 noremap <C-n> :Fern .<CR>
 
-"画面分割{{{
+"Split display{{{
 map <sv> :vsplit<CR>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
@@ -43,7 +44,7 @@ nnoremap sv :<C-u>vs<CR>
 "}}}
 
 
-"Tab設定
+"Setting about Tab
 map tts <cmd>set expandtab<cr><cmd>retab 4<cr>
 
 nmap pm :PreviewMarkdown<cr>
@@ -54,16 +55,21 @@ nnoremap ut :MundoToggle<cr>
 " nnoremap ts :Tsad<cr>
 " nnoremap ta :Tsl<cr>
 
+"grep
+nnoremap <Leader>r :Rg 
+
 "エスケープ
 inoremap <silent> jj <ESC>
 
-"折りたたみ関連
+"折りたたみ関連{{{
 noremap fo :foldclose<cr>
 map dep zo
 map fj zj
 map fk zk
+"}}}
 
 vmap <C-q> <Plug>(caw:hatpos:toggle)
+
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
@@ -94,16 +100,13 @@ nmap <silent> gR <Plug>(coc-rename)
 "Terminal
 command! Terminal call popup_create(term_start([&shell], #{ hidden: 1, term_finish: 'close'}), #{ border: [], minwidth: winwidth(0)/2, minheight: &lines/2 })
 
+"gh.vim{{{
+  function! s:www(word) abort
+    execute('term ++close ++shell w3m google.com/search\?q="' . a:word . '"')
+  endfunction
 
-function! s:www(word) abort
-  execute('term ++close ++shell w3m google.com/search\?q="' . a:word . '"')
-endfunction
+  command! -nargs=1 WWW call s:www(<f-args>)
+"}}}
 
-command! -nargs=1 WWW call s:www(<f-args>)
-
-
-
-"grep
-nnoremap <Leader>r :Rg 
 
 

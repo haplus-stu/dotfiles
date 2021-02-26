@@ -8,7 +8,7 @@ ln -s $HOME/dotfiles/shell/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 ln -s $HOME/dotfiles/vim/vimrc $HOME/.vimrc
 ln -s $HOME/dotfiles/vim/plugin.vim $HOME/.plugin.vim
 ln -s $HOME/dotfiles/vim/editor.vim $HOME/.editor.vim
-ln -s $HOME/dotfiles/vim/plugin.vim $HOME/.plugin.vim
+ln -s $HOME/dotfiles/vim/keymap.vim $HOME/.keymap.vim
 
 #terminal
 ln -s $HOME/dotfiles/shell/zshrc $HOME/.zshrc

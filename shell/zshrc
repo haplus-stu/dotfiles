@@ -13,7 +13,7 @@ alias shconf="$EDITOR ~/.${SHELL##*/}rc"
 #change dird
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"
-# alias vim="nvim"
+alias diff="vimdiff"
 
 
 # if [["$(uname)" == 'Darwin']]; then
@@ -147,6 +147,9 @@ export PATH="/usr/local/opt/bison/bin:$PATH"
 
 export PATH="/usr/local/opt/php@7.2/bin:$PATH"
 export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
+export PATH="/usr/local/opt/bison/bin:$PATH"
+export PATH="/usr/local/opt/bison/bin:$PATH"
+export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="/usr/local/opt/bison/bin:$PATH"

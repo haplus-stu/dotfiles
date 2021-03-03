@@ -2,9 +2,8 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'mattn/emmet-vim'
-
-Plug 'cohama/lexima.vim'
-Plug 'mattn/vim-lexiv'
+Plug 'lambdalisue/fern.vim'
+Plug 'junegunn/vim-easy-align'
 
 "Language Server Protocol
 Plug 'prabirshrestha/vim-lsp'
@@ -17,44 +16,21 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'tyru/caw.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
-Plug 'editorconfig/editorconfig-vim'
-Plug 'skanehira/preview-markdown.vim'
 
-Plug 'MichaelMure/mdr'
-Plug 'lambdalisue/fern.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'previm/previm'
-Plug 'mattn/vim-maketable'
-
-Plug 'machakann/vim-sandwich'
 Plug 'simnalamburt/vim-mundo'
 Plug 'rhysd/vim-clang-format'
-
 
 "Japanese Help Document
 Plug 'vim-jp/vimdoc-ja'
 
-"高速検索
+"Quick Search
 Plug 'jremmen/vim-ripgrep'
 
 "js-formatter
 Plug 'maksimr/vim-jsbeautify'
 
-
-let g:rainbow_active = 1
-
-let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_disable_italic_comment = 1
-
-let g:vim_markdown_folding_disabled = 1
-
-let g:previm_enable_realtime = 1
-
-let g:previm_open_cmd = 'open -a Google\ Chrome'
-
-"colorscheme
+"Colorscheme
 Plug 'ghifarit53/tokyonight-vim'
-
 
 call plug#end()
 "}}}
@@ -68,13 +44,6 @@ call plug#end()
         let g:lsp_diagnostics_float_cursor = 1
     endif
     let g:lsp_log_file = ''
-
-    let g:lsp_settings = {
-                \ 'efm-langserver': {
-                \   'disabled': 0,
-                \   'allowlist': ['markdown'],
-                \  }
-                \ }
 
     function! s:on_lsp_buffer_enabled() abort
         setlocal completeopt=menu
@@ -122,21 +91,20 @@ endif
 
 "}}}
 
-"preview_markdown{{{
-  let g:preview_markdown_vertical = 1
-let g:preview_markdown_auto_update = 1
-if has('mac')
-  let g:previm_open_cmd = 'open'
-elseif has('linux')
-  let g:previm_open_cmd = 'xdg-open'
-endif
-
-"}}}
-
-
 "ctrlp
 let g:ctrlp_working_path_mode = 'ra'
+
 "rustfmt
 let g:rustfmt_autosave = 1
 
+"ClangFormat
+let g:clang_format#code_style = 'Google'
+let g:clang_format#detect_style_file = 1
+
+"rainbow
+let g:rainbow_active = 1
+
+"tokyo-night
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_disable_italic_comment = 1
 "}}}

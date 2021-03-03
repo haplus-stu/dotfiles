@@ -1,8 +1,8 @@
 "Setting space as <Leader>
 let g:mapleader = "\<Space>"
+
 " Delete highlight
 nnoremap <silent> <Esc><Esc> :nohlsearch<cr>
-
 
 " Open setting file
 nnoremap <Leader>. :tabe $MYVIMRC<cr>
@@ -22,15 +22,13 @@ noremap YY :%y<cr>
 noremap <silent> <C-n> :Fern . -drawer -toggle<cr>
 
 "Split display{{{
-map <sv> :vsplit<cr>
-nnoremap sj <C-w>j
-nnoremap sk <C-w>k
-nnoremap sl <C-w>l
-nnoremap sh <C-w>h
-nnoremap ss :<C-u>sp<cr>
-nnoremap sv :<C-u>vs<cr>
+nnoremap <silent> sj <C-w>j
+nnoremap <silent> sk <C-w>k
+nnoremap <silent> sl <C-w>l
+nnoremap <silent> sh <C-w>h
+nnoremap <silent> ss :<C-u>sp<cr>
+nnoremap <silent> sv :<C-u>vs<cr>
 "}}}
-
 
 "Setting about Tab
 map tts :setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab<cr>
@@ -46,8 +44,8 @@ nnoremap <Leader>r :Rg<Space>
 inoremap <silent> jj <ESC>
 
 "折りたたみ関連{{{
-noremap fo :foldclose<cr>
-map dep zo
+noremap <silent>fo :foldclose<cr>
+map <silent>dep zo
 map fj zj
 map fk zk
 "}}}
@@ -58,8 +56,6 @@ vmap <C-q> <Plug>(caw:hatpos:toggle)
 xmap gA <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap gA <Plug>(EasyAlign)
-
-
 
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
@@ -78,6 +74,7 @@ nmap <C-q> <Plug>(caw:hatpos:toggle)
 
 au FileType javascript noremap<buffer> <c-f> :ClangFormat<cr>
 au FileType typescript noremap<buffer> <c-f> :ClangFormat<cr>
+au FileType c noremap<buffer> <c-f> :ClangFormat<cr>
 
 au FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 au FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>

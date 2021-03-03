@@ -5,8 +5,7 @@ set imdisable
 set helplang=ja
 
 "折りたたみ
-set foldmethod=marker "折りたたみ設定
-
+set foldmethod=marker
 
 "タブ スペースの可視化
 set list
@@ -16,9 +15,16 @@ set cursorline
 " ハイライトサーチの有効化
 set hlsearch
 
-set showtabline=2
-set statusline=0
-" set noshowmode 
+" set showtabline=2
+set laststatus=2
+
+set statusline=%F
+set statusline+=%m
+set statusline+=:%l
+set statusline+=%=
+set statusline+=\ %Y[%{&fileencoding}]
+
+" set noshowmode
 
 "対応するカッコ表示
 " set showmatch
@@ -37,7 +43,8 @@ colorscheme tokyonight
 " swapファイルを作成しない
 set noswapfile
 
-if has("mac") | set clipboard+=unnamed | else | set clipboard^=unnamedplus | endif " クリップボードを共有
+" クリップボードを共有
+if has("mac") | set clipboard+=unnamed | else | set clipboard^=unnamedplus | endif 
 
 "ファイルタイプごとの設定
 au FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
@@ -50,6 +57,4 @@ set shiftwidth=2
 
 
 set backspace=indent,eol,start
-
-
 "}}}

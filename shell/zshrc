@@ -11,9 +11,11 @@ alias alldel="bash ~/dotfiles/docker/all_down.sh"
 alias fdown="docker-compose down --rmi all --volumes --remove-orphans"
 alias recon="source ~/.${SHELL##*/}rc"
 alias shconf="$EDITOR ~/.${SHELL##*/}rc"
-#change dird
+#change dir
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"
+alias cdd="cd ~/dotfiles/"
+alias zi="zoxied"
 alias diff="vimdiff"
 
 

@@ -48,12 +48,14 @@ if has("mac") | set clipboard+=unnamed | else | set clipboard^=unnamedplus | end
 
 "ファイルタイプごとの設定
 au FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+au FileType MAKE setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 au FileType rust nnoremap <buffer><silent> gK :<C-u>CocCommand rust-analyzer.openDocs<CR>
 
 "setting indent
 set expandtab
 set tabstop=2
 set shiftwidth=2
+
 
 
 set backspace=indent,eol,start

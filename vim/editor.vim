@@ -1,4 +1,3 @@
-"エディタ設定 {{{
 set imdisable
 
 "ヘルプの日本語化
@@ -17,19 +16,14 @@ set hlsearch
 
 " set showtabline=2
 set laststatus=2
-
 set statusline=%F
 set statusline+=%m
 set statusline+=:%l
 set statusline+=%=
 set statusline+=\ %Y[%{&fileencoding}]
 
-" set noshowmode
-
 "対応するカッコ表示
 " set showmatch
-
-"set number
 
 set belloff=all "ミュート
 
@@ -56,7 +50,4 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 
-
-
 set backspace=indent,eol,start
-"}}}

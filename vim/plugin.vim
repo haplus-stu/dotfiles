@@ -32,6 +32,12 @@ Plug 'maksimr/vim-jsbeautify'
 "Colorscheme
 Plug 'ghifarit53/tokyonight-vim'
 
+"window resize
+Plug 'simeji/winresizer'
+
+"Japanese Input
+Plug 'tyru/eskk.vim'
+
 call plug#end()
 "}}}
 

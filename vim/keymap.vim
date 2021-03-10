@@ -70,7 +70,9 @@ nmap <C-q> <Plug>(caw:hatpos:toggle)
   nmap <silent> vd :LspPeekDefinition<cr>
   nmap <silent> vr :LspReferences<cr>
   nmap <silent> vR :LspRename<cr>
+  noremap<buffer> <c-f> :LspDocumentFormat<cr>
 "}}}
+
 
 au FileType javascript noremap<buffer> <c-f> :ClangFormat<cr>
 au FileType typescript noremap<buffer> <c-f> :ClangFormat<cr>

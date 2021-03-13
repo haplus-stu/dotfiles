@@ -13,5 +13,6 @@ ln -s $HOME/dotfiles/vim/keymap.vim $HOME/.keymap.vim
 #terminal
 ln -s $HOME/dotfiles/shell/zshrc $HOME/.zshrc
 ln -s $HOME/dotfiles/shell/tmux_conf $HOME/.tmux_conf
+ln -s $HOME/dotfiles/shell/ranger $HOME/.config/ranger
 
 

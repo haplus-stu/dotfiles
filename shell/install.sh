@@ -15,4 +15,7 @@ ln -s $HOME/dotfiles/shell/zshrc $HOME/.zshrc
 ln -s $HOME/dotfiles/shell/tmux_conf $HOME/.tmux_conf
 ln -s $HOME/dotfiles/shell/ranger $HOME/.config/ranger
 
-
+#i3
+ln -s $HOME/dotfiles/i3/config $HOME/.config/i3/config
+ln -s $HOME/dotfiles/i3/i3-blocks-conf $HOME/.config/i3blocks/config
+ln -s $HOME/dotfiles/i3/rofi-conf $HOME/.config/rofi/config

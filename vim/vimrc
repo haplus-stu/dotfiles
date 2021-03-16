@@ -11,6 +11,10 @@
     endif
 " }}}
 
+set runtimepath^=~/dps-helloworld
+let g:denops#script#typecheck = 1
+
+
 exec 'source' expand('~/.plugin.vim')
 exec 'source' expand('~/.editor.vim')
 exec 'source' expand('~/.keymap.vim')

@@ -10,15 +10,14 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 
 "Snippet
-Plug 'Shougo/neosnippet.vim' 
-Plug 'Shougo/neosnippet-snippets'
+"Plug 'Shougo/neosnippet.vim' 
+"Plug 'Shougo/neosnippet-snippets'
 
 Plug 'tyru/caw.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
 
 Plug 'simnalamburt/vim-mundo'
-Plug 'rhysd/vim-clang-format'
 
 "Japanese Help Document
 Plug 'vim-jp/vimdoc-ja'
@@ -26,8 +25,11 @@ Plug 'vim-jp/vimdoc-ja'
 "Quick Search
 Plug 'jremmen/vim-ripgrep'
 
-"js-formatter
+"Formatter
 Plug 'maksimr/vim-jsbeautify'
+Plug 'rust-lang/rust.vim'
+Plug 'rhysd/vim-clang-format'
+
 
 "Colorscheme
 Plug 'ghifarit53/tokyonight-vim'
@@ -37,6 +39,10 @@ Plug 'simeji/winresizer'
 
 "Japanese Input
 Plug 'tyru/eskk.vim'
+
+"Make plugin tools
+Plug 'vim-denops/denops.vim'
+
 
 call plug#end()
 "}}}

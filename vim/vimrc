@@ -5,7 +5,7 @@
             set rtp+=~/.vim/plugged/vim-plug 
             if !isdirectory(expand('~/.vim/plugged/vim-plug'))
               echo 'install vim-plug...'
-              call mkdir('~/.vim/plugged/vim-plug/',p)
+              call mkdir('~/.vim/plugged/vim-plug/')
               call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
         end
     endif
@@ -18,5 +18,6 @@ let g:denops#script#typecheck = 1
 exec 'source' expand('~/.plugin.vim')
 exec 'source' expand('~/.editor.vim')
 exec 'source' expand('~/.keymap.vim')
+exec 'source' expand('~/.command.vim')
 
 

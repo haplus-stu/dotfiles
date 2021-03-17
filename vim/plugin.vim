@@ -13,11 +13,17 @@ Plug 'mattn/vim-lsp-settings'
 "Plug 'Shougo/neosnippet.vim' 
 "Plug 'Shougo/neosnippet-snippets'
 
+"Support Commentout
 Plug 'tyru/caw.vim'
+
 Plug 'ctrlpvim/ctrlp.vim'
 
-
+"More confortable undo
 Plug 'simnalamburt/vim-mundo'
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 "Japanese Help Document
 Plug 'vim-jp/vimdoc-ja'
@@ -25,14 +31,25 @@ Plug 'vim-jp/vimdoc-ja'
 "Quick Search
 Plug 'jremmen/vim-ripgrep'
 
+<<<<<<< Updated upstream
 "Formatter
 Plug 'maksimr/vim-jsbeautify'
 Plug 'rust-lang/rust.vim'
 Plug 'rhysd/vim-clang-format'
 
+=======
+"Quick Runner
+Plug 'erietz/vim-terminator'
+
+"Formatter
+Plug 'maksimr/vim-jsbeautify'
+Plug 'rhysd/vim-clang-format'
+>>>>>>> Stashed changes
 
 "Colorscheme
 Plug 'ghifarit53/tokyonight-vim'
+Plug 'Rigellute/rigel'
+
 
 "window resize
 Plug 'simeji/winresizer'

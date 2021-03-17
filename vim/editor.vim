@@ -32,7 +32,8 @@ set termguicolors
 set background=dark
 syntax enable
 filetype plugin indent on
-colorscheme tokyonight
+#colorscheme tokyonight
+colorscheme rigel
 
 " swapファイルを作成しない
 set noswapfile

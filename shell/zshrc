@@ -1,12 +1,14 @@
 alias tkill="tmux kill-server" 
 alias memo="rusmo"
 alias g="git"
-# alias ls="exa -T -L 1 -a "
 alias ls="exa -a "
-alias ll="exa -alFh --git --time-style=long-iso"; alias dc="docker-compose" alias d="docker"
+alias ll="exa -alFh --git --time-style=long-iso"; 
 alias cat="bat"
 alias mkdir="mkdir -p"
+alias dc="docker-compose" 
 alias cp="cp -r"
+alias d="docker"
+alias v="vim"
 alias alldel="bash ~/dotfiles/docker/all_down.sh"
 alias fdown="docker-compose down --rmi all --volumes --remove-orphans"
 alias recon="source ~/.${SHELL##*/}rc"
@@ -58,9 +60,28 @@ plugins=(zsh-autosuggestions)
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
-source /Users/shuya/.config/broot/launcher/bash/br
+function do_ls(){
 
+  if [[ -n "$BUFFER" ]]; then
+    zle accept-line
+    return 0
+  fi
 
+  #if current dir is git repo, show now branch
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    echo "\n[branch]"
+    echo "$(git rev-parse --abbrev-ref @)"
+  fi
+
+   ls
+   echo "\n"
+
+  zle reset-prompt
+  return 0
+}
+
+zle -N do_ls
+bindkey '^m' do_ls
 
 autoload -Uz colors && colors
 if [ -n "$SSH_CLIENT" ]; then
@@ -68,9 +89,7 @@ if [ -n "$SSH_CLIENT" ]; then
 else
 	isssh="${GREEN}[local]${RESET}"
 fi
-# gitstatus='$(__git_ps1 "(%s)")'
+
 PS1="%F{cyan}%D{%Y-%m-%d}${reset_color%} %F{cyan}$vcs_info_msg_0_%f%F{yellow}%f
 ${isssh} %n@%m: %F{cyan}%~ ${reset_color%} 
 \$ "
-
-

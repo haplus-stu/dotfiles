@@ -43,3 +43,6 @@ export DENO_INSTALL="/Users/shuya/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="/usr/local/opt/binutils/bin:$PATH"
 export EDITOR=vim
+
+eval "$(zoxide init bash)"
+

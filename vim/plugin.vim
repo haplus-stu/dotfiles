@@ -20,10 +20,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 "More confortable undo
 Plug 'simnalamburt/vim-mundo'
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 
 "Japanese Help Document
 Plug 'vim-jp/vimdoc-ja'
@@ -31,20 +27,17 @@ Plug 'vim-jp/vimdoc-ja'
 "Quick Search
 Plug 'jremmen/vim-ripgrep'
 
-<<<<<<< Updated upstream
 "Formatter
 Plug 'maksimr/vim-jsbeautify'
 Plug 'rust-lang/rust.vim'
 Plug 'rhysd/vim-clang-format'
 
-=======
 "Quick Runner
 Plug 'erietz/vim-terminator'
 
 "Formatter
 Plug 'maksimr/vim-jsbeautify'
 Plug 'rhysd/vim-clang-format'
->>>>>>> Stashed changes
 
 "Colorscheme
 Plug 'ghifarit53/tokyonight-vim'
@@ -53,6 +46,7 @@ Plug 'Rigellute/rigel'
 
 "window resize
 Plug 'simeji/winresizer'
+Plug 'wesQ3/vim-windowswap'
 
 "Japanese Input
 Plug 'tyru/eskk.vim'
@@ -60,6 +54,9 @@ Plug 'tyru/eskk.vim'
 "Make plugin tools
 Plug 'vim-denops/denops.vim'
 
+Plug 'itchyny/vim-highlighturl'
+
+Plug 'jceb/vim-orgmode'
 
 call plug#end()
 "}}}
@@ -136,4 +133,9 @@ let g:rainbow_active = 1
 "tokyo-night
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_disable_italic_comment = 1
+
+"vim-windowswap
+let g:windowswap_map_keys = 0 "prevent default bindings
+
+
 "}}}

@@ -93,3 +93,4 @@ fi
 PS1="%F{cyan}%D{%Y-%m-%d}${reset_color%} %F{cyan}$vcs_info_msg_0_%f%F{yellow}%f
 ${isssh} %n@%m: %F{cyan}%~ ${reset_color%} 
 \$ "
+# PS1="$ "

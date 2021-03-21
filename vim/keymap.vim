@@ -1,5 +1,7 @@
 "Setting space as <Leader>
 let g:mapleader = "\<Space>"
+let maplocalleader = ';'
+
 
 " Delete highlight
 nnoremap <silent> <Esc><Esc> :nohlsearch<cr>
@@ -10,9 +12,10 @@ nnoremap <Leader>. :tabe $MYVIMRC<cr>
 "Reload
 nnoremap <Leader>s :source $MYVIMRC<cr>
 
-"Save nnoremap <Leader>w :w<cr> "Exit
-nnoremap qq :qall<cr>
-
+"Save 
+nnoremap <Leader>w :w<cr> 
+"Exit
+nnoremap qq :confirm qall<cr>
 "All delete
 noremap DD :%d<cr>
 "All yank
@@ -20,6 +23,15 @@ noremap YY :%y<cr>
 
 "Open file browse
 noremap <silent> <C-n> :Fern . -drawer -toggle<cr>
+
+
+"command mode{{{
+  " コマンドラインで単語移動
+  " based skanehira/dotfiles
+  cnoremap <c-b> <S-Left>
+  cnoremap <c-f> <S-Right>
+  cnoremap <c-a> <Home>
+"}}}
 
 "Split display{{{
 nnoremap <silent> sj <C-w>j
@@ -64,6 +76,11 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 "caw:hatpos:toggle 
 nmap <C-q> <Plug>(caw:hatpos:toggle)
+
+"vim-windowswap
+nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<cr>
+nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<cr>
+nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<cr>
 
 "vim-lsp{{{
   nmap <silent> vh :LspHover<cr>

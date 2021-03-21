@@ -51,3 +51,6 @@ set tabstop=2
 set shiftwidth=2
 
 set backspace=indent,eol,start
+
+" 基本はタブで開いて、他のタブにあっても既存を使う
+set switchbuf=usetab,newtab

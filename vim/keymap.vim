@@ -2,7 +2,6 @@
 let g:mapleader = "\<Space>"
 let maplocalleader = ';'
 
-
 " Delete highlight
 nnoremap <silent> <Esc><Esc> :nohlsearch<cr>
 
@@ -16,14 +15,15 @@ nnoremap <Leader>s :source $MYVIMRC<cr>
 nnoremap <Leader>w :w<cr> 
 "Exit
 nnoremap qq :confirm qall<cr>
+
 "All delete
 noremap DD :%d<cr>
+
 "All yank
 noremap YY :%y<cr>
 
 "Open file browse
 noremap <silent> <C-n> :Fern . -drawer -toggle<cr>
-
 
 "command mode{{{
   " コマンドラインで単語移動
@@ -42,9 +42,6 @@ nnoremap <silent> ss :<C-u>sp<cr>
 nnoremap <silent> sv :<C-u>vs<cr>
 "}}}
 
-"Setting about Tab
-map tts :setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab<cr>
-
 nmap pm :PreviewMarkdown<cr>
 
 nnoremap U :MundoToggle<cr>
@@ -54,6 +51,15 @@ nnoremap <Leader>r :Rg<Space>
 
 "Escape
 inoremap <silent> jj <ESC>
+
+"based on antonk52
+" go to the beginning of the line (^ is too far)
+nnoremap <Leader>a ^
+vnoremap <Leader>a ^
+" go to the end of the line ($ is too far)
+nnoremap <Leader>e $
+vnoremap <Leader>e $
+
 
 "折りたたみ関連{{{
 noremap <silent>fo :foldclose<cr>
@@ -69,18 +75,22 @@ xmap gA <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap gA <Plug>(EasyAlign)
 
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"neosnippet{{{
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
+"}}}
 
 "caw:hatpos:toggle 
-nmap <C-q> <Plug>(caw:hatpos:toggle)
+nmap <C-/> <Plug>(caw:hatpos:toggle)
 
-"vim-windowswap
+"quickrun
+noremap <Leader>q :QuickRun<cr>
+
+"vim-windowswap{{{
 nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<cr>
 nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<cr>
 nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<cr>
+"}}}
 
 "vim-lsp{{{
   nmap <silent> vh :LspHover<cr>
@@ -93,7 +103,9 @@ nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<cr>
 
 au FileType javascript noremap<buffer> <c-f> :ClangFormat<cr>
 au FileType typescript noremap<buffer> <c-f> :ClangFormat<cr>
+
 au FileType c noremap<buffer> <c-f> :ClangFormat<cr>
+au FileType cpp noremap<buffer> <c-f> :ClangFormat<cr>
 
 au FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 au FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>

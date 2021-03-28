@@ -4,7 +4,9 @@ set imdisable
 set helplang=ja
 
 "折りたたみ
-set foldmethod=marker
+set foldmethod=syntax
+"起動時にフォールドされるのを防止
+set foldlevelstart=99
 
 "タブ スペースの可視化
 set list
@@ -25,7 +27,10 @@ set statusline+=\ %Y[%{&fileencoding}]
 "対応するカッコ表示
 " set showmatch
 
-set belloff=all "ミュート
+"ミュート
+if exists('&belloff')
+  set belloff=all
+endif
 
 " important:
 set termguicolors
@@ -39,9 +44,10 @@ set noswapfile
 
 " クリップボードを共有
 if has("mac") | set clipboard+=unnamed | else | set clipboard^=unnamedplus | endif 
+if has("unix")| set clipboard+=unnamedplus
 
 "ファイルタイプごとの設定
-au FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+au FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab | set foldmethod=marker
 au FileType MAKE setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 au FileType rust nnoremap <buffer><silent> gK :<C-u>CocCommand rust-analyzer.openDocs<CR>
 
@@ -54,3 +60,6 @@ set backspace=indent,eol,start
 
 " 基本はタブで開いて、他のタブにあっても既存を使う
 set switchbuf=usetab,newtab
+
+"インクリメンタルサーチ
+set incsearch

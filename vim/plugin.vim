@@ -26,6 +26,7 @@ Plug 'vim-jp/vimdoc-ja'
 
 "Quick Search
 Plug 'jremmen/vim-ripgrep'
+Plug 'thinca/vim-quickrun'
 
 "Formatter
 Plug 'maksimr/vim-jsbeautify'
@@ -56,7 +57,6 @@ Plug 'vim-denops/denops.vim'
 
 Plug 'itchyny/vim-highlighturl'
 
-Plug 'jceb/vim-orgmode'
 
 call plug#end()
 "}}}
@@ -94,19 +94,10 @@ let g:loaded_netrwSettings     = 1
 let g:loaded_netrwFileHandlers = 1
 let g:fern#default_hidden      = 1
 
-augroup my-fern-hijack
-  autocmd!
-  autocmd BufEnter * ++nested call s:hijack_directory()
-augroup END
-
-function! s:hijack_directory() abort
-  let path = expand('%:p')
-  if !isdirectory(path)
-    return
-  endif
-  bwipeout %
-  execute printf('Fern %s', fnameescape(path))
-endfunction
+"augroup __fern__
+"au!
+"autocmd VimEnter * ++nested Fern . -reveal=%
+"augroup END
 
 let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets'
 
@@ -137,5 +128,8 @@ let g:tokyonight_disable_italic_comment = 1
 "vim-windowswap
 let g:windowswap_map_keys = 0 "prevent default bindings
 
-
+"quickrun{{{
+autocmd BufNewFile,BufRead *.cpp  let g:quickrun_config.cpp  = {'exec' : 'g++'}
+autocmd BufNewFile,BufRead *.rs  let g:quickrun_config.rust = {'exec' : 'cargo run'}
+"}}}
 "}}}

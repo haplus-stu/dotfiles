@@ -25,6 +25,7 @@ font:
   # Normal (roman) font face
   normal:
     family: Source Code Pro
+    style: bold
 
   bold:
     family: Source Code Pro

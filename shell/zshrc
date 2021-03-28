@@ -5,19 +5,17 @@ alias ls="exa -a "
 alias ll="exa -alFh --git --time-style=long-iso"; 
 alias cat="bat"
 alias mkdir="mkdir -p"
-alias dc="docker-compose" 
-alias cp="cp -r"
-alias d="docker"
+alias dc="docker-compose" alias cp="cp -r" alias d="docker"
 alias v="vim"
 alias alldel="bash ~/dotfiles/docker/all_down.sh"
 alias fdown="docker-compose down --rmi all --volumes --remove-orphans"
 alias recon="source ~/.${SHELL##*/}rc"
 alias shconf="$EDITOR ~/.${SHELL##*/}rc"
+alias zi="zoxide"
 #change dir
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"
 alias cdd="cd ~/dotfiles/"
-alias zi="zoxied"
 alias diff="vimdiff"
 
 #about tmux
@@ -43,17 +41,17 @@ fi
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export EDITOR=vim
-export PATH=~/.npm-global/bin:$PATH
-export DENO_INSTALL="$HOME/.deno"
+export PATH=~/.npm-global/bin:$PATH export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="/usr/local/opt/binutils/bin:$PATH"
+export PATH=$PATH:/usr/local/go/bin
+
 
 eval "$(zoxide init zsh)"
 # eval "$(starship init zsh)"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /home/hasu/Downloads/alacritty/extra/completions/alacritty.bash
 
 # $ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 plugins=(zsh-autosuggestions)
@@ -80,8 +78,25 @@ function do_ls(){
   return 0
 }
 
+
 zle -N do_ls
 bindkey '^m' do_ls
+
+function fbr() {
+  local branches branch
+  branches=$(git branch | sed -e 's/\(^\* \|^  \)//g' | cut -d " " -f 1) &&
+  branch=$(echo "$branches" | fzf --preview "git show --color=always {}") &&
+  git checkout $(echo "$branch")
+}
+
+
+function select-history() {
+  BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt=">> ")
+  CURSOR=$#BUFFER
+}
+zle -N select-history
+bindkey '^r' select-history
+
 
 autoload -Uz colors && colors
 if [ -n "$SSH_CLIENT" ]; then

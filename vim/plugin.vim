@@ -55,7 +55,11 @@ Plug 'tyru/eskk.vim'
 "Make plugin tools
 Plug 'vim-denops/denops.vim'
 
+"Highlight url
 Plug 'itchyny/vim-highlighturl'
+
+"Vimrc読書会
+Plug 'y0za/vim-reading-vimrc.git'
 
 
 call plug#end()
@@ -94,10 +98,10 @@ let g:loaded_netrwSettings     = 1
 let g:loaded_netrwFileHandlers = 1
 let g:fern#default_hidden      = 1
 
-"augroup __fern__
-"au!
-"autocmd VimEnter * ++nested Fern . -reveal=%
-"augroup END
+augroup __fern__
+au!
+autocmd VimEnter * ++nested Fern . -reveal=%
+augroup END
 
 let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets'
 

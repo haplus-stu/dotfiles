@@ -25,7 +25,7 @@ font:
   # Normal (roman) font face
   normal:
     family: Source Code Pro
-    style: bold
+      #  style: bold
 
   bold:
     family: Source Code Pro
@@ -91,7 +91,7 @@ bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.9
+background_opacity: 1
 
 # All available `mods` and `action` values are documented in the key binding
 # section.

@@ -12,6 +12,7 @@ alias fdown="docker-compose down --rmi all --volumes --remove-orphans"
 alias recon="source ~/.${SHELL##*/}rc"
 alias shconf="$EDITOR ~/.${SHELL##*/}rc"
 alias zi="zoxide"
+alias sed="gsed"
 #change dir
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"
@@ -43,8 +44,13 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export EDITOR=vim
 export PATH=~/.npm-global/bin:$PATH export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
-export PATH="/usr/local/opt/binutils/bin:$PATH"
+export PATH=/usr/local/opt/binutils/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
+export PATH=/usr/local/opt/llvm@9/bin:$PATH
+export PATH=/usr/local/opt/llvm@9/bin:$PATH
+export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
+export PATH=/usr/local/opt/dosfstools/sbin:$PATH
+
 
 
 eval "$(zoxide init zsh)"

@@ -1,56 +1,64 @@
 #!/bin/bash
+
+if [[ "$1" -eq "ubuntu" ]]; then
+  PACKAGE_CMD="apt install"
+  echo ${PACKAGE_CMD}
+elif [[ "$1" -eq "arch" ]]; then
+  PACKAGE_CMD="pacman -S "
+  echo ${PACKAGE_CMD}
+fi
+
+
 echo "
 #===============
-check upgrade of ubuntu
-use command is 
-sudo apt update -y
-sudo apt upgrade -y 
+check upgrade
 #==============="
-sudo apt update -y
-sudo apt upgrade -y
+if [[ "$1" -eq "ubuntu" ]]; then
+  sudo apt update -y
+elif [[ "$1" -eq "arch" ]]; then
+  sudo pacman -Sy 
+fi
+
 echo "
 # ===============
 install node and more...
-use command is 
-sudo apt install -y nodejs npm
-sudo npm i -g n
-sudo n stable
-sudo apt purge -y nodejs npm
+[ nodejs , npm , n]
 # ==============="
-sudo apt install -y nodejs npm
+sudo ${PACKAGE_CMD} -y nodejs npm
 sudo npm i -g n
 sudo n stable
 sudo apt purge -y nodejs npm
 echo "
 ================
 #yarn install
-use command is
-curl -o- -L https://yarnpkg.com/install.sh | bash 
-export PATH="$PATH:`yarn global bin`"
 ================
 "
 curl -o- -L https://yarnpkg.com/install.sh | bash 
 export PATH="$PATH:`yarn global bin`"
 #便利ツールのインストール
-sudo apt install -y screenfetch
+sudo ${PACKAGE_CMD} -y neofetch
 #herokuのインストール
 yarn global add heroku
 echo "
 ================
 install vim
-use command is
-sudo add-apt-repository ppa:jonathonf/vim
-sudo apt update -y
-sudo apt install -y vim
 ================
 "
-echo -new '\n' sudo add-apt-repository ppa:jonathonf/vim
-sudo apt update -y
-sudo apt install -y vim
 
+git clone https://github.com/vim/vim.git
+cd vim/src
+sudo make && sudo make install
+
+if [[ "$1" -eq "ubuntu" ]]; then
  sudo add-apt-repository ppa:alessandro-strada/ppa
  sudo apt-get update
  sudo apt-get install google-drive-ocamlfuse
+fi
 
+ #rust
  curl https://sh.rustup.rs -sSf | sh
+
+ source $HOME/.cargo/env
+
+ cargo install exa bat rusmo zoxide
 

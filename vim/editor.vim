@@ -48,7 +48,7 @@ if has("unix")| set clipboard+=unnamedplus
 
 "ファイルタイプごとの設定
 au FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab | set foldmethod=marker |set foldlevelstart=-1
-au FileType MAKE setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+au FileType MAKE setlocal set noexpandtab :retab!<cr>
 au FileType rust nnoremap <buffer><silent> gK :<C-u>CocCommand rust-analyzer.openDocs<CR>
 
 "setting indent

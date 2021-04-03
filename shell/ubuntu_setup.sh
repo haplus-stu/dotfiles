@@ -8,7 +8,6 @@ elif [[ "$1" -eq "arch" ]]; then
   echo ${PACKAGE_CMD}
 fi
 
-
 echo "
 #===============
 check upgrade
@@ -19,16 +18,18 @@ elif [[ "$1" -eq "arch" ]]; then
   sudo pacman -Sy 
 fi
 
-echo "
-# ===============
-install node and more...
-[ nodejs , npm , n]
-# ==============="
-sudo ${PACKAGE_CMD} -y nodejs npm
-sudo npm i -g n
-sudo n stable
-sudo apt purge -y nodejs npm
-echo "
+INSTALL_PKG_LIST=("nodejs" "npm" "neofetch");
+
+for pkg in "${INSTALL_PKG_LIST[@]}"
+do
+  echo "
+  #==================
+  sudo $PACKAGE_CMD $pkg"
+  #=================="
+  sudo $PACKAGE_CMD -y $pkg
+done
+
+ echo "
 ================
 #yarn install
 ================

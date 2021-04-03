@@ -1,18 +1,18 @@
 alias tkill="tmux kill-server" 
 alias memo="rusmo"
 alias g="git"
-alias ls="exa -a "
+alias ls="exa -a"
 alias ll="exa -alFh --git --time-style=long-iso"; 
 alias cat="bat"
 alias mkdir="mkdir -p"
-alias dc="docker-compose" alias cp="cp -r" alias d="docker"
-alias v="vim"
+alias dc="docker-compose" 
+alias cp="cp -r" 
+alias d="docker"
 alias alldel="bash ~/dotfiles/docker/all_down.sh"
 alias fdown="docker-compose down --rmi all --volumes --remove-orphans"
 alias recon="source ~/.${SHELL##*/}rc"
 alias shconf="$EDITOR ~/.${SHELL##*/}rc"
 alias zi="zoxide"
-alias sed="gsed"
 #change dir
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"
@@ -47,13 +47,12 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH=/usr/local/opt/binutils/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH=/usr/local/opt/llvm@9/bin:$PATH
-export PATH=/usr/local/opt/llvm@9/bin:$PATH
-export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
 export PATH=/usr/local/opt/dosfstools/sbin:$PATH
 
 
 
 eval "$(zoxide init zsh)"
+eval "$(gh completion -s zsh)"
 # eval "$(starship init zsh)"
 
 
@@ -87,14 +86,6 @@ function do_ls(){
 
 zle -N do_ls
 bindkey '^m' do_ls
-
-function fbr() {
-  local branches branch
-  branches=$(git branch | sed -e 's/\(^\* \|^  \)//g' | cut -d " " -f 1) &&
-  branch=$(echo "$branches" | fzf --preview "git show --color=always {}") &&
-  git checkout $(echo "$branch")
-}
-
 
 function select-history() {
   BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt=">> ")

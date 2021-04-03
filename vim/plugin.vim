@@ -1,6 +1,5 @@
 "Plugin{{{
 call plug#begin('~/.vim/plugged')
-
 Plug 'mattn/emmet-vim'
 Plug 'lambdalisue/fern.vim'
 Plug 'junegunn/vim-easy-align'
@@ -9,9 +8,15 @@ Plug 'junegunn/vim-easy-align'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 
-"Snippet
-"Plug 'Shougo/neosnippet.vim' 
-"Plug 'Shougo/neosnippet-snippets'
+"Auto complate
+Plug 'mattn/vim-lexiv'
+Plug 'machakann/vim-sandwich'
+
+Plug 'ntpeters/vim-better-whitespace'
+
+Snippet
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 
 "Support Commentout
 Plug 'tyru/caw.vim'
@@ -59,7 +64,7 @@ Plug 'vim-denops/denops.vim'
 Plug 'itchyny/vim-highlighturl'
 
 "Vimrc読書会
-Plug 'y0za/vim-reading-vimrc.git'
+Plug 'mattn/vim-reading-vimrc'
 
 
 call plug#end()
@@ -135,5 +140,6 @@ let g:windowswap_map_keys = 0 "prevent default bindings
 "quickrun{{{
 autocmd BufNewFile,BufRead *.cpp  let g:quickrun_config.cpp  = {'exec' : 'g++'}
 autocmd BufNewFile,BufRead *.rs  let g:quickrun_config.rust = {'exec' : 'cargo run'}
+autocmd BufNewFile,BufRead *.ts  let g:quickrun_config.typescript = {'exec' : 'tsc'}
 "}}}
 "}}}

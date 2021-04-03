@@ -11,8 +11,8 @@ nnoremap <Leader>. :tabe $MYVIMRC<cr>
 "Reload
 nnoremap <Leader>s :source $MYVIMRC<cr>
 
-"Save 
-nnoremap <Leader>w :w<cr> 
+"Save
+nnoremap <Leader>w :w<cr>
 "Exit
 nnoremap qq :confirm qall<cr>
 
@@ -21,6 +21,10 @@ noremap DD :%d<cr>
 
 "All yank
 noremap YY :%y<cr>
+
+"For US keyboard
+noremap ; :
+noremap : ;
 
 "Open file browse
 noremap <silent> <C-n> :Fern . -drawer -toggle<cr>
@@ -45,6 +49,8 @@ nnoremap <silent> sv :<C-u>vs<cr>
 nmap pm :PreviewMarkdown<cr>
 
 nnoremap U :MundoToggle<cr>
+
+vnoremap <silent> <Enter> :LiveEasyAlign<cr>
 
 "grep
 nnoremap <Leader>r :Rg<Space>
@@ -80,8 +86,8 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 "}}}
 
-"caw:hatpos:toggle 
-nmap <C-/> <Plug>(caw:hatpos:toggle)
+"caw:hatpos:toggle
+nmap <C-\> <Plug>(caw:hatpos:toggle)
 
 "quickrun
 noremap <Leader>q :QuickRun<cr>

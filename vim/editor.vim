@@ -43,7 +43,7 @@ colorscheme tokyonight
 set noswapfile
 
 " クリップボードを共有
-if has("mac") | set clipboard+=unnamed | else | set clipboard^=unnamedplus | endif 
+if has("mac") | set clipboard+=unnamed | else | set clipboard^=unnamedplus | endif
 if has("unix")| set clipboard+=unnamedplus
 
 "ファイルタイプごとの設定
@@ -63,3 +63,13 @@ set switchbuf=usetab,newtab
 
 "インクリメンタルサーチ
 set incsearch
+
+set showcmd
+"Undo
+if has('persistent_undo')
+    set undodir=$HOME/.vimundo  " アンドゥ用ディレクトリ
+    if !isdirectory(&undodir)
+        call mkdir(&undodir, "p")
+    endif
+    set undofile "全てのファイルでundo履歴を残す
+endif

@@ -1,10 +1,20 @@
 #!/bin/bash
 
-if [[ "$1" -eq "ubuntu" ]]; then
-  PACKAGE_CMD="apt install"
-  echo ${PACKAGE_CMD}
-elif [[ "$1" -eq "arch" ]]; then
+echo $1
+
+#if [[ "$1" -eq "ubuntu" ]]; then
+#  PACKAGE_CMD="apt install"
+#  echo ${PACKAGE_CMD}
+#elif [[ "$1" -eq "arch" ]]; then
+#  PACKAGE_CMD="pacman -S "
+#  echo ${PACKAGE_CMD}
+#fi
+
+if [[ "$1" = "arch" ]]; then
   PACKAGE_CMD="pacman -S "
+  echo ${PACKAGE_CMD}
+elif [[ "$1" = "ubuntu" ]]; then
+  PACKAGE_CMD="apt install"
   echo ${PACKAGE_CMD}
 fi
 

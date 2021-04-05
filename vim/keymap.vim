@@ -2,6 +2,9 @@
 let g:mapleader = "\<Space>"
 let maplocalleader = ';'
 
+"toggle line number
+nnoremap <silent> <Leader>l :set invnumber<cr>
+
 " Delete highlight
 nnoremap <silent> <Esc><Esc> :nohlsearch<cr>
 

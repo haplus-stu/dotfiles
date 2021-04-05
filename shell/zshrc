@@ -1,18 +1,19 @@
-alias tkill="tmux kill-server" 
+alias tkill="tmux kill-server"
 alias memo="rusmo"
 alias g="git"
 alias ls="exa -a"
-alias ll="exa -alFh --git --time-style=long-iso"; 
+alias ll="exa -alFh --git --time-style=long-iso";
 alias cat="bat"
 alias mkdir="mkdir -p"
-alias dc="docker-compose" 
-alias cp="cp -r" 
+alias dc="docker-compose"
+alias cp="cp -r"
 alias d="docker"
 alias alldel="bash ~/dotfiles/docker/all_down.sh"
 alias fdown="docker-compose down --rmi all --volumes --remove-orphans"
 alias recon="source ~/.${SHELL##*/}rc"
 alias shconf="$EDITOR ~/.${SHELL##*/}rc"
 alias zi="zoxide"
+alias cls="clear"
 #change dir
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"

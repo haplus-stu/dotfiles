@@ -64,5 +64,5 @@ fi
 
  source $HOME/.cargo/env
 
- cargo install exa bat rusmo zoxide
+ cargo install exa bat rusmo zoxide starship
 

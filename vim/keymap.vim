@@ -9,10 +9,10 @@ nnoremap <silent> <Leader>l :set number!<cr>
 nnoremap <silent> <Esc><Esc> :nohlsearch<cr>
 
 " Open setting file
-nnoremap <Leader>. :tabe $MYVIMRC<cr>
+nnoremap <silent> <Leader>. :tabe $MYVIMRC<cr>
 
 "Reload
-nnoremap <Leader>s :source $MYVIMRC<cr>
+nnoremap <silent> <Leader>s :source $MYVIMRC<cr>
 
 "Save
 nnoremap <Leader>w :w<cr>

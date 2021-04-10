@@ -16,6 +16,7 @@ ln -s $HOME/dotfiles/shell/tmux.conf $HOME/.tmux.conf
 ln -s $HOME/dotfiles/shell/ranger $HOME/.config/ranger
 
 #i3
+mkdir -p $HOME/.config/i3blocks
 ln -s $HOME/dotfiles/i3/config $HOME/.config/i3/config
 ln -s $HOME/dotfiles/i3/i3-blocks-conf $HOME/.config/i3blocks/config
 ln -s $HOME/dotfiles/i3/rofi-conf $HOME/.config/rofi/config

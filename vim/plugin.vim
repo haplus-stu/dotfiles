@@ -1,20 +1,25 @@
 "Plugin{{{
 call plug#begin('~/.vim/plugged')
+
 Plug 'mattn/emmet-vim'
+
+"Fern
 Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-hijack.vim'
+
 Plug 'junegunn/vim-easy-align'
+
+Plug 'Shougo/junkfile.vim'
 
 "Language Server Protocol
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
+Plug 'codota/tabnine-vim'
 
-"Auto complate
-Plug 'mattn/vim-lexiv'
-Plug 'machakann/vim-sandwich'
-
+"to visualize whitespace
 Plug 'ntpeters/vim-better-whitespace'
 
-Snippet
+"Snippet
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
@@ -38,17 +43,13 @@ Plug 'maksimr/vim-jsbeautify'
 Plug 'rust-lang/rust.vim'
 Plug 'rhysd/vim-clang-format'
 
-"Quick Runner
-Plug 'erietz/vim-terminator'
-
 "Formatter
 Plug 'maksimr/vim-jsbeautify'
 Plug 'rhysd/vim-clang-format'
 
 "Colorscheme
 Plug 'ghifarit53/tokyonight-vim'
-Plug 'Rigellute/rigel'
-
+Plug 'dylnmc/novum.vim'
 
 "window resize
 Plug 'simeji/winresizer'
@@ -57,14 +58,10 @@ Plug 'wesQ3/vim-windowswap'
 "Japanese Input
 Plug 'tyru/eskk.vim'
 
-"Make plugin tools
-Plug 'vim-denops/denops.vim'
-
 "Highlight url
 Plug 'itchyny/vim-highlighturl'
 
-"Vimrc読書会
-Plug 'mattn/vim-reading-vimrc'
+Plug 'Bakudankun/BackAndForward.vim'
 
 
 call plug#end()
@@ -96,17 +93,6 @@ let g:eskk#large_dictionary  = {'path':"~/SKK-JISYO.L",'sorted':1,'encoding':'eu
 let g:eskk#enable_completion = 1
 "}}}
 
-"Fern{{{
-let g:loaded_netrw             = 1
-let g:loaded_netrwPlugin       = 1
-let g:loaded_netrwSettings     = 1
-let g:loaded_netrwFileHandlers = 1
-let g:fern#default_hidden      = 1
-
-augroup __fern__
-au!
-autocmd VimEnter * ++nested Fern . -reveal=%
-augroup END
 
 let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets'
 
@@ -114,8 +100,6 @@ let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets'
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-
-"}}}
 
 "ctrlp
 let g:ctrlp_working_path_mode = 'ra'

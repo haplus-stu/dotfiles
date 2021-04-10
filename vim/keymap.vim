@@ -91,6 +91,7 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 "caw:hatpos:toggle
 nmap <C-\> <Plug>(caw:hatpos:toggle)
+nmap <C-\> <Plug>(caw:hatpos:toggle)
 
 "quickrun
 noremap <Leader>q :QuickRun<cr>
@@ -108,6 +109,9 @@ nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<cr>
   nmap <silent> vR :LspRename<cr>
   noremap<buffer> <c-f> :LspDocumentFormat<cr>
 "}}}
+
+nnoremap <A-b> <Plug>(backandforward-back)
+nnoremap <A-f> <Plug>(backandforward-forward)
 
 
 au FileType javascript noremap<buffer> <c-f> :ClangFormat<cr>

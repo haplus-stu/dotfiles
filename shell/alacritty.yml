@@ -42,49 +42,53 @@ use_thin_strokes: true
 draw_bold_text_with_bright_colors: true
 
 colors:
-
+  # Default colors
   primary:
-    # background: '0x002635'
-    foreground: '0xffffff'
+    background: '#2c2c2c'
+    foreground: '#d6d6d6'
 
-  cursor:
-    text: '0x000000'
-    cursor: '0x00ffff'
+    dim_foreground:    '#dbdbdb'
+    bright_foreground: '#d9d9d9'
+    dim_background:    '#202020' # not sure
+    bright_background: '#3a3a3a' # not sure
 
-  normal:
-    black:   '0x000000'
-    red:     '0xfd3232'
-    green:   '0x00a600'
-    yellow:  '0x999900'
-    blue:    '0x0080cb'
-    magenta: '0xb200b2'
-    cyan:    '0x00a6b2'
-    white:   '0xbfbfbf'
+    # Cursor colors
+    cursor:
+      text:   '#2c2c2c'
+      cursor: '#d9d9d9'
 
-  bright:
-    black:   '0x666666'
-    red:     '0xe50000'
-    green:   '0x00d900'
-    yellow:  '0xe5e500'
-    blue:    '0x2498ff'
-    magenta: '0xe500e5'
-    cyan:    '0x00e5e5'
-    white:   '0xe5e5e5'
+      # Normal colors
+      normal:
+        black:   '#1c1c1c'
+        red:     '#bc5653'
+        green:   '#909d63'
+        yellow:  '#ebc17a'
+        blue:    '#7eaac7'
+        magenta: '#aa6292'
+        cyan:    '#86d3ce'
+        white:   '#cacaca'
 
-  # Dim colors
-  #
-  # If the dim colors are not set, they will be calculated automatically based
-  # on the `normal` colors.
-  dim:
-    black:   '0x333333'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white:   '0xdddddd'
+        # Bright colors
+        bright:
+          black:   '#636363'
+          red:     '#bc5653'
+          green:   '#909d63'
+          yellow:  '#ebc17a'
+          blue:    '#7eaac7'
+          magenta: '#aa6292'
+          cyan:    '#86d3ce'
+          white:   '#f7f7f7'
 
+          # Dim colors
+          dim:
+            black:   '#232323'
+            red:     '#74423f'
+            green:   '#5e6547'
+            yellow:  '#8b7653'
+            blue:    '#556b79'
+            magenta: '#6e4962'
+            cyan:    '#5c8482'
+            white:   '#828282'
 
 bell:
   animation: EaseOutExpo

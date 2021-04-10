@@ -37,14 +37,14 @@ set termguicolors
 set background=dark
 syntax enable
 filetype plugin indent on
-colorscheme tokyonight
+colorscheme novum
 
 " swapファイルを作成しない
 set noswapfile
 
 " クリップボードを共有
 if has("mac") | set clipboard+=unnamed | else | set clipboard^=unnamedplus | endif
-if has("unix")| set clipboard+=unnamedplus
+if has("unix")| set clipboard+=unnamedplus | endif
 
 "ファイルタイプごとの設定
 au FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab | set foldmethod=marker |set foldlevelstart=-1

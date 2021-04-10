@@ -14,6 +14,7 @@ alias recon="source ~/.${SHELL##*/}rc"
 alias shconf="$EDITOR ~/.${SHELL##*/}rc"
 alias zi="zoxide"
 alias cls="clear"
+alias vim="nvim"
 #change dir
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"
@@ -54,7 +55,7 @@ export PATH=/usr/local/opt/dosfstools/sbin:$PATH
 
 eval "$(zoxide init zsh)"
 eval "$(gh completion -s zsh)"
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -62,31 +63,6 @@ eval "$(gh completion -s zsh)"
 # $ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 plugins=(zsh-autosuggestions)
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-
-function do_ls(){
-
-  if [[ -n "$BUFFER" ]]; then
-    zle accept-line
-    return 0
-  fi
-
-  #if current dir is git repo, show now branch
-  if git rev-parse --git-dir > /dev/null 2>&1; then
-    echo "\n[branch]"
-    echo "$(git rev-parse --abbrev-ref @)"
-  fi
-
-   ls
-   echo "\n"
-
-  zle reset-prompt
-  return 0
-}
-
-
-zle -N do_ls
-bindkey '^m' do_ls
 
 function select-history() {
   BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt=">> ")
@@ -103,7 +79,7 @@ else
 	isssh="${GREEN}[local]${RESET}"
 fi
 
-PS1="%F{cyan}%D{%Y-%m-%d}${reset_color%} %F{cyan}$vcs_info_msg_0_%f%F{yellow}%f
-${isssh} %n@%m: %F{cyan}%~ ${reset_color%} 
-\$ "
+#PS1="%F{cyan}%D{%Y-%m-%d}${reset_color%} %F{cyan}$vcs_info_msg_0_%f%F{yellow}%f
+#${isssh} %n@%m: %F{cyan}%~ ${reset_color%} 
+#\$ "
 # PS1="$ "

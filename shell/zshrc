@@ -14,7 +14,7 @@ alias recon="source ~/.${SHELL##*/}rc"
 alias shconf="$EDITOR ~/.${SHELL##*/}rc"
 alias zi="zoxide"
 alias cls="clear"
-alias vim="nvim"
+#alias vim="nvim"
 #change dir
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"

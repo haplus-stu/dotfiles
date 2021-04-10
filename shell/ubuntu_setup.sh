@@ -2,14 +2,6 @@
 
 echo $1
 
-#if [[ "$1" -eq "ubuntu" ]]; then
-#  PACKAGE_CMD="apt install"
-#  echo ${PACKAGE_CMD}
-#elif [[ "$1" -eq "arch" ]]; then
-#  PACKAGE_CMD="pacman -S "
-#  echo ${PACKAGE_CMD}
-#fi
-
 if [[ "$1" = "arch" ]]; then
   PACKAGE_CMD="pacman -S "
   echo ${PACKAGE_CMD}
@@ -25,7 +17,7 @@ check upgrade
 if [[ "$1" -eq "ubuntu" ]]; then
   sudo apt update -y
 elif [[ "$1" -eq "arch" ]]; then
-  sudo pacman -Sy 
+  sudo pacman -Sy
 fi
 
 INSTALL_PKG_LIST=("nodejs" "npm" "neofetch");
@@ -44,7 +36,7 @@ done
 #yarn install
 ================
 "
-curl -o- -L https://yarnpkg.com/install.sh | bash 
+curl -o- -L https://yarnpkg.com/install.sh | bash
 export PATH="$PATH:`yarn global bin`"
 #便利ツールのインストール
 sudo ${PACKAGE_CMD} -y neofetch
@@ -57,6 +49,7 @@ install vim
 "
 
 git clone https://github.com/vim/vim.git
+
 cd vim/src
 sudo make && sudo make install
 

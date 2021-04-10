@@ -110,6 +110,12 @@ nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<cr>
   noremap<buffer> <c-f> :LspDocumentFormat<cr>
 "}}}
 
+"Coc.nvim{{{
+  nmap <silent> <Leader>h :<c-u>call CocAction('doHover')<cr>
+  nmap <silent> <Leader>d <Plug>(coc-definition)
+  nmap <silent> <Leader>fr <Plug>(coc-reference)
+"}}}
+
 nnoremap <A-b> <Plug>(backandforward-back)
 nnoremap <A-f> <Plug>(backandforward-forward)
 

@@ -1,20 +1,25 @@
 "Plugin{{{
 call plug#begin('~/.vim/plugged')
-
 Plug 'mattn/emmet-vim'
-
 "Fern
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-hijack.vim'
+
+
 
 Plug 'junegunn/vim-easy-align'
 
 Plug 'Shougo/junkfile.vim'
 
 "Language Server Protocol
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'codota/tabnine-vim'
+"Plug 'prabirshrestha/vim-lsp'
+"Plug 'mattn/vim-lsp-settings'
+"Plug 'prabirshrestha/asyncomplete.vim'
+"Plug 'prabirshrestha/asyncomplete-lsp.vim'
+"Plug 'Shougo/deoplete.nvim'
+"Plug 'lighttiger2505/deoplete-vim-lsp'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 
 "to visualize whitespace
 Plug 'ntpeters/vim-better-whitespace'
@@ -61,8 +66,15 @@ Plug 'tyru/eskk.vim'
 "Highlight url
 Plug 'itchyny/vim-highlighturl'
 
-Plug 'Bakudankun/BackAndForward.vim'
-
+if has('nvim')
+  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/defx.nvim'
+  Plug 'Shougo/denite.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 call plug#end()
 "}}}

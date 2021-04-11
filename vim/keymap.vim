@@ -18,7 +18,6 @@ nnoremap <silent> <Leader>s :source $MYVIMRC<cr>
 nnoremap <Leader>w :w<cr>
 "Exit
 nnoremap qq :confirm qall<cr>
-
 "All delete
 noremap DD :%d<cr>
 
@@ -49,8 +48,6 @@ nnoremap <silent> ss :<C-u>sp<cr>
 nnoremap <silent> sv :<C-u>vs<cr>
 "}}}
 
-nmap pm :PreviewMarkdown<cr>
-
 nnoremap U :MundoToggle<cr>
 
 vnoremap <silent> <Enter> :LiveEasyAlign<cr>
@@ -77,21 +74,23 @@ map fj zj
 map fk zk
 "}}}
 
-vmap <C-q> <Plug>(caw:hatpos:toggle)
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap gA <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap gA <Plug>(EasyAlign)
 
-"neosnippet{{{
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+"snippet{{{
+	imap <C-k>  <Plug>(deoppet_expand)
+	imap <C-f>  <Plug>(deoppet_jump_forward)
+	imap <C-b>  <Plug>(deoppet_jump_backward)
+	smap <C-f>  <Plug>(deoppet_jump_forward)
+	smap <C-b>  <Plug>(deoppet_jump_backward)
 "}}}
 
 "caw:hatpos:toggle
 nmap <C-\> <Plug>(caw:hatpos:toggle)
-nmap <C-\> <Plug>(caw:hatpos:toggle)
+vmap <C-\> <Plug>(caw:hatpos:toggle)
 
 "quickrun
 noremap <Leader>q :QuickRun<cr>
@@ -102,23 +101,11 @@ nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<cr>
 nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<cr>
 "}}}
 
-"vim-lsp{{{
-  nmap <silent> vh :LspHover<cr>
-  nmap <silent> vd :LspPeekDefinition<cr>
-  nmap <silent> vr :LspReferences<cr>
-  nmap <silent> vR :LspRename<cr>
-  noremap<buffer> <c-f> :LspDocumentFormat<cr>
-"}}}
-
 "Coc.nvim{{{
-  nmap <silent> <Leader>h :<c-u>call CocAction('doHover')<cr>
-  nmap <silent> <Leader>d <Plug>(coc-definition)
-  nmap <silent> <Leader>fr <Plug>(coc-reference)
+  nmap <silent> gh :<c-u>call CocAction('doHover')<cr>
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gr <Plug>(coc-reference)
 "}}}
-
-nnoremap <A-b> <Plug>(backandforward-back)
-nnoremap <A-f> <Plug>(backandforward-forward)
-
 
 au FileType javascript noremap<buffer> <c-f> :ClangFormat<cr>
 au FileType typescript noremap<buffer> <c-f> :ClangFormat<cr>
@@ -131,4 +118,3 @@ au FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
 
 au FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 au FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
-

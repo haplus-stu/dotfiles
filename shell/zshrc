@@ -12,9 +12,9 @@ alias alldel="bash ~/dotfiles/docker/all_down.sh"
 alias fdown="docker-compose down --rmi all --volumes --remove-orphans"
 alias recon="source ~/.${SHELL##*/}rc"
 alias shconf="$EDITOR ~/.${SHELL##*/}rc"
+alias vim="nvim"
 alias zi="zoxide"
 alias cls="clear"
-#alias vim="nvim"
 #change dir
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"
@@ -50,8 +50,6 @@ export PATH=/usr/local/opt/binutils/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH=/usr/local/opt/llvm@9/bin:$PATH
 export PATH=/usr/local/opt/dosfstools/sbin:$PATH
-
-
 
 eval "$(zoxide init zsh)"
 eval "$(gh completion -s zsh)"

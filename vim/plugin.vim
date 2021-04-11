@@ -1,15 +1,13 @@
 "Plugin{{{
 call plug#begin('~/.vim/plugged')
-Plug 'mattn/emmet-vim'
+
+Plug 'mattn/emmet-vim',{'for':'html'}
 "Fern
-Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern.vim',{'on':'Fern'}
 Plug 'lambdalisue/fern-hijack.vim'
 
-
-
-Plug 'junegunn/vim-easy-align'
-
-Plug 'Shougo/junkfile.vim'
+Plug 'junegunn/vim-easy-align',{'on':['EasyAlign','LiveEasyAlign']}
+Plug 'Shougo/junkfile.vim',{'on':'JunkfileOpen'}
 
 "Language Server Protocol
 "Plug 'prabirshrestha/vim-lsp'
@@ -19,7 +17,6 @@ Plug 'Shougo/junkfile.vim'
 "Plug 'Shougo/deoplete.nvim'
 "Plug 'lighttiger2505/deoplete-vim-lsp'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 
 "to visualize whitespace
 Plug 'ntpeters/vim-better-whitespace'
@@ -31,7 +28,7 @@ Plug 'Shougo/neosnippet-snippets'
 "Support Commentout
 Plug 'tyru/caw.vim'
 
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim',{'on':'Ctrlp'}
 
 "More confortable undo
 Plug 'simnalamburt/vim-mundo'
@@ -41,16 +38,12 @@ Plug 'vim-jp/vimdoc-ja'
 
 "Quick Search
 Plug 'jremmen/vim-ripgrep'
-Plug 'thinca/vim-quickrun'
+Plug 'thinca/vim-quickrun',{'on':'QuickRun'}
 
 "Formatter
-Plug 'maksimr/vim-jsbeautify'
-Plug 'rust-lang/rust.vim'
-Plug 'rhysd/vim-clang-format'
-
-"Formatter
-Plug 'maksimr/vim-jsbeautify'
-Plug 'rhysd/vim-clang-format'
+Plug 'maksimr/vim-jsbeautify',{'for':['css','html']}
+Plug 'rust-lang/rust.vim',{'for':'rust'}
+Plug 'rhysd/vim-clang-format',{'for':['c','cpp','javascript','typescript']}
 
 "Colorscheme
 Plug 'ghifarit53/tokyonight-vim'
@@ -67,8 +60,8 @@ Plug 'tyru/eskk.vim'
 Plug 'itchyny/vim-highlighturl'
 
 if has('nvim')
-  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' ,'on':'Defx'}
+  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' ,'on':'Denite'}
 else
   Plug 'Shougo/defx.nvim'
   Plug 'Shougo/denite.nvim'

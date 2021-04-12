@@ -53,7 +53,7 @@ export PATH=/usr/local/opt/dosfstools/sbin:$PATH
 
 eval "$(zoxide init zsh)"
 eval "$(gh completion -s zsh)"
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -72,12 +72,12 @@ bindkey '^r' select-history
 
 autoload -Uz colors && colors
 if [ -n "$SSH_CLIENT" ]; then
-	isssh="${RED}[ssh]${RESET}"
+	isssh="%F{red}[ssh]${reset_color%}"
 else
-	isssh="${GREEN}[local]${RESET}"
+	isssh="%F{green}[local]${reset_color%}"
 fi
 
-#PS1="%F{cyan}%D{%Y-%m-%d}${reset_color%} %F{cyan}$vcs_info_msg_0_%f%F{yellow}%f
-#${isssh} %n@%m: %F{cyan}%~ ${reset_color%} 
-#\$ "
+PS1="%F{cyan}%D{%Y-%m-%d}${reset_color%} %F{cyan}$vcs_info_msg_0_%f%F{yellow}%f
+${isssh} %n@%m: %F{cyan}%~ ${reset_color%} 
+\$ "
 # PS1="$ "

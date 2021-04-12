@@ -31,14 +31,6 @@ noremap : ;
 "Open file browse
 noremap <silent> <C-n> :Fern . -drawer -toggle<cr>
 
-"command mode{{{
-  " コマンドラインで単語移動
-  " based skanehira/dotfiles
-  cnoremap <c-b> <S-Left>
-  cnoremap <c-f> <S-Right>
-  cnoremap <c-a> <Home>
-"}}}
-
 "Split display{{{
 nnoremap <silent> sj <C-w>j
 nnoremap <silent> sk <C-w>k
@@ -79,14 +71,6 @@ map fk zk
 xmap gA <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap gA <Plug>(EasyAlign)
-
-"snippet{{{
-	imap <C-k>  <Plug>(deoppet_expand)
-	imap <C-f>  <Plug>(deoppet_jump_forward)
-	imap <C-b>  <Plug>(deoppet_jump_backward)
-	smap <C-f>  <Plug>(deoppet_jump_forward)
-	smap <C-b>  <Plug>(deoppet_jump_backward)
-"}}}
 
 "caw:hatpos:toggle
 nmap <C-\> <Plug>(caw:hatpos:toggle)

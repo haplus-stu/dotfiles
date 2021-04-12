@@ -14,4 +14,3 @@ exec 'source' expand('~/.plugin.vim')
 exec 'source' expand('~/.editor.vim')
 exec 'source' expand('~/.keymap.vim')
 
-

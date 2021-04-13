@@ -61,7 +61,7 @@ Plug 'itchyny/vim-highlighturl'
 
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' ,'on':'Defx'}
-  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins'}
+  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins','on':'Denite'}
 else
   Plug 'Shougo/defx.nvim'
   Plug 'Shougo/denite.nvim'
@@ -100,6 +100,9 @@ let g:eskk#large_dictionary  = {'path':"~/SKK-JISYO.L",'sorted':1,'encoding':'eu
 let g:eskk#enable_completion = 1
 "}}}
 
+"vim-better-whitespace{{{
+let g:better_whitespace_operator = '0'
+"}}}
 
 let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets'
 
@@ -127,6 +130,8 @@ let g:tokyonight_disable_italic_comment = 1
 
 "vim-windowswap
 let g:windowswap_map_keys = 0 "prevent default bindings
+
+
 
 "quickrun{{{
 autocmd BufNewFile,BufRead *.cpp  let g:quickrun_config.cpp  = {'exec' : 'g++'}

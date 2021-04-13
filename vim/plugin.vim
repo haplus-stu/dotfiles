@@ -61,7 +61,7 @@ Plug 'itchyny/vim-highlighturl'
 
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' ,'on':'Defx'}
-  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' ,'on':'Denite'}
+  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins'}
 else
   Plug 'Shougo/defx.nvim'
   Plug 'Shougo/denite.nvim'

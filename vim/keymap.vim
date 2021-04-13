@@ -25,8 +25,8 @@ noremap DD :%d<cr>
 noremap YY :%y<cr>
 
 "For US keyboard
-noremap ; :
-noremap : ;
+ noremap ; :
+ noremap : ;
 
 "Open file browse
 noremap <silent> <C-n> :Fern . -drawer -toggle<cr>
@@ -65,6 +65,8 @@ map <silent>dep zo
 map fj zj
 map fk zk
 "}}}
+
+
 
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)

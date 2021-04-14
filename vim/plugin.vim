@@ -48,6 +48,8 @@ Plug 'rhysd/vim-clang-format',{'for':['c','cpp','javascript','typescript']}
 "Colorscheme
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'dylnmc/novum.vim'
+Plug 'wadackel/vim-dogrun'
+
 
 "window resize
 Plug 'simeji/winresizer'
@@ -101,7 +103,8 @@ let g:eskk#enable_completion = 1
 "}}}
 
 "vim-better-whitespace{{{
-let g:better_whitespace_operator = '0'
+" let g:better_whitespace_operator = '0'
+let g:better_whitespace_operator = "<Plug>(better-whitespace)"
 "}}}
 
 let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets'

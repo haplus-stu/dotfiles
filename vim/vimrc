@@ -13,5 +13,5 @@
 exec 'source' expand('~/.plugin.vim')
 exec 'source' expand('~/.editor.vim')
 exec 'source' expand('~/.keymap.vim')
-exec 'source' expand('~/.denite.vim')
+exec 'source' expand('~/dotfiles/vim/.denite.vim')
 

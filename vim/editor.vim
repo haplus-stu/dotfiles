@@ -11,6 +11,12 @@ set foldlevelstart=99
 "タブ スペースの可視化
 set list
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+augroup HighlightTrailingSpaces
+  autocmd!
+  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
+  autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+augroup END
+
 set cursorline
 
 " ハイライトサーチの有効化

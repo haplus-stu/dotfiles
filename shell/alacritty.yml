@@ -4,7 +4,8 @@
 # environment variables. Some entries may override variables
 # set by alacritty itself.
 env:
-      TERM: alacritty
+  TERM: xterm-256color
+  WINIT_X11_SCALE_FACTOR: "1.0"
 
 window:
   dimensions:
@@ -39,7 +40,7 @@ font:
   # Point size
   size: 12.0
 
-use_thin_strokes: true
+use_thin_strokes: false
 
 draw_bold_text_with_bright_colors: true
 
@@ -167,8 +168,6 @@ key_bindings:
   - { key: M,         mods: Alt,       chars: "\x1bm"                       }
   - { key: N,         mods: Alt,       chars: "\x1bn"                       }
   - { key: O,         mods: Alt,       chars: "\x1bo"                       }
-  - { key: P,         mods: Alt,       chars: "\x1bp"                       }
-  - { key: Q,         mods: Alt,       chars: "\x1bq"                       }
   - { key: R,         mods: Alt,       chars: "\x1br"                       }
   - { key: S,         mods: Alt,       chars: "\x1bs"                       }
   - { key: T,         mods: Alt,       chars: "\x1bt"                       }

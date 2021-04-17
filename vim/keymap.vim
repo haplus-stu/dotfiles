@@ -45,7 +45,7 @@ nnoremap U :MundoToggle<cr>
 vnoremap <silent> <Enter> :LiveEasyAlign<cr>
 
 "grep
-nnoremap <Leader>r :Rg<Space>
+nnoremap <Leader>r :Rg<Space><C-r><C-w><cr>
 
 "Escape
 inoremap <silent> jj <ESC>

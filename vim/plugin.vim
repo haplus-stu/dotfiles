@@ -9,17 +9,8 @@ Plug 'lambdalisue/fern-hijack.vim'
 Plug 'junegunn/vim-easy-align',{'on':['EasyAlign','LiveEasyAlign']}
 Plug 'Shougo/junkfile.vim',{'on':'JunkfileOpen'}
 
-"Language Server Protocol
-"Plug 'prabirshrestha/vim-lsp'
-"Plug 'mattn/vim-lsp-settings'
-"Plug 'prabirshrestha/asyncomplete.vim'
-"Plug 'prabirshrestha/asyncomplete-lsp.vim'
-"Plug 'Shougo/deoplete.nvim'
-"Plug 'lighttiger2505/deoplete-vim-lsp'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-"to visualize whitespace
-" Plug 'ntpeters/vim-better-whitespace'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 "Snippet
 Plug 'Shougo/neosnippet.vim'
@@ -37,7 +28,7 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'vim-jp/vimdoc-ja'
 
 "Quick Search
-Plug 'jremmen/vim-ripgrep'
+Plug 'jremmen/vim-ripgrep',{'on':'Rg'}
 Plug 'thinca/vim-quickrun',{'on':'QuickRun'}
 
 "Formatter
@@ -78,33 +69,9 @@ call plug#end()
 
 "Plugin settings{{{
 
-"Lsp settings {{{
-    let g:lsp_signs_error = {'text': 'E'}
-    let g:lsp_signs_warning = {'text': 'W'}
-    if !has('nvim')
-        let g:lsp_diagnostics_float_cursor = 1
-    endif
-    let g:lsp_log_file = ''
-
-    function! s:on_lsp_buffer_enabled() abort
-        setlocal completeopt=menu
-        setlocal omnifunc=lsp#complete
-    endfunction
-
-    augroup lsp_install
-        au!
-        au User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-    augroup END
-" }}}
-
 "eskk.vim{{{
 let g:eskk#large_dictionary  = {'path':"~/SKK-JISYO.L",'sorted':1,'encoding':'euc-jp'}
 let g:eskk#enable_completion = 1
-"}}}
-
-"vim-better-whitespace{{{
-" let g:better_whitespace_operator = '0'
-let g:better_whitespace_operator = "<Plug>(better-whitespace)"
 "}}}
 
 let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets'
@@ -114,9 +81,6 @@ if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
 
-"ctrlp
-let g:ctrlp_working_path_mode = 'ra'
-
 "rustfmt
 let g:rustfmt_autosave = 1
 
@@ -124,8 +88,6 @@ let g:rustfmt_autosave = 1
 let g:clang_format#code_style = 'Google'
 let g:clang_format#detect_style_file = 1
 
-"rainbow
-let g:rainbow_active = 1
 
 "tokyo-night
 let g:tokyonight_style = 'night' " available: night, storm
@@ -134,11 +96,25 @@ let g:tokyonight_disable_italic_comment = 1
 "vim-windowswap
 let g:windowswap_map_keys = 0 "prevent default bindings
 
-
-
 "quickrun{{{
-autocmd BufNewFile,BufRead *.cpp  let g:quickrun_config.cpp  = {'exec' : 'g++'}
-autocmd BufNewFile,BufRead *.rs  let g:quickrun_config.rust = {'exec' : 'cargo run'}
-autocmd BufNewFile,BufRead *.ts  let g:quickrun_config.typescript = {'exec' : 'tsc'}
+
+autocmd FileType quickrun call s:quickrun_settings()
+
+function! s:quickrun_settings() abort
+  autocmd BufNewFile,BufRead *.cpp  let g:quickrun_config.cpp  = {'exec' : 'g++'}
+  autocmd BufNewFile,BufRead *.rs  let g:quickrun_config.rust = {'exec' : 'cargo run'}
+  autocmd BufNewFile,BufRead *.ts  let g:quickrun_config.typescript = {'exec' : 'tsc'}
+endfunction
+"}}}
+
+"treesitter{{{
+lua <<EOF
+require'nvim-treesitter.configs'.setup{
+ensure_installed = "maintained",
+highlight = {
+  enable = true,
+  },
+}
+EOF
 "}}}
 "}}}

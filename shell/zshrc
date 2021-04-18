@@ -16,7 +16,7 @@ alias shconf="$EDITOR ~/.${SHELL##*/}rc"
 alias vim="nvim"
 alias zi="zoxide"
 alias cls="clear"
-alias gp="bash -x ~/dotfiles/shell/git.sh"
+alias diff="vimdiff"
 #change dir
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"

@@ -66,7 +66,10 @@ map fj zj
 map fk zk
 "}}}
 
-
+"CommandLine
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <C-h> <Del>
 
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)

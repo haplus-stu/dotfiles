@@ -21,7 +21,6 @@ alias gp="bash -x ~/dotfiles/shell/git.sh"
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"
 alias cdd="cd ~/dotfiles/"
-alias diff="vimdiff"
 
 #about tmux
 if [[ ! -n $TMUX && $- == *l* ]]; then

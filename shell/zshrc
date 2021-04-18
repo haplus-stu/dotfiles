@@ -1,6 +1,7 @@
 alias tkill="tmux kill-server"
 alias memo="rusmo"
 alias g="git"
+alias lg="lazygit"
 alias ls="exa -a"
 alias ll="exa -alFh --git --time-style=long-iso";
 alias cat="bat"

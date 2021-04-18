@@ -5,10 +5,6 @@ function! s:denite_my_settings() abort
   call denite#custom#var('file/rec', 'command',
   \ ['rg', '--files', '--glob', '!.git', '--color', 'never'])
 
-  call denite#custom#option('default', {
-        \ 'auto_action': 'preview',
-        \ 'floating_preview':v:true,
-        \ })
   " Ripgrep command on grep source
   call denite#custom#var('grep', {
              \ 'command': ['rg'],
@@ -18,7 +14,6 @@ function! s:denite_my_settings() abort
              \ 'separator': ['--'],
              \ 'final_opts': [],
              \ })
-
 
   nnoremap <silent><buffer><expr> <CR>
   \ denite#do_map('do_action','tabopen')
@@ -41,7 +36,7 @@ function! s:denite_my_settings() abort
 endfunction
 
 
-nnoremap <silent> ;f :<c-u>Denite -start-filter file/rec <cr>
+nnoremap <silent> ;f :<c-u>Denite -start-filter file/rec<cr>
 nnoremap <silent> ;F :<c-u>DeniteProjectDir -start-filter file/rec<cr>
-nnoremap <silent> ;g  :<C-u>DeniteProjectDir grep:::<C-r><C-w><CR>
-nnoremap <silent> ;G  :<C-u>DeniteProjectDir grep:::<C-r><C-a><CR>
+nnoremap <silent> ;;g :<C-u>Denite grep<CR>
+nnoremap <silent> ;;G :<C-u>DeniteProjectDir grep<CR>

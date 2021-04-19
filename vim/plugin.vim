@@ -62,8 +62,6 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
-Plug 'vim-denops/denops.vim'
-
 call plug#end()
 "}}}
 

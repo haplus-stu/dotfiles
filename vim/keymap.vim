@@ -12,7 +12,7 @@ nnoremap <silent> <Esc><Esc> :nohlsearch<cr>
 nnoremap <silent> <Leader>. :tabe $MYVIMRC<cr>
 
 "Reload
-nnoremap <silent> <Leader>s :source $MYVIMRC<cr>
+nnoremap <Leader>s :source $MYVIMRC<cr>
 
 "Save
 nnoremap <Leader>w :w<cr>

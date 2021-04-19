@@ -38,5 +38,5 @@ endfunction
 
 nnoremap <silent> ;f :<c-u>Denite -start-filter file/rec<cr>
 nnoremap <silent> ;F :<c-u>DeniteProjectDir -start-filter file/rec<cr>
-nnoremap <silent> ;;g :<C-u>Denite grep<CR>
-nnoremap <silent> ;;G :<C-u>DeniteProjectDir grep<CR>
+nnoremap <silent> ;g :<C-u>Denite grep<CR>
+nnoremap <silent> ;G :<C-u>DeniteProjectDir grep<CR>

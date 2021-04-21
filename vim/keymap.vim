@@ -90,6 +90,9 @@ nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<cr>
 nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<cr>
 "}}}
 
+"zoxide.vim{{{
+nnoremap <Leader>j :Z<space>
+
 "Coc.nvim{{{
   nmap <silent> gh :<c-u>call CocAction('doHover')<cr>
   nmap <silent> gd <Plug>(coc-definition)

@@ -52,6 +52,8 @@ Plug 'tyru/eskk.vim'
 "Highlight url
 Plug 'itchyny/vim-highlighturl'
 
+Plug 'nanotee/zoxide.vim',{'on':['Z']}
+
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' ,'on':'Defx'}
   Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins','on':['Denite','DeniteProjectDir']}

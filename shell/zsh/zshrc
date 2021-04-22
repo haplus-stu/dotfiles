@@ -14,8 +14,7 @@ alias fdown="docker-compose down --rmi all --volumes --remove-orphans"
 alias recon="source ~/.${SHELL##*/}rc"
 alias shconf="$EDITOR ~/.${SHELL##*/}rc"
 alias vim="nvim"
-alias zi="zoxide"
-alias cls="clear"
+alias zi="zoxide" alias cls="clear"
 alias diff="vimdiff"
 #change dir
 alias cdw="cd ~/workspace/"
@@ -65,15 +64,38 @@ bindkey '^r' select-history
 
 autoload -Uz colors && colors
 if [ -n "$SSH_CLIENT" ]; then
-	isssh="%F{red}[ssh]${reset_color%}"
+	isssh="%F{red}[S]${reset_color%}"
 else
-	isssh="%F{green}[local]${reset_color%}"
+	isssh="%F{green}[L]${reset_color%}"
 fi
 
 PS1="${isssh} %n@%m: %F{cyan}%~ ${reset_color%} 
-\$ "
+%F{red}>${reset_color%}%F{cyan}>${reset_color%} "
 # PS1="$ "
 
 . /usr/local/opt/asdf/asdf.sh
 export PATH="/usr/local/opt/php@7.2/bin:$PATH"
 export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
+export PATH="/usr/local/opt/bison/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/krb5/bin:$PATH"
+export PATH="/usr/local/opt/krb5/sbin:$PATH"
+export PATH="/usr/local/opt/libiconv/bin:$PATH"
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+# 履歴ファイルの保存先
+export HISTFILE=${HOME}/.zsh_history
+
+# メモリに保存される履歴の件数
+export HISTSIZE=100
+
+# 履歴ファイルに保存される履歴の件数
+export SAVEHIST=10000
+
+# norecord duplicate command
+setopt hist_ignore_dups
+#no record history command
+setopt hist_no_store
+
+setopt hist_save_no_dups
+
+

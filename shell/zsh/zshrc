@@ -65,12 +65,15 @@ bindkey '^r' select-history
 autoload -Uz colors && colors
 if [ -n "$SSH_CLIENT" ]; then
 	isssh="%F{red}[S]${reset_color%}"
+
+  PS1="${isssh} %n in %F{yellow}%m ${reset_color}: %F{cyan}%~ ${reset_color%} 
+ %F{red}>${reset_color%}%F{cyan}>${reset_color%} "
 else
 	isssh="%F{green}[L]${reset_color%}"
-fi
 
-PS1="${isssh} %n@%m: %F{cyan}%~ ${reset_color%} 
+  PS1="${isssh} %n@%m: %F{cyan}%~ ${reset_color%} 
 %F{red}>${reset_color%}%F{cyan}>${reset_color%} "
+fi
 # PS1="$ "
 
 . /usr/local/opt/asdf/asdf.sh

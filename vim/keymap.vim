@@ -2,6 +2,10 @@
 let g:mapleader = "\<Space>"
 let maplocalleader = ';'
 
+if has('nvim')
+  nnoremap <silent> <Leader>tt :tab terminal ++close <cr>
+endif
+
 "toggle line number
 nnoremap <silent> <Leader>l :set number!<cr>
 
@@ -54,8 +58,7 @@ inoremap <silent> jj <ESC>
 " go to the beginning of the line (^ is too far)
 nnoremap <Leader>a ^
 vnoremap <Leader>a ^
-" go to the end of the line ($ is too far)
-nnoremap <Leader>e $
+" go to the end of the line ($ is too far) nnoremap <Leader>e $
 vnoremap <Leader>e $
 
 
@@ -92,6 +95,7 @@ nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<cr>
 
 "zoxide.vim{{{
 nnoremap <Leader>j :Z<space>
+"}}}
 
 "Coc.nvim{{{
   nmap <silent> gh :<c-u>call CocAction('doHover')<cr>

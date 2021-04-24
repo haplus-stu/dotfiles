@@ -3,7 +3,8 @@ let g:mapleader = "\<Space>"
 let maplocalleader = ';'
 
 if has('nvim')
-  nnoremap <silent> <Leader>tt :tab terminal ++close <cr>
+  nnoremap <silent> <Leader>tt :tab terminal<cr>
+  nnoremap <silent> <ESC> <C-\>N
 endif
 
 "toggle line number

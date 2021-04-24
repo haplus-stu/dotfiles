@@ -4,7 +4,7 @@ let maplocalleader = ';'
 
 if has('nvim')
   nnoremap <silent> <Leader>tt :tab terminal<cr>
-  nnoremap <silent> <ESC> <C-\>N
+  tnoremap <silent> <ESC> <C-\><C-n>
 endif
 
 "toggle line number

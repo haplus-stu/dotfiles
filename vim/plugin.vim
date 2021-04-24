@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'mattn/emmet-vim',{'for':'html'}
 "Fern
 Plug 'lambdalisue/fern.vim',{'on':'Fern'}
-Plug 'lambdalisue/fern-hijack.vim'
+Plug 'lambdalisue/fern-hijack.vim',{'for':'fern'}
 
 Plug 'junegunn/vim-easy-align',{'on':['EasyAlign','LiveEasyAlign']}
 Plug 'Shougo/junkfile.vim',{'on':'JunkfileOpen'}

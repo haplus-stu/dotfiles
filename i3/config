@@ -42,7 +42,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty 
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+q kill
@@ -161,8 +161,7 @@ mode "resize" {
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -187,7 +186,7 @@ default_floating_border pixel 1
 gaps inner 10
 gaps outer 10
 
-for_window [class="Alacritty"] move to workspace $ws2
+for_window [class="Gnome-terminal"] move to workspace $ws2
 for_window [class="biscuit"] move to workspace $ws3
 for_window [class="Blueman-manager"] floating enable
 for_window [class="copyq"] floating enable
@@ -204,8 +203,8 @@ bindsym $mod+$alt+r exec --no-startup-id gnome-terminal -- ranger
 
 #Start at login
 exec --no-startup-id ~/.fehbg
-exec --no-startup-id  google-drive-ocamlfuse ~/goole_drive/
+exec --no-startup-id  google-drive-ocamlfuse ~/google_drive/
 exec --no-startup-id blueman-applet
 exec --no-startup-id redshift
-exec --no-startup-id CopyQ
-exec --no-startup-id autokey
+exec --no-startup-id copyq
+exec --no-startup-id autokey-gtk

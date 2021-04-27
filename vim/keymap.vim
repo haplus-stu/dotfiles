@@ -10,6 +10,13 @@ endif
 "toggle line number
 nnoremap <silent> <Leader>l :set number!<cr>
 
+"show register list
+nnoremap ;r :reg<CR>
+
+"save without extensions
+nnoremap ;s :saveas <C-R>=expand("%<")<CR>
+
+
 " Delete highlight
 nnoremap <silent> <Esc><Esc> :nohlsearch<cr>
 
@@ -33,8 +40,13 @@ noremap YY :%y<cr>
  noremap ; :
  noremap : ;
 
+"abbr{{{
+cabbrev sudo w !sudo tee % > /dev/null
+"}}}
+
 "Open file browse
 noremap <silent> <C-n> :Fern . -drawer -toggle<cr>
+
 
 "Split display{{{
 nnoremap <silent> sj <C-w>j

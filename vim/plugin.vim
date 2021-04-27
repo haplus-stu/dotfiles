@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'mattn/emmet-vim',{'for':'html'}
 "Fern
 Plug 'lambdalisue/fern.vim',{'on':'Fern'}
-Plug 'lambdalisue/fern-hijack.vim',{'for':'fern'}
+Plug 'lambdalisue/fern-hijack.vim'
 
 Plug 'junegunn/vim-easy-align',{'on':['EasyAlign','LiveEasyAlign']}
 Plug 'Shougo/junkfile.vim',{'on':'JunkfileOpen'}
@@ -107,14 +107,4 @@ function! s:quickrun_settings() abort
 endfunction
 "}}}
 
-"treesitter{{{
-lua <<EOF
-require'nvim-treesitter.configs'.setup{
-ensure_installed = "maintained",
-highlight = {
-  enable = true,
-  },
-}
-EOF
-"}}}
 "}}}

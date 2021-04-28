@@ -27,7 +27,7 @@ Plug 'simnalamburt/vim-mundo'
 "Japanese Help Document
 Plug 'vim-jp/vimdoc-ja'
 
-"Quick Search
+"Quick
 Plug 'jremmen/vim-ripgrep',{'on':'Rg'}
 Plug 'thinca/vim-quickrun',{'on':'QuickRun'}
 
@@ -71,7 +71,7 @@ call plug#end()
 
 "eskk.vim{{{
 let g:eskk#large_dictionary  = {'path':"~/SKK-JISYO.L",'sorted':1,'encoding':'euc-jp'}
-let g:eskk#enable_completion = 1
+let g:eskk#enable_completion = 0
 "}}}
 
 let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets'

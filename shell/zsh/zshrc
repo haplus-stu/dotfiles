@@ -1,3 +1,4 @@
+#alias
 alias tkill="tmux kill-server"
 alias memo="rusmo"
 alias g="git"
@@ -20,13 +21,12 @@ alias diff="vimdiff"
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"
 alias cdd="cd ~/dotfiles/"
-#path
 
 EDITOR="nvim"
 
 eval "$(zoxide init zsh)"
 eval "$(gh completion -s zsh)"
-#eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -44,32 +44,19 @@ bindkey '^r' select-history
 
 
 autoload -Uz colors && colors
-if [ -n "$SSH_CLIENT" ]; then
-	isssh="%F{red}[S]${reset_color%}"
-
-  PS1="${isssh} %n in %F{yellow}%m ${reset_color}: %F{cyan}%~ ${reset_color%} 
- %F{red}>${reset_color%}%F{cyan}>${reset_color%} "
-else
-	isssh="%F{green}[L]${reset_color%}"
-
-  PS1="${isssh} %n@%m: %F{cyan}%~ ${reset_color%} 
-%F{red}>${reset_color%}%F{cyan}>${reset_color%} "
-fi
+# if [ -n "$SSH_CLIENT" ]; then
+# 	isssh="%F{red}[S]${reset_color%}"
+# 
+#   PS1="${isssh} %n in %F{yellow}%m ${reset_color}: %F{cyan}%~ ${reset_color%} 
+#  %F{red}>${reset_color%}%F{cyan}>${reset_color%} "
+# else
+# 	isssh="%F{green}[L]${reset_color%}"
+# 
+#   PS1="${isssh} %n@%m: %F{cyan}%~ ${reset_color%} 
+# %F{red}>${reset_color%}%F{cyan}>${reset_color%} "
+# fi
 # PS1="$ "
-
-. /usr/local/opt/asdf/asdf.sh
-export PATH="/usr/local/opt/php@7.2/bin:$PATH"
-export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
-export PATH="/usr/local/opt/bison/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/krb5/bin:$PATH"
-export PATH="/usr/local/opt/krb5/sbin:$PATH"
-export PATH="/usr/local/opt/libiconv/bin:$PATH"
-export PATH="/usr/local/opt/libxml2/bin:$PATH"
-
-. $HOME/.asdf/asdf.sh
-
-
+#
 # 履歴ファイルの保存先
 export HISTFILE=${HOME}/.zsh_history
 
@@ -85,5 +72,3 @@ setopt hist_ignore_dups
 setopt hist_no_store
 
 setopt hist_save_no_dups
-
-

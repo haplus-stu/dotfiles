@@ -10,7 +10,8 @@ Plug 'junegunn/vim-easy-align',{'on':['EasyAlign','LiveEasyAlign']}
 Plug 'Shougo/junkfile.vim',{'on':'JunkfileOpen'}
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 
 "Snippet
 Plug 'Shougo/neosnippet.vim'
@@ -23,7 +24,6 @@ Plug 'ctrlpvim/ctrlp.vim',{'on':'Ctrlp'}
 
 "More confortable undo
 Plug 'simnalamburt/vim-mundo'
-
 "Japanese Help Document
 Plug 'vim-jp/vimdoc-ja'
 
@@ -57,6 +57,7 @@ Plug 'nanotee/zoxide.vim',{'on':['Z']}
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' ,'on':'Defx'}
   Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins','on':['Denite','DeniteProjectDir']}
+  Plug 'Shougo/deol.nvim',{'on':'Deol'}
 else
   Plug 'Shougo/defx.nvim'
   Plug 'Shougo/denite.nvim'
@@ -107,4 +108,8 @@ function! s:quickrun_settings() abort
 endfunction
 "}}}
 
+"deol.nvim
+let g:deol#custom_map = {
+      \'quit':'q',
+      \}
 "}}}

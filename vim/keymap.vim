@@ -4,8 +4,9 @@ let maplocalleader = ';'
 
 if has('nvim')
   nnoremap <silent> <Leader>tt :tab terminal<cr>
-  tnoremap <silent> <ESC> <C-\><C-n>
+  tnoremap <silent> <C-[> <C-\><C-n>
 endif
+
 
 "toggle line number
 nnoremap <silent> <Leader>l :set number!<cr>
@@ -40,12 +41,19 @@ noremap YY :%y<cr>
  noremap ; :
  noremap : ;
 
+"switch between two files
+nnoremap <M-[> :<C-u>e #<cr>
+
+"close tab
+nnoremap <M-q> :tabclose<cr>
+
 "abbr{{{
 cabbrev sudo w !sudo tee % > /dev/null
 "}}}
 
 "Open file browse
 noremap <silent> <C-n> :Fern . -drawer -toggle<cr>
+
 
 
 "Split display{{{
@@ -116,6 +124,7 @@ nnoremap <Leader>j :Z<space>
   nmap <silent> gr <Plug>(coc-reference)
 "}}}
 
+"filetype settings{{{
 au FileType javascript noremap<buffer> <c-f> :ClangFormat<cr>
 au FileType typescript noremap<buffer> <c-f> :ClangFormat<cr>
 
@@ -127,3 +136,8 @@ au FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
 
 au FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 au FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
+"}}}
+
+
+"deol.nvim
+nnoremap <Space>as  :<C-u>tabnew<Cr>:pwd<Cr>:Deol -edit -start-insert -auto-cd -toggle<Cr>

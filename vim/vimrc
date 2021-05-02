@@ -1,17 +1,48 @@
-"vim 初回起動時vim-plug自動インストール{{{
-    set rtp+=~/.vim/plugged/vim-plug
-    " install vim-pulg
-    if has('vim_starting')
-            if !isdirectory(expand('~/.vim/plugged/'))
-              echo 'install vim-plug...'
-              call mkdir('~/.vim/plugged')
-              call system('curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
-            endif
-    endif
-" }}}
+"dein Scripts-----------------------------{{{
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
-exec 'source' expand('~/dotfiles/vim/plugin.vim')
+" Required:
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin('~/.cache/dein')
+
+" Let dein manage dein
+" Required:
+call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+
+call dein#load_toml('~/dotfiles/vim/dein/dein.toml')
+call dein#load_toml('~/dotfiles/vim/dein/dein_lazy.toml')
+
+" Required:
+call dein#end()
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+ call dein#install()
+endif
+
+"}}}End dein Scripts-------------------------
+
+
+"treesitter{{{
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+  },
+  ensure_installed = 'maintained',
+}
+EOF
+"}}}
+
 exec 'source' expand('~/dotfiles/vim/editor.vim')
 exec 'source' expand('~/dotfiles/vim/keymap.vim')
 exec 'source' expand('~/dotfiles/vim/denite.vim')
-

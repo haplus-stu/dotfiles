@@ -1,0 +1,36 @@
+[[plugins]]
+repo = 'lambdalisue/fern-hijack.vim'
+
+#Colorscheme
+[[plugins]]
+repo = 'wadackel/vim-dogrun'
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+
+#Highlight url
+[[plugins]]
+repo = 'itchyny/vim-highlighturl'
+
+[[plugins]]
+repo     = 'tyru/eskk.vim'
+hook_add = """
+let g:eskk#large_dictionary  = {'path':"~/SKK-JISYO.L",'sorted':1,'encoding':'euc-jp'}
+let g:eskk#enable_completion = 0
+"""
+
+[[plugins]]
+repo = 'simeji/winresizer'
+
+[[plugins]]
+repo     = 'neoclide/coc.nvim'
+merge    = 0
+rev      = "release"
+hook_add = """
+let g:coc_global_extensions =[
+\'coc-tsserver',
+\'coc-rust-analyzer',
+\'coc-word',
+\]
+"""
+

@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'mattn/emmet-vim',{'for':'html'}
+
 "Fern
 Plug 'lambdalisue/fern.vim',{'on':'Fern'}
 Plug 'lambdalisue/fern-hijack.vim'
@@ -10,7 +11,7 @@ Plug 'junegunn/vim-easy-align',{'on':['EasyAlign','LiveEasyAlign']}
 Plug 'Shougo/junkfile.vim',{'on':'JunkfileOpen'}
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 
 "Snippet
@@ -20,10 +21,8 @@ Plug 'Shougo/neosnippet-snippets'
 "Support Commentout
 Plug 'tyru/caw.vim'
 
-Plug 'ctrlpvim/ctrlp.vim',{'on':'Ctrlp'}
-
 "More confortable undo
-Plug 'simnalamburt/vim-mundo'
+Plug 'simnalamburt/vim-mundo',{'on':'MundoToggle'}
 "Japanese Help Document
 Plug 'vim-jp/vimdoc-ja'
 
@@ -55,11 +54,9 @@ Plug 'itchyny/vim-highlighturl'
 Plug 'nanotee/zoxide.vim',{'on':['Z']}
 
 if has('nvim')
-  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' ,'on':'Defx'}
   Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins','on':['Denite','DeniteProjectDir']}
   Plug 'Shougo/deol.nvim',{'on':'Deol'}
 else
-  Plug 'Shougo/defx.nvim'
   Plug 'Shougo/denite.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
@@ -69,6 +66,17 @@ call plug#end()
 "}}}
 
 "Plugin settings{{{
+
+"nvim-treesitter{{{
+lua <<EOF
+require'nvim-treesitter.configs'.setup{
+  highlight = {
+    enable = true,
+  },
+  ensure_installed = 'maintained',
+}
+EOF
+"}}}
 
 "eskk.vim{{{
 let g:eskk#large_dictionary  = {'path':"~/SKK-JISYO.L",'sorted':1,'encoding':'euc-jp'}
@@ -108,8 +116,19 @@ function! s:quickrun_settings() abort
 endfunction
 "}}}
 
+"coc.nvim{{{
+let g:coc_global_extensions =[
+      \'coc-tsserver',
+      \'coc-rust-analyzer',
+      \'coc-word'
+      \]
+
+"}}}
+
 "deol.nvim
 let g:deol#custom_map = {
       \'quit':'q',
       \}
+
 "}}}
+"EOF

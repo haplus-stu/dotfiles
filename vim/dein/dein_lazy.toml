@@ -1,0 +1,52 @@
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+on_cmd = ['Fern']
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+on_cmd = ['EasyAlign','LiveEasyAlign']
+
+[[plugins]]
+repo = 'simnalamburt/vim-mundo'
+on_cmd = ['MundoToggle']
+
+[[plugins]]
+repo = 'jremmen/vim-ripgrep'
+on_cmd = ['Rg']
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+on_cmd = ['QuickRun']
+
+[[plugins]]
+repo = 'nanotee/zoxide.vim'
+on_cmd = ['Z']
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+on_cmd = ['Deinte','DeniteProjectDir']
+
+[[plugins]]
+repo = 'Shougo/deol.nvim'
+on_cmd = ['Deol']
+
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html']
+
+[[plugins]]
+repo =  'maksimr/vim-jsbeautify'
+on_ft = ['html','css']
+
+[[plugins]]
+repo =  'rust-lang/rust.vim'
+on_ft = ['rust']
+
+[[plugins]]
+repo =  'rhysd/vim-clang-format'
+on_ft = ['c','cpp','javascript','typescript']
+hook_add = """
+let g:clang_format#code_style = 'Google'
+let g:clang_format#detect_style_file = 1
+"""

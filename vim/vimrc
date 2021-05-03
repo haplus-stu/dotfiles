@@ -20,28 +20,12 @@ call dein#load_toml('~/dotfiles/vim/dein/dein_lazy.toml')
 " Required:
 call dein#end()
 
-" Required:
-filetype plugin indent on
-syntax enable
-
 " If you want to install not installed plugins on startup.
 if dein#check_install()
  call dein#install()
 endif
 
 "}}}End dein Scripts-------------------------
-
-
-"treesitter{{{
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-  },
-  ensure_installed = 'maintained',
-}
-EOF
-"}}}
 
 exec 'source' expand('~/dotfiles/vim/editor.vim')
 exec 'source' expand('~/dotfiles/vim/keymap.vim')

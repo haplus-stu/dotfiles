@@ -54,8 +54,6 @@ cabbrev sudo w !sudo tee % > /dev/null
 "Open file browse
 noremap <silent> <C-n> :Fern . -drawer -toggle<cr>
 
-
-
 "Split display{{{
 nnoremap <silent> sj <C-w>j
 nnoremap <silent> sk <C-w>k
@@ -107,12 +105,6 @@ vmap <C-\> <Plug>(caw:hatpos:toggle)
 
 "quickrun
 noremap <Leader>q :QuickRun<cr>
-
-"vim-windowswap{{{
-nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<cr>
-nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<cr>
-nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<cr>
-"}}}
 
 "zoxide.vim{{{
 nnoremap <Leader>j :Z<space>

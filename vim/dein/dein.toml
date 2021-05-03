@@ -5,23 +5,17 @@ repo = 'lambdalisue/fern-hijack.vim'
 [[plugins]]
 repo = 'wadackel/vim-dogrun'
 
-[[plugins]]
-repo = 'nvim-treesitter/nvim-treesitter'
+# [[plugins]]
+# repo = 'nvim-treesitter/nvim-treesitter'
 
 #Highlight url
 [[plugins]]
 repo = 'itchyny/vim-highlighturl'
 
-[[plugins]]
-repo = 'simeji/winresizer'
 
 #comment out
 [[plugins]]
 repo = 'tyru/caw.vim'
-
-#Japanese Help Document
-[[plugins]]
-repo ='vim-jp/vimdoc-ja'
 
 
 [[plugins]]

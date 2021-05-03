@@ -2,9 +2,18 @@
 repo = 'lambdalisue/fern.vim'
 on_cmd = ['Fern']
 
+#Japanese Help Document
+[[plugins]]
+repo ='vim-jp/vimdoc-ja'
+on_ft = ['help']
+
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
 on_cmd = ['EasyAlign','LiveEasyAlign']
+
+[[plugins]]
+repo = 'simeji/winresizer'
+on_cmd = ['WinResizerStartResize']
 
 [[plugins]]
 repo = 'simnalamburt/vim-mundo'
@@ -25,6 +34,9 @@ on_cmd = ['Z']
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 on_cmd = ['Deinte','DeniteProjectDir']
+# hook_add = """
+# source ~/dotfiles/vim/denite.vim
+# """
 
 [[plugins]]
 repo = 'Shougo/deol.nvim'
@@ -42,6 +54,10 @@ on_ft = ['html','css']
 [[plugins]]
 repo =  'rust-lang/rust.vim'
 on_ft = ['rust']
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
 
 [[plugins]]
 repo =  'rhysd/vim-clang-format'

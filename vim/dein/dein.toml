@@ -13,14 +13,23 @@ repo = 'nvim-treesitter/nvim-treesitter'
 repo = 'itchyny/vim-highlighturl'
 
 [[plugins]]
+repo = 'simeji/winresizer'
+
+#comment out
+[[plugins]]
+repo = 'tyru/caw.vim'
+
+#Japanese Help Document
+[[plugins]]
+repo ='vim-jp/vimdoc-ja'
+
+
+[[plugins]]
 repo     = 'tyru/eskk.vim'
 hook_add = """
 let g:eskk#large_dictionary  = {'path':"~/SKK-JISYO.L",'sorted':1,'encoding':'euc-jp'}
 let g:eskk#enable_completion = 0
 """
-
-[[plugins]]
-repo = 'simeji/winresizer'
 
 [[plugins]]
 repo     = 'neoclide/coc.nvim'

@@ -39,13 +39,17 @@ on_cmd = ['Deinte','DeniteProjectDir']
 # """
 
 [[plugins]]
+repo = 'gotchane/vim-git-commit-prefix'
+on_ft = ['gitcommit']
+
+[[plugins]]
 repo = 'Shougo/deol.nvim'
 on_cmd = ['Deol']
 
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
-on_ft = ['html']
+on_ft = ['html','svelte']
 
 [[plugins]]
 repo =  'maksimr/vim-jsbeautify'

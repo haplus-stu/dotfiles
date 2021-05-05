@@ -49,6 +49,13 @@ nnoremap <M-q> :tabclose<cr>
 
 "abbr{{{
 cabbrev sudo w !sudo tee % > /dev/null
+
+augroup gitabbr
+  autocmd!
+  autocmd FileType gitcommit iabbrev <buffer> add [add]
+  autocmd FileType gitcommit iabbrev <buffer> fix [fix]
+  autocmd FileType gitcommit iabbrev <buffer> feat [feat]
+augroup END
 "}}}
 
 "Open file browse

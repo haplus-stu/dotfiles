@@ -27,6 +27,17 @@ endif
 
 "}}}End dein Scripts-------------------------
 
+"nvim-treesitter{{{
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+      enable = true,
+  },
+  ensure_installed = 'maintained'
+}
+EOF
+"}}}
+
 exec 'source' expand('~/dotfiles/vim/editor.vim')
 exec 'source' expand('~/dotfiles/vim/keymap.vim')
 exec 'source' expand('~/dotfiles/vim/denite.vim')

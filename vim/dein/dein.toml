@@ -1,12 +1,16 @@
 [[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
 repo = 'lambdalisue/fern-hijack.vim'
 
 #Colorscheme
 [[plugins]]
 repo = 'wadackel/vim-dogrun'
 
-# [[plugins]]
-# repo = 'nvim-treesitter/nvim-treesitter'
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+
 
 #Highlight url
 [[plugins]]

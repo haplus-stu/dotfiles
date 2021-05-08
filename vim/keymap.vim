@@ -101,6 +101,7 @@ cnoremap <C-f> <Right>
 cnoremap <C-h> <Del>
 
 
+
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap gA <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
@@ -140,3 +141,17 @@ au FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
 
 "deol.nvim
 nnoremap <Space>as  :<C-u>tabnew<Cr>:pwd<Cr>:Deol -edit -start-insert -auto-cd -toggle<Cr>
+
+"とじ括弧に、jump
+noremap m) ])
+noremap m} ]}
+
+" create a new empty tab w/ buffer with current register {{{
+
+ nnoremap <silent> <Space>ap  <Cmd>tabnew<Cr>]p:call deletebufline('%', 1, 1)<Cr>
+ vnoremap <silent> <Space>ap y<Cmd>tabnew<Cr>]p:call deletebufline('%', 1, 1)<Cr>
+
+" }}}
+"
+" open browser
+nmap gl <Plug>(openbrowser-smart-search)

@@ -70,3 +70,7 @@ hook_add = """
 let g:clang_format#code_style = 'Google'
 let g:clang_format#detect_style_file = 1
 """
+
+[[plugins]]
+repo = "lambdalisue/suda.vim"
+on_cmd = ['SudaRead','SudaWrite']

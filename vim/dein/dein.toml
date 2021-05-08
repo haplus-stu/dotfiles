@@ -8,8 +8,16 @@ repo = 'lambdalisue/fern-hijack.vim'
 [[plugins]]
 repo = 'wadackel/vim-dogrun'
 
+# [[plugins]]
+# repo = 'nvim-treesitter/nvim-treesitter'
+
 [[plugins]]
-repo = 'nvim-treesitter/nvim-treesitter'
+repo = "tyru/open-browser.vim"
+hook_add ="""
+let g:openbrowser_browser_commands = [
+\ {"name":'open',
+\ "args": ["{browser}","{uri}"]}]
+"""
 
 
 #Highlight url

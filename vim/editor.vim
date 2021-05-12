@@ -6,9 +6,7 @@ set helplang=ja
 "折りたたみ
 set foldmethod=syntax
 "起動時にフォールドされるのを防止
-set foldlevelstart=99
-
-"タブ スペースの可視化
+set foldlevelstart=99 "タブ スペースの可視化
 set list
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 augroup HighlightTrailingSpaces
@@ -41,7 +39,7 @@ set background=dark
 syntax enable
 filetype plugin indent on
 " colorscheme novum
-colorscheme dogrun
+"colorscheme dogrun
 
 " swapファイルを作成しない
 set noswapfile
@@ -82,3 +80,16 @@ let &t_ti .= "\e[1 q"
 let &t_SI .= "\e[5 q"
 let &t_EI .= "\e[1 q"
 let &t_te .= "\e[0 q"
+
+
+
+if has('nvim')
+  augroup neovim-terminal
+    au!
+    au TermOpen * startinsert
+    au BufNewFile te* ++nested call termopen(&shell)
+  augroup END
+endif
+
+"customize highlight
+hi Pmenu guibg=#333333

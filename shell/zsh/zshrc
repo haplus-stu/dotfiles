@@ -7,16 +7,19 @@ alias ls="exa -a"
 alias ll="exa -alFh --git --time-style=long-iso";
 alias cat="bat"
 alias mkdir="mkdir -p"
-alias dc="docker-compose"
-alias cp="cp -r"
 alias d="docker"
+alias dc="docker-compose"
+alias ds="sh $HOME/dotfiles/shell/docker.sh"
+alias cp="cp -r"
 alias alldel="bash ~/dotfiles/docker/all_down.sh"
 alias fdown="docker-compose down --rmi all --volumes --remove-orphans"
 alias recon="source ~/.${SHELL##*/}rc"
 alias shconf="$EDITOR ~/.${SHELL##*/}rc"
 alias vim="nvim"
-alias zi="zoxide" alias cls="clear"
+alias zi="zoxide" 
+alias cls="clear"
 alias diff="vimdiff"
+alias ys="yay -S"
 #change dir
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"
@@ -31,7 +34,7 @@ eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# $ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+# git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 plugins=(zsh-autosuggestions)
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 

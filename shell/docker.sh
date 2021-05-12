@@ -1,6 +1,8 @@
 #!/bin/bash -x
 
-if [[ $1 == "down" ]]; then
+if [[ $1 == "up" ]]; then
+  docker-compose up -d
+elif [[ $1 == "down" ]]; then
 
 docker-compose down --rmi all --volumes --remove-orphans
 

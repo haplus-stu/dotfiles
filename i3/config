@@ -199,12 +199,13 @@ bindsym $mod+Shift+minus move scratchpad
 #Run command or application
 bindsym $mod+$alt+l exec --no-startup-id gnome-terminal -- sncli
 bindsym $mod+$alt+r exec --no-startup-id gnome-terminal -- ranger
+bindsym $mod+$alt+5 exec  flameshot gui
 
 
 #Start at login
-exec --no-startup-id ~/.fehbg
-exec --no-startup-id  google-drive-ocamlfuse ~/google_drive/
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id google-drive-ocamlfuse ~/google_drive/
 exec --no-startup-id blueman-applet
 exec --no-startup-id redshift
 exec --no-startup-id copyq
-exec --no-startup-id autokey-gtk
+exec --no-startup-id ~/.dropbox-dist/dropboxd

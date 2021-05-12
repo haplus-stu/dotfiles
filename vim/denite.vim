@@ -2,9 +2,12 @@
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
 
+  call denite#custom#option('_', 'filter_split_direction', 'floating')
+
   call denite#custom#var('file/rec', 'command',
   \ ['rg', '--files', '--glob', '!.git', '--color', 'never'])
-
+  " Show hidden file
+  call denite#custom#source('file/rec','matchers',['matcher_hide_hidden_files'])
   " Ripgrep command on grep source
   call denite#custom#var('grep', {
              \ 'command': ['rg'],
@@ -40,3 +43,4 @@ nnoremap <silent> ;f :<c-u>Denite -start-filter file/rec<cr>
 nnoremap <silent> ;F :<c-u>DeniteProjectDir -start-filter file/rec<cr>
 nnoremap <silent> ;g :<C-u>Denite grep<CR>
 nnoremap <silent> ;G :<C-u>DeniteProjectDir grep<CR>
+

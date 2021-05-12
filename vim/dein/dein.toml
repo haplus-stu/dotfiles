@@ -8,8 +8,8 @@ repo = 'lambdalisue/fern-hijack.vim'
 [[plugins]]
 repo = 'wadackel/vim-dogrun'
 
-# [[plugins]]
-# repo = 'nvim-treesitter/nvim-treesitter'
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
 
 [[plugins]]
 repo = "tyru/open-browser.vim"
@@ -28,6 +28,12 @@ repo = 'itchyny/vim-highlighturl'
 #comment out
 [[plugins]]
 repo = 'tyru/caw.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+hook_add ="""
+let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets/'
+"""
 
 
 [[plugins]]

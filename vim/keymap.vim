@@ -1,3 +1,19 @@
+"Mapping Table
+"-------------------------------------------------------------------------------------------------|
+" Commands \ Modes | Normal | Insert | Command | Visual | Select | Operator | Terminal | Lang-Arg |
+" map  / noremap   |    @   |   -    |    -    |   @    |   @    |    @     |    -     |    -     |
+" nmap / nnoremap  |    @   |   -    |    -    |   -    |   -    |    -     |    -     |    -     |
+" map! / noremap!  |    -   |   @    |    @    |   -    |   -    |    -     |    -     |    -     |
+" imap / inoremap  |    -   |   @    |    -    |   -    |   -    |    -     |    -     |    -     |
+" cmap / cnoremap  |    -   |   -    |    @    |   -    |   -    |    -     |    -     |    -     |
+" vmap / vnoremap  |    -   |   -    |    -    |   @    |   @    |    -     |    -     |    -     |
+" xmap / xnoremap  |    -   |   -    |    -    |   @    |   -    |    -     |    -     |    -     |
+" smap / snoremap  |    -   |   -    |    -    |   -    |   @    |    -     |    -     |    -     |
+" omap / onoremap  |    -   |   -    |    -    |   -    |   -    |    @     |    -     |    -     |
+" tmap / tnoremap  |    -   |   -    |    -    |   -    |   -    |    -     |    @     |    -     |
+" lmap / lnoremap  |    -   |   @    |    @    |   -    |   -    |    -     |    -     |    @     |
+
+
 "Setting space as <Leader>
 let g:mapleader = "\<Space>"
 let maplocalleader = ';'
@@ -30,7 +46,7 @@ nnoremap <Leader>s :source $MYVIMRC<cr>
 "Save
 nnoremap <Leader>w :w<cr>
 "Exit
-nnoremap qq :confirm qall<cr>
+nnoremap Q :confirm qall<cr>
 "All delete
 noremap DD :%d<cr>
 

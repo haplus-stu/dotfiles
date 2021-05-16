@@ -6,7 +6,6 @@ ln -s $HOME/dotfiles/shell/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 
 #vim
 ln -s $HOME/dotfiles/vim/vimrc $HOME/.vimrc
-ln -s $HOME/dotfiles/vim/plugin.vim $HOME/.plugin.vim
 ln -s $HOME/dotfiles/vim/editor.vim $HOME/.editor.vim
 ln -s $HOME/dotfiles/vim/keymap.vim $HOME/.keymap.vim
 
@@ -23,3 +22,9 @@ if ["$(expr substr $(uname -s) 1 5)" == 'Linux']; then
   ln -s $HOME/dotfiles/i3/rofi-conf $HOME/.config/rofi/config
 fi
 
+
+if [[ "$1" == "mini" ]]; then
+  bash $HOME/dotfiles/shell/min-setup.sh
+elif [[ "$1" == "full"]]; then
+  bash $HOME/dotfiles/shell/setup.sh
+fi

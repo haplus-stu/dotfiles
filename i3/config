@@ -207,5 +207,6 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id google-drive-ocamlfuse ~/google_drive/
 exec --no-startup-id blueman-applet
 exec --no-startup-id redshift
+exec --no-startup-id pasystray
 exec --no-startup-id copyq
 exec --no-startup-id ~/.dropbox-dist/dropboxd

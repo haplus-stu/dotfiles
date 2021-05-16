@@ -10,10 +10,12 @@ elif [[ "$1" = "ubuntu" ]]; then
   echo ${PACKAGE_CMD}
 fi
 
+
 echo "
 #===============
 check upgrade
 #==============="
+
 if [[ "$1" -eq "ubuntu" ]]; then
   sudo apt update -y
 elif [[ "$1" -eq "arch" ]]; then

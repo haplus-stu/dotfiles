@@ -1,0 +1,11 @@
+[alias]
+  st = status
+  ad = add
+  ci = commit
+  df = diff
+  ps = push origin $(git rev-parse --abbrev-ref @)
+[core]
+	edior = nvim
+[user]
+	email = syu8.0324@outlook.jp
+	name = Hasu

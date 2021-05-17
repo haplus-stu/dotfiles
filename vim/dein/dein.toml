@@ -3,7 +3,7 @@ repo = 'deoplete-plugins/deoplete-zsh'
 
 
 [[plugins]]
-repo = 'jiangmiao/auto-pairs'
+repo = 'mattn/vim-lexiv'
 
 [[plugins]]
 repo = 'lambdalisue/fern-hijack.vim'
@@ -39,45 +39,17 @@ let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets/'
 
 
 [[plugins]]
-repo     = 'tyru/eskk.vim' hook_add = """
-let g:eskk#large_dictionary  = {'path':"~/SKK-JISYO.L",'sorted':1,'encoding':'euc-jp'}
-let g:eskk#enable_completion = 0
-"""
-
-[[plugins]]
-repo     = 'neoclide/coc.nvim'
-merge    = 0
-rev      = "release"
-hook_add = """
-let g:coc_global_extensions =[
-\'coc-tsserver',
-\'coc-rust-analyzer',
-\'coc-word',
-\]
-"""
-
-# [[plugins]]
-# repo = 'nvim-treesitter/nvim-treesitter'
-# hook_add="""
-# lua <<EOF
-# require'nvim-treesitter.configs'.setup {
-#   highlight = {
-#       enable = true,
-#   },
-#   ensure_installed = 'maintained'
-# }
-# EOF
-# """
-
-
-
-[[plugins]]
 repo = 'Shougo/deoplete.nvim'
-hook_source = '''
-  let g:deoplete#enable_at_startup = 1
-  call deoplete#custom#option({
-    \ 'nofile_complete_filetypes': ['zsh'],
-    \ })
-  inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-  inoremap <expr><S-Tab> pumvisible() ? "\<UP>" : "\<S-Tab>"
-'''
+
+[[plugins]]
+repo='prabirshrestha/vim-lsp'
+
+[[plugins]]
+repo='mattn/vim-lsp-settings'
+
+[[plugins]]
+repo='ghifarit53/tokyonight-vim'
+
+[[plugins]]
+repo='Shougo/neosnippet-snippets'
+

@@ -5,8 +5,11 @@ set helplang=ja
 
 "折りたたみ
 set foldmethod=syntax
+
 "起動時にフォールドされるのを防止
-set foldlevelstart=99 "タブ スペースの可視化
+set foldlevelstart=99
+
+"タブ スペースの可視化
 set list
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 augroup HighlightTrailingSpaces
@@ -36,10 +39,10 @@ endif
 " important:
 set termguicolors
 set background=dark
+let g:github_colors_soft = 1
 syntax enable
 filetype plugin indent on
-" colorscheme novum
-"colorscheme dogrun
+colorscheme tokyonight
 
 " swapファイルを作成しない
 set noswapfile
@@ -49,8 +52,9 @@ if has("mac") | set clipboard+=unnamed | else | set clipboard^=unnamedplus | end
 if has("unix")| set clipboard+=unnamedplus | endif
 
 "ファイルタイプごとの設定
-au FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab | set foldmethod=marker |set foldlevelstart=-1
+au FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab | set foldmethod=marker |set foldlevel=0
 au FileType MAKE setlocal set noexpandtab :retab!<cr>
+au FileType zsh let b:coc_enabled = v:false
 
 "setting indent
 set expandtab
@@ -93,3 +97,4 @@ endif
 
 "customize highlight
 hi Pmenu guibg=#333333
+

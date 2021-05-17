@@ -1,80 +1,72 @@
- [[plugins]]
- repo = 'lambdalisue/fern.vim'
- on_cmd = ['Fern']
- 
- #Japanese Help Document
- [[plugins]]
- repo ='vim-jp/vimdoc-ja'
- on_ft = ['help']
- 
- [[plugins]]
- repo = 'junegunn/vim-easy-align'
- on_cmd = ['EasyAlign','LiveEasyAlign']
- 
- [[plugins]]
- repo = 'simeji/winresizer'
- on_cmd = ['WinResizerStartResize']
- 
- [[plugins]]
- repo = 'simnalamburt/vim-mundo'
- on_cmd = ['MundoToggle']
- 
- [[plugins]]
- repo = 'jremmen/vim-ripgrep'
- on_cmd = ['Rg']
- 
- [[plugins]]
- repo = 'thinca/vim-quickrun'
- on_cmd = ['QuickRun']
- 
- [[plugins]]
- repo = 'nanotee/zoxide.vim'
- on_cmd = ['Z']
- 
- [[plugins]]
- repo = 'Shougo/denite.nvim'
- on_cmd = ['Deinte','DeniteProjectDir']
- # hook_add = """
- # source ~/dotfiles/vim/denite.vim
- # """
- 
- [[plugins]]
- repo = 'gotchane/vim-git-commit-prefix'
- on_ft = ['gitcommit']
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+on_cmd = ['Fern']
+
+#Japanese Help Document
+[[plugins]]
+repo ='vim-jp/vimdoc-ja'
+on_ft = ['help']
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+on_cmd = ['EasyAlign','LiveEasyAlign']
+
+[[plugins]]
+repo = 'simeji/winresizer'
+on_cmd = ['WinResizerStartResize']
+
+[[plugins]]
+repo = 'simnalamburt/vim-mundo'
+on_cmd = ['MundoToggle']
+
+[[plugins]]
+repo = 'jremmen/vim-ripgrep'
+on_cmd = ['Rg']
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+on_cmd = ['QuickRun']
+
+[[plugins]]
+repo = 'nanotee/zoxide.vim'
+on_cmd = ['Z']
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+on_cmd = ['Deinte','DeniteProjectDir']
+hook_source = """
+source ~/dotfiles/vim/denite.vim
+"""
 
 [[plugins]]
 repo = 'Shougo/deol.nvim'
 on_cmd = ['Deol']
 depends=['deoplete-zsh']
 
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html','svelte']
 
+[[plugins]]
+repo =  'maksimr/vim-jsbeautify'
+on_ft = ['html','css']
 
- [[plugins]]
- repo = 'mattn/emmet-vim'
- on_ft = ['html','svelte']
- 
- [[plugins]]
- repo =  'maksimr/vim-jsbeautify'
- on_ft = ['html','css']
- 
- [[plugins]]
- repo =  'rust-lang/rust.vim'
- on_ft = ['rust']
- 
- [[plugins]]
- repo = 'cespare/vim-toml'
- on_ft = ['toml']
- 
- [[plugins]]
- repo =  'rhysd/vim-clang-format'
- on_ft = ['c','cpp','javascript','typescript']
- hook_add = """
- let g:clang_format#code_style = 'Google'
- let g:clang_format#detect_style_file = 1
- """
- 
- [[plugins]]
- repo = "lambdalisue/suda.vim"
- on_cmd = ['SudaRead','SudaWrite']
- 
- 
+[[plugins]]
+repo =  'rust-lang/rust.vim'
+on_ft = ['rust']
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
+
+[[plugins]]
+repo =  'rhysd/vim-clang-format'
+on_ft = ['c','cpp','javascript','typescript']
+hook_add = """
+let g:clang_format#code_style = 'Google'
+let g:clang_format#detect_style_file = 1
+"""
+
+[[plugins]]
+repo = "lambdalisue/suda.vim"
+on_cmd = ['SudaRead','SudaWrite']

@@ -33,7 +33,6 @@ nnoremap ;r :reg<CR>
 "save without extensions
 nnoremap ;s :saveas <C-R>=expand("%<")<CR>
 
-
 " Delete highlight
 nnoremap <silent> <Esc><Esc> :nohlsearch<cr>
 
@@ -45,6 +44,7 @@ nnoremap <Leader>s :source $MYVIMRC<cr>
 
 "Save
 nnoremap <Leader>w :w<cr>
+
 "Exit
 nnoremap Q :confirm qall<cr>
 "All delete
@@ -111,10 +111,11 @@ map fj zj
 map fk zk
 "}}}
 
-"CommandLine
+"CommandLine{{{
 cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
 cnoremap <C-h> <Del>
+"}}}
 
 
 
@@ -163,10 +164,8 @@ noremap m) ])
 noremap m} ]}
 
 " create a new empty tab w/ buffer with current register {{{
-
  nnoremap <silent> <Space>ap  <Cmd>tabnew<Cr>]p:call deletebufline('%', 1, 1)<Cr>
  vnoremap <silent> <Space>ap y<Cmd>tabnew<Cr>]p:call deletebufline('%', 1, 1)<Cr>
-
 " }}}
 "
 " open browser
@@ -186,4 +185,12 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+"}}}
+
+
+"denite.nvim{{{
+nnoremap <silent> ;f :<c-u>Denite -start-filter file/rec<cr>
+nnoremap <silent> ;F :<c-u>DeniteProjectDir -start-filter file/rec<cr>
+nnoremap <silent> ;g :<C-u>Denite grep<CR>
+nnoremap <silent> ;G :<C-u>DeniteProjectDir grep<CR>
 "}}}

@@ -3,9 +3,9 @@
   ad = add
   ci = commit
   df = diff
-  ps = push origin $(git rev-parse --abbrev-ref @)
+  ps = "!git push origin $(git rev-parse --abbrev-ref @)"
 [core]
-	edior = nvim
+	edior = vim
 [user]
 	email = syu8.0324@outlook.jp
 	name = Hasu

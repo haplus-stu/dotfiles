@@ -135,10 +135,10 @@ noremap <Leader>q :QuickRun<cr>
 nnoremap <Leader>j :Z<space>
 "}}}
 
-"Coc.nvim{{{
-  nmap <silent> gh :<c-u>call CocAction('doHover')<cr>
-  nmap <silent> gd <Plug>(coc-definition)
-  nmap <silent> gr <Plug>(coc-reference)
+"vim-lsp{{{
+  nnoremap <silent> gh :LspHover<cr>
+  nnoremap <silent> gd :LspDefinition<cr>
+  nnoremap <silent> gr :LspRename<cr>
 "}}}
 
 "filetype settings{{{
@@ -194,3 +194,4 @@ nnoremap <silent> ;F :<c-u>DeniteProjectDir -start-filter file/rec<cr>
 nnoremap <silent> ;g :<C-u>Denite grep<CR>
 nnoremap <silent> ;G :<C-u>DeniteProjectDir grep<CR>
 "}}}
+

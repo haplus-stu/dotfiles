@@ -7,7 +7,6 @@
   br = branch
   co = checkout
 [core]
-	edior = /us/bin/nvim
 	editor = nvim
 [user]
 	email = syu8.0324@outlook.jp

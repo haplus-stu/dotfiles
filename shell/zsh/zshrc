@@ -16,7 +16,7 @@ alias fdown="docker-compose down --rmi all --volumes --remove-orphans"
 alias recon="source ~/.${SHELL##*/}rc"
 alias shconf="$EDITOR ~/.${SHELL##*/}rc"
 alias vim="nvim"
-alias zi="zoxide" 
+alias zi="zoxide"
 alias cls="clear"
 alias diff="vimdiff"
 alias ys="yay -S"
@@ -44,7 +44,6 @@ function select-history() {
 }
 zle -N select-history
 bindkey '^r' select-history
-
 
 autoload -Uz colors && colors
 # if [ -n "$SSH_CLIENT" ]; then

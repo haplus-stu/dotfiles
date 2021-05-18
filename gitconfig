@@ -8,7 +8,7 @@
   co = checkout
 [core]
 	edior = /us/bin/nvim
-	editor = vim
+	editor = nvim
 [user]
 	email = syu8.0324@outlook.jp
 	name = Hasu

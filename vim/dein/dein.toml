@@ -53,3 +53,5 @@ repo='ghifarit53/tokyonight-vim'
 [[plugins]]
 repo='Shougo/neosnippet-snippets'
 
+[[plugins]]
+repo='lambdalisue/gina.vim'

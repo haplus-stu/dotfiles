@@ -4,6 +4,7 @@
   ci = commit
   df = diff
   ps = "!git push origin $(git rev-parse --abbrev-ref @)"
+  pl = pull
   br = branch
   co = checkout
 [core]

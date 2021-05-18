@@ -33,5 +33,16 @@ call deoplete#custom#option({
   \ })
 exec 'source' expand('~/dotfiles/vim/editor.vim')
 exec 'source' expand('~/dotfiles/vim/keymap.vim')
+exec 'source' expand('~/dotfiles/vim/gina.vim')
 
+
+function! s:showLog() abort
+  execute 'Gina log'
+  echo &columns
+  let width = &columns * (3/10)
+  echo width
+  execute 'vertical resize' float2nr(width)
+endfunction
+
+command! Tlog call s:showLog()
 

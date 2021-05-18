@@ -4,8 +4,11 @@
   ci = commit
   df = diff
   ps = "!git push origin $(git rev-parse --abbrev-ref @)"
+  br = branch
+  co = checkout
 [core]
-	edior = vim
+	edior = /us/bin/nvim
+	editor = vim
 [user]
 	email = syu8.0324@outlook.jp
 	name = Hasu

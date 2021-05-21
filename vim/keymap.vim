@@ -40,7 +40,7 @@ nnoremap <silent> <Esc><Esc> :nohlsearch<cr>
 nnoremap <silent> <Leader>. :tabe $MYVIMRC<cr>
 
 "Reload
-nnoremap <Leader>s :source $MYVIMRC<cr>
+nnoremap <silent> <Leader>s :source $MYVIMRC<cr>
 
 "Save
 nnoremap <Leader>w :w<cr>
@@ -64,7 +64,6 @@ nnoremap <M-[> :<C-u>e #<cr>
 nnoremap <M-q> :tabclose<cr>
 
 "abbr{{{
-cabbrev sudo w !sudo tee % > /dev/null
 
 augroup gitabbr
   autocmd!
@@ -91,7 +90,7 @@ nnoremap U :MundoToggle<cr>
 vnoremap <silent> <Enter> :LiveEasyAlign<cr>
 
 "grep
-nnoremap <Leader>r :Rg<Space><C-r><C-w><cr>
+nnoremap <Leader>r :Rg<Space>
 
 "Escape
 inoremap <silent> jj <ESC>
@@ -119,10 +118,10 @@ cnoremap <C-h> <Del>
 
 
 
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap gA <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap gA <Plug>(EasyAlign)
+" " Start interactive EasyAlign in visual mode (e.g. vipga)
+" xmap gA <Plug>(EasyAlign)
+" " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+" nmap gA <Plug>(EasyAlign)
 
 "caw:hatpos:toggle
 nmap <C-\> <Plug>(caw:hatpos:toggle)

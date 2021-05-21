@@ -10,21 +10,21 @@ repo = 'lambdalisue/fern-hijack.vim'
 
 #Colorscheme
 [[plugins]]
-repo = 'wadackel/vim-dogrun'
+repo='ghifarit53/tokyonight-vim'
 
 
-[[plugins]]
-repo = "tyru/open-browser.vim"
-hook_add ="""
-let g:openbrowser_browser_commands = [
-\ {"name":'open',
-\ "args": ["{browser}","{uri}"]}]
-"""
+# [[plugins]]
+# repo = "tyru/open-browser.vim"
+# hook_add ="""
+# let g:openbrowser_browser_commands = [
+# \ {"name":'open',
+# \ "args": ["{browser}","{uri}"]}]
+# """
 
 
 #Highlight url
-[[plugins]]
-repo = 'itchyny/vim-highlighturl'
+# [[plugins]]
+# repo = 'itchyny/vim-highlighturl'
 
 
 #comment out
@@ -40,6 +40,12 @@ let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets/'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
+hook_source="""
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option({
+  \ 'nofile_complete_filetypes': ['zsh'],
+  \ })
+"""
 
 [[plugins]]
 repo='prabirshrestha/vim-lsp'
@@ -47,8 +53,6 @@ repo='prabirshrestha/vim-lsp'
 [[plugins]]
 repo='mattn/vim-lsp-settings'
 
-[[plugins]]
-repo='ghifarit53/tokyonight-vim'
 
 [[plugins]]
 repo='Shougo/neosnippet-snippets'

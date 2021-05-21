@@ -4,7 +4,8 @@ set imdisable
 set helplang=ja
 
 "折りたたみ
-set foldmethod=syntax
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 
 "起動時にフォールドされるのを防止
 set foldlevelstart=99

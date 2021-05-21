@@ -59,3 +59,16 @@ repo='Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo='lambdalisue/gina.vim'
+
+[[plugins]]
+repo='nvim-treesitter/nvim-treesitter'
+hook_source="""
+lua<<EOF
+require'nvim-treesitter.configs'.setup{
+  highlight={
+    enable=true,
+  },
+  ensure_installed = 'maintained',
+}
+EOF
+"""

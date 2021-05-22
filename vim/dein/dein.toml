@@ -13,20 +13,6 @@ repo = 'lambdalisue/fern-hijack.vim'
 repo='ghifarit53/tokyonight-vim'
 
 
-# [[plugins]]
-# repo = "tyru/open-browser.vim"
-# hook_add ="""
-# let g:openbrowser_browser_commands = [
-# \ {"name":'open',
-# \ "args": ["{browser}","{uri}"]}]
-# """
-
-
-#Highlight url
-# [[plugins]]
-# repo = 'itchyny/vim-highlighturl'
-
-
 #comment out
 [[plugins]]
 repo = 'tyru/caw.vim'

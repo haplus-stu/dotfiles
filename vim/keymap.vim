@@ -1,4 +1,4 @@
-"Mapping Table
+"Mapping Table{{{
 "-------------------------------------------------------------------------------------------------|
 " Commands \ Modes | Normal | Insert | Command | Visual | Select | Operator | Terminal | Lang-Arg |
 " map  / noremap   |    @   |   -    |    -    |   @    |   @    |    @     |    -     |    -     |
@@ -12,16 +12,17 @@
 " omap / onoremap  |    -   |   -    |    -    |   -    |   -    |    @     |    -     |    -     |
 " tmap / tnoremap  |    -   |   -    |    -    |   -    |   -    |    -     |    @     |    -     |
 " lmap / lnoremap  |    -   |   @    |    @    |   -    |   -    |    -     |    -     |    @     |
-
+"}}}
 
 "Setting space as <Leader>
 let g:mapleader = "\<Space>"
-let maplocalleader = ';'
 
+"Only Neovim{{{
 if has('nvim')
   nnoremap <silent> <Leader>tt :tab terminal<cr>
   tnoremap <silent> <C-[> <C-\><C-n>
 endif
+"}}}
 
 
 "toggle line number
@@ -53,15 +54,27 @@ noremap DD :%d<cr>
 "All yank
 noremap YY :%y<cr>
 
-"For US keyboard
- noremap ; :
- noremap : ;
-
 "switch between two files
 nnoremap <M-[> :<C-u>e #<cr>
 
 "close tab
 nnoremap <M-q> :tabclose<cr>
+
+"For US keyboard{{{
+ noremap ; :
+ noremap : ;
+"}}}
+
+"more comfortable settings to use motion{{{
+noremap m) ])
+noremap m} ]}
+" }}}
+
+" create a new empty tab w/ buffer with current register {{{
+ nnoremap <silent> <Space>ap  <Cmd>tabnew<Cr>]p:call deletebufline('%', 1, 1)<Cr>
+ vnoremap <silent> <Space>ap y<Cmd>tabnew<Cr>]p:call deletebufline('%', 1, 1)<Cr>
+" }}}
+"
 
 "abbr{{{
 
@@ -73,8 +86,6 @@ augroup gitabbr
 augroup END
 "}}}
 
-"Open file browse
-noremap <silent> <C-n> :Fern . -drawer -toggle<cr>
 
 "Split display{{{
 nnoremap <silent> sj <C-w>j
@@ -85,16 +96,16 @@ nnoremap <silent> ss :<C-u>sp<cr>
 nnoremap <silent> sv :<C-u>vs<cr>
 "}}}
 
-nnoremap U :MundoToggle<cr>
 
-vnoremap <silent> <Enter> :LiveEasyAlign<cr>
-
-"grep
+"grep{{{
 nnoremap <Leader>r :Rg<Space>
+nnoremap <Leader>ru :Rg<Space><C-w><C-r><cr>
+"}}}
 
 "Escape
 inoremap <silent> jj <ESC>
 
+"more comfortable settings to cursor move{{{
 "based on antonk52
 " go to the beginning of the line (^ is too far)
 nnoremap <Leader>a ^
@@ -102,8 +113,11 @@ vnoremap <Leader>a ^
 " go to the end of the line ($ is too far) nnoremap <Leader>e $
 vnoremap <Leader>e $
 
+"based on ycino
+noremap <expr> 0 getline('.')[0 : col('.') - 2] =~# '^\s\+$' ? '0' : '^'
+"}}}
 
-"折りたたみ関連{{{
+"fold-related{{{
 noremap <silent>fo :foldclose<cr>
 map <silent>dep zo
 map fj zj
@@ -116,19 +130,20 @@ cnoremap <C-f> <Right>
 cnoremap <C-h> <Del>
 "}}}
 
+"settings of Plugins{{{
+"
+"Fern.vim{{{
+noremap <silent> <C-n> :Fern . -drawer -toggle<cr>
+"}}}
 
-
-" " Start interactive EasyAlign in visual mode (e.g. vipga)
-" xmap gA <Plug>(EasyAlign)
-" " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-" nmap gA <Plug>(EasyAlign)
-
-"caw:hatpos:toggle
+"caw.vim{{{
 nmap <C-\> <Plug>(caw:hatpos:toggle)
 vmap <C-\> <Plug>(caw:hatpos:toggle)
+"}}}
 
-"quickrun
+"quickrun{{{
 noremap <Leader>q :QuickRun<cr>
+"}}}
 
 "zoxide.vim{{{
 nnoremap <Leader>j :Z<space>
@@ -154,21 +169,9 @@ au FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 au FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
 "}}}
 
-
-"deol.nvim
+"deol.nvim{{{
 nnoremap <Space>as  :<C-u>tabnew<Cr>:pwd<Cr>:Deol -edit -start-insert -auto-cd -toggle<Cr>
-
-"とじ括弧に、jump
-noremap m) ])
-noremap m} ]}
-
-" create a new empty tab w/ buffer with current register {{{
- nnoremap <silent> <Space>ap  <Cmd>tabnew<Cr>]p:call deletebufline('%', 1, 1)<Cr>
- vnoremap <silent> <Space>ap y<Cmd>tabnew<Cr>]p:call deletebufline('%', 1, 1)<Cr>
-" }}}
-"
-" open browser
-nmap gl <Plug>(openbrowser-smart-search)
+"}}}
 
 
 "snippet{{{
@@ -186,11 +189,15 @@ if has('conceal')
 endif
 "}}}
 
-
 "denite.nvim{{{
 nnoremap <silent> ;f :<c-u>Denite -start-filter file/rec<cr>
 nnoremap <silent> ;F :<c-u>DeniteProjectDir -start-filter file/rec<cr>
 nnoremap <silent> ;g :<C-u>Denite grep<CR>
 nnoremap <silent> ;G :<C-u>DeniteProjectDir grep<CR>
 "}}}
+
+vnoremap <silent> <Enter> :LiveEasyAlign<cr>
+nnoremap U :MundoToggle<cr>
+"}}}
+
 

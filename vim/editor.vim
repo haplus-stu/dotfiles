@@ -39,11 +39,11 @@ endif
 
 " important:
 set termguicolors
-set background=dark
+set background=light
 let g:github_colors_soft = 1
 syntax enable
 filetype plugin indent on
-colorscheme tokyonight
+colorscheme github
 
 " swapファイルを作成しない
 set noswapfile
@@ -97,5 +97,5 @@ if has('nvim')
 endif
 
 "customize highlight
-hi Pmenu guibg=#333333
+" hi Pmenu guibg=#333333
 

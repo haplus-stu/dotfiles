@@ -10,7 +10,9 @@ repo = 'lambdalisue/fern-hijack.vim'
 
 #Colorscheme
 [[plugins]]
-repo='ghifarit53/tokyonight-vim'
+repo='cormacrelf/vim-colors-github'
+[[plugins]]
+repo='yous/vim-open-color'
 
 
 #comment out

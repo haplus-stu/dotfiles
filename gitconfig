@@ -7,6 +7,7 @@
   pl = pull
   br = branch
   co = checkout
+  mg = "!git merge origin/$(git rev-parse --abbrev-ref @)"
 [core]
 	editor = nvim
 [user]

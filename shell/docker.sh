@@ -4,7 +4,7 @@ if [[ $1 == "up" ]]; then
   docker-compose up -d
 elif [[ $1 == "down" ]]; then
 
-docker-compose down --rmi all --volumes --remove-orphans
+  docker-compose down --rmi all --volumes --remove-orphans
 
 elif [[ $1 == "del" ]]; then
 

@@ -196,7 +196,14 @@ nnoremap <silent> ;g :<C-u>Denite grep<CR>
 nnoremap <silent> ;G :<C-u>DeniteProjectDir grep<CR>
 "}}}
 
+"vim-vsnip{{{
+imap <Tab> <Plug>(vsnip-expand-or-jump)
+"}}}
+
+"EasyAlign{{{
 vnoremap <silent> <Enter> :LiveEasyAlign<cr>
+"}}}
+"
 nnoremap U :MundoToggle<cr>
 "}}}
 

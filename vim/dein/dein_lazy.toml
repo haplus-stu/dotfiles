@@ -45,7 +45,7 @@ depends=['deoplete-zsh']
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
-on_ft = ['html','svelte']
+on_ft = ['html','vue']
 
 [[plugins]]
 repo =  'maksimr/vim-jsbeautify'

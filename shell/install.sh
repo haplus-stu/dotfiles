@@ -28,3 +28,11 @@ if [[ "$1" == "mini" ]]; then
 elif [[ "$1" == "full"]]; then
   bash $HOME/dotfiles/shell/setup.sh
 fi
+
+
+link(){
+  local src=$1
+  local dest=$2
+
+  if [[ -e "${dest}"]]
+}

@@ -2,7 +2,6 @@
 alias tkill="tmux kill-server"
 alias memo="rusmo"
 alias g="git"
-alias lg="lazygit"
 alias ls="exa -a"
 alias ll="exa -alFh --git --time-style=long-iso";
 alias cat="bat"
@@ -28,18 +27,14 @@ alias cdd="cd ~/dotfiles/"
 EDITOR="nvim"
 
 eval "$(zoxide init zsh)"
-eval "$(gh completion -s zsh)"
 eval "$(starship init zsh)"
 
 
+PATH=/usr/local/bin/git:$PATH
+export PATH
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-# plugins=(zsh-autosuggestions)
-# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-fpath=(~/.zsh/completion $fpath)
-autoload -U compinit
-compinit -u
 
 function select-history() {
   BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt=">> ")
@@ -73,3 +68,8 @@ setopt correct
 
 #do not create .lesshist
 export LESSHISTFILE=-
+
+
+#git completion
+fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+autoload -Uz compinit && compinit

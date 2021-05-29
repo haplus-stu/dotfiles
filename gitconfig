@@ -1,5 +1,6 @@
 [alias]
   st = status
+  sc = switch
   ad = add
   ci = commit
   df = diff

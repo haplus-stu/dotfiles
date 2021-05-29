@@ -62,3 +62,6 @@ let g:vsnip_snippet_dir = $HOME .. "/dotfiles/vim/snippets/"
 
 [[plugins]]
 repo='hrsh7th/vim-vsnip-integ'
+
+[[plugins]]
+repo="y0za/vim-reading-vimrc"

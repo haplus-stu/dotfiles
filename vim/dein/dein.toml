@@ -8,6 +8,9 @@ repo = 'mattn/vim-lexiv'
 [[plugins]]
 repo = 'lambdalisue/fern-hijack.vim'
 
+[[plugins]]
+repo='yuki-yano/fern-preview.vim'
+
 #Colorscheme
 [[plugins]]
 repo='cormacrelf/vim-colors-github'
@@ -57,7 +60,7 @@ EOF
 [[plugins]]
 repo='hrsh7th/vim-vsnip'
 hook_source="""
-let g:vsnip_snippet_dir = $HOME .. "/dotfiles/vim/snippets/"
+let g:vsnip_snippet_dir = $HOME .. "/config/vim/snippets/"
 """
 
 [[plugins]]

@@ -14,8 +14,8 @@ call dein#begin('~/.cache/dein')
 call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
 
- call dein#load_toml('~/dotfiles/vim/dein/dein.toml')
- call dein#load_toml('~/dotfiles/vim/dein/dein_lazy.toml')
+ call dein#load_toml('~/config/vim/dein/dein.toml')
+ call dein#load_toml('~/config/vim/dein/dein_lazy.toml')
 
 
 "Required:
@@ -29,6 +29,6 @@ endif
 
 "}}}End dein Scripts-------------------------
 
-exec 'source' expand('~/dotfiles/vim/editor.vim')
-exec 'source' expand('~/dotfiles/vim/keymap.vim')
-exec 'source' expand('~/dotfiles/vim/gina.vim')
+exec 'source' expand('~/config/vim/editor.vim')
+exec 'source' expand('~/config/vim/keymap.vim')
+exec 'source' expand('~/config/vim/gina.vim')

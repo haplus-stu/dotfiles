@@ -10,22 +10,22 @@ link(){
   local src=$1
   local dest=$2
 
-  ln -nfs "${src}" "${dest}"
+  ln -nfs "${base_path}/${src}" "${dest}"
 }
 
-#git
-link "${base_path}/gitconfig" "${HOME}/.gitconfig"
+link "gitconfig" "${HOME}/.gitconfig"
 
 mkdir -p $HOME/.config/nvim/
-ln -s $HOME/config/vim/vimrc $HOME/.config/nvim/init.vim
-ln -s $HOME/config/shell/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 
-#vim
-ln -s $HOME/config/vim/vimrc $HOME/.vimrc
+link "vim/vimrc" "${HOME}/.config/nvim/init.vim"
+link "shell/alacritty.yml" "${HOME}/.config/alacritty/alacritty.yml"
+
+# #vim
+# ln -s $HOME/config/vim/vimrc $HOME/.vimrc
 
 #terminal
-ln -s $HOME/config/shell/zsh/zshrc $HOME/.zshrc
-ln -s $HOME/config/shell/tmux.conf $HOME/.tmux.conf
+link "shell/zsh/zshrc" "${HOME}/.zshrc"
+link "shell/tmux.conf" "${HOME}/.tmux.conf"
 
 if [[ "${OS}" == "Linux" ]]; then
   echo "Make symlink of i3wm file..."
@@ -38,7 +38,10 @@ fi
 
 
 if [[ "$1" == "mini" ]]; then
-  bash $HOME/config/shell/min-setup.sh
-elif [[ "$1" == "full"]]; then
-  bash $HOME/config/shell/setup.sh
+  sh $HOME/config/shell/min-setup.sh
+elif [[ "$1" == "full" ]]; then
+  sh $HOME/config/shell/setup.sh
+else
+  : # do nothing
 fi
+

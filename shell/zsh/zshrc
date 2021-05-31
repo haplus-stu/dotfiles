@@ -8,7 +8,7 @@ alias cat="bat"
 alias mkdir="mkdir -p"
 alias d="docker"
 alias dc="docker-compose"
-alias ds="sh $HOME/dotfiles/shell/docker.sh"
+alias ds="sh $HOME/config/scripts/docker.sh"
 alias cp="cp -r"
 alias alldel="bash ~/dotfiles/docker/all_down.sh"
 alias fdown="docker-compose down --rmi all --volumes --remove-orphans"
@@ -27,7 +27,7 @@ alias cdd="cd ~/dotfiles/"
 EDITOR="nvim"
 
 eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 
 PATH=/usr/local/bin/git:$PATH
@@ -69,7 +69,6 @@ setopt correct
 #do not create .lesshist
 export LESSHISTFILE=-
 
-
-#git completion
-fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 autoload -Uz compinit && compinit
+
+PS1="%n@%m:%~ $ "

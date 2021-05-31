@@ -11,6 +11,7 @@
   mg = "!git merge origin/$(git rev-parse --abbrev-ref @)"
 [core]
 	editor = nvim
+	quotepath = false
 [user]
   email = hshue83@gmail.com
 	name = Hasu

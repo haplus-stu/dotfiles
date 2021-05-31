@@ -1,70 +1,26 @@
-#!/bin/bash
-
-echo $1
-
-if [[ "$1" = "arch" ]]; then
-  PACKAGE_CMD="pacman -S "
-  echo ${PACKAGE_CMD}
-elif [[ "$1" = "ubuntu" ]]; then
-  PACKAGE_CMD="apt install"
-  echo ${PACKAGE_CMD}
-fi
+#neovim head
+curl -L https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage -o /tmp/nvim-nightly;
+chmod +x /tmp/nvim-nightly;
+sudo mv /tmp/nvim-nightly /usr/local/bin;
 
 
-echo "
-#===============
-check upgrade
-#==============="
+#install go
+curl -L https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -o go.tar.gz
+sudo tar -C /usr/local -xzf go.tar.gz
+rm -rf go.tar.gz
 
-if [[ "$1" -eq "ubuntu" ]]; then
-  sudo apt update -y
-elif [[ "$1" -eq "arch" ]]; then
-  sudo pacman -Sy
-fi
+echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.zshenv
 
-INSTALL_PKG_LIST=("nodejs" "npm" "neofetch");
+echo Install ghq
+go get github.com/x-motemen/ghq
 
-for pkg in "${INSTALL_PKG_LIST[@]}"
-do
-  echo "
-  #==================
-  sudo $PACKAGE_CMD $pkg"
-  #=================="
-  sudo $PACKAGE_CMD -y $pkg
-done
+ghq get junegunn/fzf
+cd $HOME/workspace/github.com/junegunn/fzf
+go install
 
- echo "
-================
-#yarn install
-================
-"
-curl -o- -L https://yarnpkg.com/install.sh | bash
-export PATH="$PATH:`yarn global bin`"
-#便利ツールのインストール
-sudo ${PACKAGE_CMD} -y neofetch
-#herokuのインストール
-yarn global add heroku
-echo "
-================
-install vim
-================
-"
+#rust
+curl https://sh.rustup.rs -sSf | sh
 
-git clone https://github.com/vim/vim.git
+source $HOME/.cargo/env
 
-cd vim/src
-sudo make && sudo make install
-
-if [[ "$1" -eq "ubuntu" ]]; then
- sudo add-apt-repository ppa:alessandro-strada/ppa
- sudo apt-get update
- sudo apt-get install google-drive-ocamlfuse
-fi
-
- #rust
- curl https://sh.rustup.rs -sSf | sh
-
- source $HOME/.cargo/env
-
- cargo install exa bat rusmo zoxide starship
-
+cargo install exa bat rusmo zoxide

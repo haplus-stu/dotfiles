@@ -81,4 +81,4 @@ export LESSHISTFILE=-
 
 autoload -Uz compinit && compinit
 
-PS1="%n@%m:%~ $ "
+PS1="%n@%m:%~$ "

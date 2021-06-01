@@ -25,3 +25,7 @@ if [ -d $HOME/.zsh/comp ]; then
     export FPATH="$HOME/.zsh/comp:$FPATH"
 fi
 export PATH=/usr/local/bin/git:/usr/local/opt/bison/bin:/usr/local/opt/dosfstools/sbin:/usr/local/opt/llvm@9/bin:/usr/local/opt/binutils/bin:/home/hasu/.deno/bin:/home/hasu/.npm-global/bin:/home/hasu/.cargo/bin:/home/hasu/.yarn/bin:/home/hasu/.config/yarn/global/node_modules/.bin:/usr/local/opt/bison/bin:/usr/local/opt/dosfstools/sbin:/usr/local/opt/llvm@9/bin:/usr/local/opt/binutils/bin:/home/hasu/.deno/bin:/home/hasu/.npm-global/bin:/home/hasu/.cargo/bin:/home/hasu/.yarn/bin:/home/hasu/.config/yarn/global/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/go/bin:/usr/local/go/bin:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=~/dev/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN

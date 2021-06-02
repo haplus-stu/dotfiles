@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -eu
+set -eu pipefail
 
 source ./utils.sh
 
@@ -31,7 +31,7 @@ git config --global include.path "$HOME/config/gitconfig"
 # #minimal install
 source ./install-neovim-head.sh
 
-if [ $1 == "gui" ]  && [ ${OS} == "Linux" ]; then
+if [[ $1 == "gui" ]]  && [[ ${OS} == "Linux" ]]; then
   source ./install-i3.sh
 fi
 

@@ -8,8 +8,11 @@ if [[ "${PKGMANAGER}" == "apt" ]];then
   sudo apt -y install zsh
 elif [[ "${PKGMANAGER}" == "pacman" ]];then
   sudo pacman -S zsh --no-confirm
-elif
+fi
 
-chsh -s /bin/zsh
-
+if [[ -e /bin/zsh ]]; then
 exec $SHELL -l
+else
+ echo "zsh not found"
+ exit 1
+fi

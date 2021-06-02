@@ -11,7 +11,8 @@ elif [[ "${PKGMANAGER}" == "pacman" ]];then
 fi
 
 if [[ -e /bin/zsh ]]; then
-exec $SHELL -l
+chsh -s /bin/zsh
+exec $(which zsh)
 else
  echo "zsh not found"
  exit 1

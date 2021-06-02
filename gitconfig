@@ -17,3 +17,5 @@
 	name = Hasu
 [ghq]
 	root = ~/workspace
+[include]
+	path = /home/hasu/.config/gitconfig

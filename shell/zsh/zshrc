@@ -2,9 +2,11 @@
 alias tkill="tmux kill-server"
 alias memo="rusmo"
 alias g="git"
-alias ls="exa -a"
-alias ll="exa -alFh --git --time-style=long-iso";
-alias cat="bat"
+alias ls="ls --color"
+# alias ls="exa -a"
+# alias ll="exa -alFh --git --time-style=long-iso";
+alias ll="ls -l --color";
+# alias cat="bat"
 alias mkdir="mkdir -p"
 alias d="docker"
 alias dc="docker-compose"

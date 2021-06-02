@@ -4,10 +4,25 @@ set -eu
 source ./utils.sh
 
 check_OS
+check_pkgmanger
+
+if [[ ! -e /bin/zsh ]]; then
+  echo "
+  #####################################################
+  not install zsh Please install zsh!!!
+  #####################################################
+  "
+  exit 1
+fi
 
 if [[ ! -e $HOME/workspace ]]; then
   mkdir $HOME/workspace
 fi
+
+echo "create zsh symlink..."
+for file in $(ls $HOME/config/shell/zsh); do
+  ln -nfs $HOME/config/shell/zsh/${file} $HOME/.${file}
+done
 
 
 echo "set gitconfig path..."

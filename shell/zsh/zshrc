@@ -19,6 +19,7 @@ alias zi="zoxide"
 alias cls="clear"
 alias diff="vimdiff"
 alias ys="yay -S"
+alias rmd="rm -rf"
 #change dir
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"
@@ -26,6 +27,7 @@ alias cdd="cd ~/config/"
 
 #only mac
 if [[ ${OS} == "Mac" ]]; then
+  #MacとLinuxではlsのオプションが異なる
   alias ls="ls -G"
   alias ll="ls -lG"
 else
@@ -35,7 +37,6 @@ fi
 
 
 eval "$(zoxide init zsh)"
-# eval "$(starship init zsh)"
 
 
 
@@ -87,6 +88,7 @@ setopt correct
 #do not create .lesshist
 export LESSHISTFILE=-
 
+#zsh completion
 autoload -Uz compinit && compinit
 
 PS1="%n@%m:%~$ "

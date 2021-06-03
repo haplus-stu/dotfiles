@@ -1,3 +1,9 @@
+
+if [ "$(uname)" = "Darwin" ]; then
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+fi
+
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/libtiff/lib/pkgconfig"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/gmp/lib/pkgconfig"
@@ -29,3 +35,5 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=~/dev/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
+
+EDITOR="nvim"

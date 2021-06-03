@@ -39,11 +39,11 @@ endif
 
 " important:
 set termguicolors
-set background=light
+set background=dark
 let g:github_colors_soft = 1
 syntax enable
 filetype plugin indent on
-colorscheme github
+colorscheme bluewery
 
 " swapファイルを作成しない
 set noswapfile

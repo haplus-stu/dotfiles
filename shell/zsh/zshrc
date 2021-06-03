@@ -1,12 +1,10 @@
+source $HOME/config/scripts/utils.sh
+check_OS
+
 #alias
 alias tkill="tmux kill-server"
 alias memo="rusmo"
 alias g="git"
-alias ls="ls --color"
-# alias ls="exa -a"
-# alias ll="exa -alFh --git --time-style=long-iso";
-alias ll="ls -l --color";
-# alias cat="bat"
 alias mkdir="mkdir -p"
 alias d="docker"
 alias dc="docker-compose"
@@ -24,9 +22,17 @@ alias ys="yay -S"
 #change dir
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"
-alias cdd="cd ~/dotfiles/"
+alias cdd="cd ~/config/"
 
-EDITOR="nvim"
+#only mac
+if [[ ${OS} == "Mac" ]]; then
+  alias ls="ls -G"
+  alias ll="ls -lG"
+else
+alias ls="ls --color"
+alias ll="ls -l --color";
+fi
+
 
 eval "$(zoxide init zsh)"
 # eval "$(starship init zsh)"

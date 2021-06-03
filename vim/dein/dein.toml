@@ -14,8 +14,12 @@ repo='yuki-yano/fern-preview.vim'
 #Colorscheme
 [[plugins]]
 repo='cormacrelf/vim-colors-github'
+
 [[plugins]]
 repo='yous/vim-open-color'
+
+[[plugins]]
+repo='relastle/bluewery.vim'
 
 
 #comment out

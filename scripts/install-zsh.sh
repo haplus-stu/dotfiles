@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-source ./utils.sh
+PATH_DIR_PARENT="$(dirname "$(cd "$(dirname "${BASH_SOURCE:-$0}")" && pwd)")"
+echo "$PATH_DIR_PARENT"
+
+source ${PATH_DIR_PARENT}/scripts/utils.sh
 
 check_pkgmanger
 
@@ -14,6 +17,6 @@ if [[ -e /bin/zsh ]]; then
 chsh -s /bin/zsh
 exec $(which zsh)
 else
- echo "zsh not found"
+ echomsg "zsh not found"
  exit 1
 fi

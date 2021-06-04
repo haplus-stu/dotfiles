@@ -8,9 +8,6 @@ repo = 'mattn/vim-lexiv'
 [[plugins]]
 repo = 'lambdalisue/fern-hijack.vim'
 
-[[plugins]]
-repo='yuki-yano/fern-preview.vim'
-
 #Colorscheme
 [[plugins]]
 repo='cormacrelf/vim-colors-github'
@@ -48,18 +45,18 @@ repo='Shougo/neosnippet-snippets'
 [[plugins]]
 repo='lambdalisue/gina.vim'
 
-[[plugins]]
-repo='nvim-treesitter/nvim-treesitter'
-hook_source="""
-lua<<EOF
-require'nvim-treesitter.configs'.setup{
-  highlight={
-    enable=true,
-  },
-  ensure_installed = 'maintained',
-}
-EOF
-"""
+# [[plugins]]
+# repo='nvim-treesitter/nvim-treesitter'
+# hook_source="""
+# lua<<EOF
+# require'nvim-treesitter.configs'.setup{
+#   highlight={
+#     enable=true,
+#   },
+#   ensure_installed = 'maintained',
+# }
+# EOF
+# """
 
 [[plugins]]
 repo='hrsh7th/vim-vsnip'

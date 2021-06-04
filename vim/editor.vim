@@ -39,8 +39,7 @@ endif
 
 " important:
 set termguicolors
-set background=dark
-let g:github_colors_soft = 1
+" set background=dark
 syntax enable
 filetype plugin indent on
 colorscheme bluewery
@@ -55,7 +54,7 @@ if has("unix")| set clipboard+=unnamedplus | endif
 "ファイルタイプごとの設定
 au FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab | set foldmethod=marker |set foldlevel=0
 au FileType MAKE setlocal set noexpandtab :retab!<cr>
-au FileType zsh let b:coc_enabled = v:false
+au FileType zsh set foldmethod=marker
 
 "setting indent
 set expandtab

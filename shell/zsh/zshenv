@@ -37,3 +37,4 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
 EDITOR="nvim"
+. "$HOME/.cargo/env"

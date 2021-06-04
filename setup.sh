@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 set -eu pipefail
 
-source ./utils.sh
+base_path=$(pwd)
+scripts_path=${base_path}/scripts
+
+source ${scripts_path}/utils.sh
 
 check_OS
 check_pkgmanger
+
 
 if [[ ! -e /bin/zsh ]]; then
   echo "
@@ -29,9 +33,16 @@ echo "set gitconfig path..."
 git config --global include.path "$HOME/config/gitconfig"
 
 # #minimal install
-source ./install-neovim-head.sh
+source ${scripts_path}/install-neovim-head.sh
 
+
+#alacritty install
+if [[ $1 == "gui" ]]; then
+  source ${scripts_path}/gui/install-alacritty.sh
+fi
+
+#i3wm install
 if [[ $1 == "gui" ]]  && [[ ${OS} == "Linux" ]]; then
-  source ./install-i3.sh
+  source ${scripts_path}/gui/install-i3.sh
 fi
 

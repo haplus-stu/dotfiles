@@ -39,7 +39,7 @@ endif
 
 " important:
 set termguicolors
-" set background=dark
+set background=dark
 syntax enable
 filetype plugin indent on
 colorscheme bluewery

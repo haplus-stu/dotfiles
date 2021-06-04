@@ -1,0 +1,22 @@
+[alias]
+  st = status
+  sc = switch
+  ad = add
+  ci = commit
+  df = diff
+  ps = "!git push origin $(git rev-parse --abbrev-ref @)"
+  pl = pull
+  br = branch
+  co = checkout
+  ft = fetch
+  mg = "!git merge origin/$(git rev-parse --abbrev-ref @)"
+[core]
+	editor = nvim
+	quotepath = false
+[user]
+  email = hshue83@gmail.com
+	name = Hasu
+[ghq]
+	root = ~/workspace
+[include]
+	path = /home/hasu/.config/gitconfig

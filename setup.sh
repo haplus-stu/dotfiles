@@ -11,10 +11,8 @@ check_pkgmanger
 
 
 if [[ ! -e /bin/zsh ]]; then
-  echo "
-  #####################################################
+  echomsg "
   not install zsh Please install zsh!!!
-  #####################################################
   "
   exit 1
 fi
@@ -30,7 +28,7 @@ done
 
 
 echo "set gitconfig path..."
-git config --global include.path "$HOME/config/gitconfig"
+git config --global include.path "$HOME/config/git/gitconfig"
 
 # #minimal install
 source ${scripts_path}/install-neovim-head.sh

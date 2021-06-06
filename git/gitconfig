@@ -20,3 +20,5 @@
 	root = ~/workspace
 [include]
 	path = /home/hasu/.config/gitconfig
+[commit]
+	template = ~/config/git/commit_template

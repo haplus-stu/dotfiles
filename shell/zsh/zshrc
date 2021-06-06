@@ -3,46 +3,41 @@ check_OS
 
 #alias{{{
 alias tkill="tmux kill-server"
-alias memo="rusmo"
 alias g="git"
 alias mkdir="mkdir -p"
 alias d="docker"
 alias dc="docker-compose"
 alias ds="sh $HOME/config/scripts/docker.sh"
 alias cp="cp -r"
-alias alldel="bash ~/dotfiles/docker/all_down.sh"
-alias fdown="docker-compose down --rmi all --volumes --remove-orphans"
 alias recon="source ~/.${SHELL##*/}rc"
 alias shconf="$EDITOR ~/.${SHELL##*/}rc"
 alias vim="nvim"
 alias zz="zoxide"
-alias cls="clear"
-alias diff="vimdiff"
 alias ys="yay -S"
 alias rmd="rm -rf"
+alias gc="my_git_clone"
 #change dir
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"
 alias cdd="cd ~/config/"
 
-#only mac
-if [[ ${OS} == "Mac" ]]; then
-  #MacとLinuxではlsのオプションが異なる
-  alias ls="ls -G"
-  alias ll="ls -lG"
-else
-alias ls="ls --color"
-alias ll="ls -l --color";
-fi
+case ${OS} in
+  Mac*)
+       alias ls="ls -aG"
+       alias ll="ls -alG"
+  ;;
+  Linux*)
+       alias ls="ls -a --color"
+       alias ll="ls -al --color";
+  ;;
+esac
 #}}}
-
 
 eval "$(zoxide init zsh)"
 
 #fzf{{{
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 
 function select-history() {
   BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt=">> ")
@@ -67,8 +62,6 @@ bindkey '^[' ghq-fzf
 #}}}
 
 
-# 履歴ファイルの保存先
-export HISTFILE=${HOME}/.zsh_history
 # メモリに保存される履歴の件数
 export HISTSIZE=100
 # 履歴ファイルに保存される履歴の件数
@@ -80,13 +73,11 @@ setopt hist_no_store
 
 setopt hist_save_no_dups
 
-setopt correct
-
 #do not create .lesshist
 export LESSHISTFILE=-
 
 #zsh completion
-# autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit
 
 PS1="%n@%m:%~$ " #prompt
 
@@ -103,4 +94,33 @@ source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit's installer chunk
-zinit light zsh-users/zsh-autosuggestions
+# zinit light zsh-users/zsh-autosuggestions
+zinit ice lucid depth"1" blockf
+zinit light yuki-yano/zeno.zsh
+
+### zeno.zsh
+bindkey ' '  zeno-auto-snippet
+bindkey '^m' zeno-auto-snippet-and-accept-line
+# bindkey '^i' zeno-completion
+
+
+
+my_git_clone(){
+
+  url=$1
+  repo_name=$(echo "${url##*/}")
+
+
+  if [[ ! -e $HOME/workspace ]]; then
+    mkdir $HOME/workspace
+  fi
+
+
+  if [[ ${target} = *.git* ]]; then
+   repo_name=$(echo "${repo_name%.*}")
+  fi
+
+  git clone $1 $HOME/workspace/${repo_name}
+
+  confirm "move cloned directiory?" "cd $HOME/workspace/${repo_name}"
+}

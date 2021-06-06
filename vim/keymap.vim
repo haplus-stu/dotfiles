@@ -60,6 +60,8 @@ nnoremap <M-[> :<C-u>e #<cr>
 "close tab
 nnoremap <M-q> :tabclose<cr>
 
+nnoremap <C-s> :<C-u>%s___cg<Left><Left><Left><Left>
+
 "For US keyboard{{{
  noremap ; :
  noremap : ;
@@ -174,21 +176,6 @@ nnoremap <Space>as  :<C-u>tabnew<Cr>:pwd<Cr>:Deol -edit -start-insert -auto-cd -
 "}}}
 
 
-"snippet{{{
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: "\<TAB>"
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
-"}}}
-
 "denite.nvim{{{
 nnoremap <silent> ;f :<c-u>Denite -start-filter file/rec<cr>
 nnoremap <silent> ;F :<c-u>DeniteProjectDir -start-filter file/rec<cr>
@@ -206,11 +193,3 @@ vnoremap <silent> <Enter> :LiveEasyAlign<cr>
 "
 nnoremap U :MundoToggle<cr>
 "}}}
-
-
-"test
-nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
-nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
-nmap <silent> <buffer> <C-d> <Plug>(fern-action-preview:scroll:down:half)
-nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
-

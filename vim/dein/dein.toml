@@ -1,7 +1,6 @@
 [[plugins]]
 repo = 'deoplete-plugins/deoplete-zsh'
 
-
 [[plugins]]
 repo = 'mattn/vim-lexiv'
 
@@ -9,11 +8,11 @@ repo = 'mattn/vim-lexiv'
 repo = 'lambdalisue/fern-hijack.vim'
 
 #Colorscheme
-[[plugins]]
-repo='cormacrelf/vim-colors-github'
+# [[plugins]]
+# repo='cormacrelf/vim-colors-github'
 
-[[plugins]]
-repo='yous/vim-open-color'
+# [[plugins]]
+# repo='yous/vim-open-color'
 
 [[plugins]]
 repo='relastle/bluewery.vim'
@@ -40,9 +39,6 @@ repo='mattn/vim-lsp-settings'
 
 
 [[plugins]]
-repo='Shougo/neosnippet-snippets'
-
-[[plugins]]
 repo='lambdalisue/gina.vim'
 
 # [[plugins]]
@@ -67,5 +63,3 @@ let g:vsnip_snippet_dir = $HOME .. "/config/vim/snippets/"
 [[plugins]]
 repo='hrsh7th/vim-vsnip-integ'
 
-[[plugins]]
-repo="y0za/vim-reading-vimrc"

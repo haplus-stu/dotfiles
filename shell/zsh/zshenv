@@ -38,3 +38,4 @@ export PATH=$PATH:$GOBIN
 
 EDITOR="nvim"
 . "$HOME/.cargo/env"
+if [ -e /Users/hasu/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/hasu/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

@@ -63,3 +63,16 @@ let g:vsnip_snippet_dir = $HOME .. "/config/vim/snippets/"
 [[plugins]]
 repo='hrsh7th/vim-vsnip-integ'
 
+
+#Test
+[[plugins]]
+repo='oberblastmeister/neuron.nvim'
+
+[[plugins]]
+repo='nvim-lua/popup.nvim'
+
+[[plugins]]
+repo='nvim-lua/plenary.nvim'
+
+[[plugins]]
+repo='nvim-telescope/telescope.nvim'

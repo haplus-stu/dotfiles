@@ -21,6 +21,10 @@ alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"
 alias cdd="cd ~/config/"
 
+#docker{{{
+alias docker-purge="docker stop $(docker ps -qa) && docker rm $(docker ps -qa)"
+#}}}
+
 case ${OS} in
   Mac*)
        alias ls="ls -aG"
@@ -124,3 +128,7 @@ my_git_clone(){
 
   confirm "move cloned directiory?" "cd $HOME/workspace/${repo_name}"
 }
+
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
+    . $HOME/.nix-profile/etc/profile.d/nix.sh;
+fi

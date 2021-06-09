@@ -5,6 +5,13 @@ echo "$PATH_DIR_PARENT"
 
 source ${PATH_DIR_PARENT}/utils.sh
 
+check_pkgmanager
+
+echomsg "create symlink ..."
+mkdir -p $HOME/.config/alacritty/
+
+ln -nfs $HOME/config/shell/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+
 echomsg "install alacritty ..."
 
 if [[ ! -e $HOME/.cargo ]];then
@@ -14,8 +21,29 @@ fi
 
 source $HOME/.cargo/env
 
-cargo install alacritty
 
-echomsg "create symlink ..."
-ln -nfs $HOME/config/shell/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+
+#########################################################
+#
+# install dependencies
+#
+#########################################################
+
+
+
+if [[ '${PKGMANAGER}' == 'pacman' ]]; then
+  sudo pacman -S cmake freetype2 fontconfig pkg-config make libxcb --noconfirm
+elif [[ '${PKGMANAGER}' == 'apt' ]]; then
+  sudo apt-get install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3
+fi
+
+rustup override set stable
+rustup update stable
+
+git clone https://github.com/alacritty/alacritty.git
+cd alacritty
+
+cargo build --release
+
+infocmp alacritty
 

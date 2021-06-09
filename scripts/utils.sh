@@ -15,6 +15,7 @@ check_pkgmanger(){
     case $ID in
       ubuntu ) export PKGMANAGER="apt";;
       arch ) export PKGMANAGER="pacman";;
+      manjaro ) export PKGMANAGER="pacman";;
     esac
 
     echo ${PKGMANAGER}

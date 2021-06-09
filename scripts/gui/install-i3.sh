@@ -5,16 +5,25 @@ echo "$PATH_DIR_PARENT"
 
 source ${PATH_DIR_PARENT}/scripts/utils.sh
 
+check_pkgmanger
+
+
 echomsg "install i3..."
 
+if [[ "${PKGMANAGER}" == "pacman" ]]; then
+  sudo pacman -S i3-gaps --noconfirm
 
-wget https://gist.githubusercontent.com/chewwt/cbdb71b92b9a45e3ac9314e64c58cbf4/raw/cd1053cf9771b922348a019735e21670a162043c/i3-gaps.sh
+elif [[ "${PKGMANAGER}" == "apt" ]]; then
 
-chmod +x ./i3-gaps.sh
+  wget https://gist.githubusercontent.com/chewwt/cbdb71b92b9a45e3ac9314e64c58cbf4/raw/cd1053cf9771b922348a019735e21670a162043c/i3-gaps.sh
 
-bash ./i3-gaps.sh
+  chmod +x ./i3-gaps.sh
 
-rm ./i3-gaps.sh
+  bash ./i3-gaps.sh
+
+  rm ./i3-gaps.sh
+
+fi
 
 echomsg "Make symlink of i3wm file..."
 

@@ -16,9 +16,5 @@
 [user]
   email = hshue83@gmail.com
 	name = Hasu
-[ghq]
-	root = ~/workspace
-[include]
-	path = /home/hasu/.config/gitconfig
 [commit]
 	template = ~/config/git/commit_template

@@ -9,29 +9,42 @@ source ${scripts_path}/utils.sh
 check_OS
 check_pkgmanger
 
-
+#############################################
+#
+#  check install zsh
+#
+#############################################
 if [[ ! -e /bin/zsh ]]; then
   echomsg "
-  not install zsh Please install zsh!!!
+  not install zsh !!! Run install zsh script!!!
   "
-  exit 1
+  source ${scripts_path}/install-zsh.sh
 fi
 
+#############################################
+#
+#  check exist workspace directory
+#
+#############################################
 if [[ ! -e $HOME/workspace ]]; then
   mkdir $HOME/workspace
 fi
 
-echo "create zsh symlink..."
-for file in $(ls $HOME/config/shell/zsh); do
-  ln -nfs $HOME/config/shell/zsh/${file} $HOME/.${file}
-done
+
+echomsg "set gitconfig path..."
+git config --global include.path '~/config/git/gitconfig'
 
 
-echo "set gitconfig path..."
-git config --global include.path "$HOME/config/git/gitconfig"
+#############################################
+#
+#  install neovim
+#
+#############################################
 
-# #minimal install
+echomsg "install neovim..."
+
 source ${scripts_path}/install-neovim-head.sh
+
 
 
 #alacritty install

@@ -20,3 +20,8 @@ else
  echomsg "zsh not found"
  exit 1
 fi
+
+echomsg "create zsh symlink..."
+for file in $(ls $HOME/config/shell/zsh); do
+  ln -nfs $HOME/config/shell/zsh/${file} $HOME/.${file}
+done

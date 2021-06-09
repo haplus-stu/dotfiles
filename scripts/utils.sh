@@ -30,14 +30,3 @@ $1
 #####################################################
 "
 }
-
-confirm(){
-  local question=$1
-  local command=$2
-  read -p "${question}(y/n)" YN
-  if [[ ${YN} == "y"]]; then
-    ${command}
-  else
-    exit 1
-  fi
-}

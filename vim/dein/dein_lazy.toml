@@ -78,3 +78,10 @@ on_cmd = ['DeinUpdate']
 [[plugins]]
 repo='koron/codic-vim'
 on_cmd=['Codic']
+
+[[plugins]]
+repo='previm/previm'
+on_cmd=['PrevimOpen']
+hook_source="""
+let g:previm_open_cmd='open'
+"""

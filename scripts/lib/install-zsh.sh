@@ -12,7 +12,7 @@ function install_zsh(){
   if [[ "${PKGMANAGER}" == "apt" ]];then
     sudo apt -y install zsh
   elif [[ "${PKGMANAGER}" == "pacman" ]];then
-    sudo pacman -S zsh --no-confirm
+    sudo pacman -S zsh --noconfirm
   fi
 
   if [[ -e /bin/zsh ]]; then

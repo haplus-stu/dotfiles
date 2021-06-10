@@ -11,19 +11,20 @@ function main(){
   current_dir=$(dirname "${BASH_SOURCE[0]:-$0}")
   source ${current_dir}/lib/utils.sh
 
-  if [[ "${flag}" = "gui" ]]; then
-    echomsg "gui"
-    # source ${current_dir}/lib/install-i3.sh
-    # source ${current_dir}/lib/install-alacritty.sh
-  else
-    :
-  fi
 
-  # source ${current_dir}/lib/install-neovim-head.sh
-
+  source ${current_dir}/lib/install-neovim-head.sh
 
   ##symlink
   source ${current_dir}/lib/gitconfig.sh
+
+
+  if [[ "${flag}" = "gui" ]]; then
+    echomsg "start gui install..."
+    source ${current_dir}/lib/install-i3.sh
+    source ${current_dir}/lib/install-alacritty.sh
+  else
+    :
+  fi
 }
 
 main
@@ -40,40 +41,3 @@ main
 #   "
 #   source ${scripts_path}/install-zsh.sh
 # fi
-# 
-# #############################################
-# #
-# #  check exist workspace directory
-# #
-# #############################################
-# if [[ ! -e $HOME/workspace ]]; then
-#   mkdir $HOME/workspace
-# fi
-# 
-# 
-# echomsg "set gitconfig path..."
-# git config --global include.path '~/config/git/gitconfig'
-# 
-# 
-# #############################################
-# #
-# #  install neovim
-# #
-# #############################################
-# 
-# echomsg "install neovim..."
-# 
-# source ${scripts_path}/install-neovim-head.sh
-# 
-# 
-# 
-# #alacritty install
-# if [[ $1 == "gui" ]]; then
-#   source ${scripts_path}/gui/install-alacritty.sh
-# fi
-# 
-# #i3wm install
-# if [[ $1 == "gui" ]]  && [[ ${OS} == "Linux" ]]; then
-#   source ${scripts_path}/gui/install-i3.sh
-# fi
-# 

@@ -2,8 +2,6 @@
 
 set -eu
 
-source $(dirname "${BASH_SOURCE[0]:-$0}")/utils.sh
-
 function setup_alacritty(){
   check_pkgmanger
 

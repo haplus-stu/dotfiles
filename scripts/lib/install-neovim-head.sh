@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-PATH_DIR_PARENT="$(dirname "$(cd "$(dirname "${BASH_SOURCE:-$0}")" && pwd)")"
-echo "$PATH_DIR_PARENT"
 
-source ${PATH_DIR_PARENT}/scripts/utils.sh
+source $(dirname "${BASH_SOURCE[0]:-$0}")/utils.sh
+
 
 echomsg "install neovim(head)..."
 
@@ -11,5 +10,5 @@ chmod +x /tmp/nvim-nightly;
 sudo mv /tmp/nvim-nightly /usr/local/bin/nvim;
 
 echomsg "create symlink..."
-base_path=$(pwd)
+mkdir -p $HOME/.config/nvim
 ln -nfs "${HOME}/config/vim/vimrc" "${HOME}/.config/nvim/init.vim"

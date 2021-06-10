@@ -1,4 +1,4 @@
-source $HOME/config/scripts/utils.sh
+source $HOME/config/scripts/lib/utils.sh
 check_OS
 
 #alias{{{

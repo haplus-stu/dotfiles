@@ -13,8 +13,8 @@ check_pkgmanger(){
   if [[ -f /etc/os-release ]]; then
     source /etc/os-release
     case $ID in
-      ubuntu ) export PKGMANAGER="apt";;
-      arch ) export PKGMANAGER="pacman";;
+      ubuntu  ) export PKGMANAGER="apt";;
+      arch    ) export PKGMANAGER="pacman";;
       manjaro ) export PKGMANAGER="pacman";;
     esac
 

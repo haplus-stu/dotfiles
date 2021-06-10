@@ -1,7 +1,7 @@
 {
   "check_OS":{
     "prefix":["OS"],
-    body:[
+    "body":[
       "if [[ "$(uname)" == "Darwin"  ]]; then
         export OS="Mac"
         else
@@ -9,5 +9,12 @@
        fi"
     ],
     "description":"check OS."
+  },
+  "get_current_dir_path":{
+    "prefix":["current_dir"],
+    "body":[
+      "  current_dir=$(dirname "${BASH_SOURCE[0]:-$0}")"
+    ],
+    "description":"get current dir path"
   }
 }

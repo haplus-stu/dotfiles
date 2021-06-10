@@ -185,6 +185,9 @@ nnoremap <silent> ;G :<C-u>DeniteProjectDir grep<CR>
 
 "vim-vsnip{{{
 imap <Tab> <Plug>(vsnip-expand-or-jump)
+imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+imap <expr> <C-j> vsnip#expandable() ? "<Plug>(vsnip-expand)" : "<C-j>"
 "}}}
 
 "EasyAlign{{{

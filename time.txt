@@ -1,0 +1,133 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.101  000.101: --- NVIM STARTING ---
+001.897  001.796: locale set
+015.504  013.607: inits 1
+015.548  000.044: window checked
+015.559  000.011: parsing arguments
+015.922  000.363: expanding arguments
+016.051  000.129: inits 2
+016.682  000.630: init highlight
+016.686  000.005: waiting for UI
+019.867  003.181: done waiting for UI
+019.890  000.023: initialized screen early for UI
+022.062  000.202  000.202: sourcing /Users/hasu/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein.vim
+022.964  000.668  000.668: sourcing /Users/hasu/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/util.vim
+025.361  000.040  000.040: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/ftoff.vim
+026.267  000.238  000.238: sourcing /Users/hasu/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/autoload.vim
+027.172  000.506  000.506: sourcing /Users/hasu/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/types/git.vim
+027.553  001.065  000.559: sourcing /Users/hasu/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/parse.vim
+028.718  000.262  000.262: sourcing /Users/hasu/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/toml.vim
+070.203  000.195  000.195: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/deoplete/custom.vim
+070.731  000.314  000.314: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/deoplete/init.vim
+075.568  000.279  000.279: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/syntax/syncolor.vim
+075.889  000.735  000.456: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/syntax/synload.vim
+082.821  000.086  000.086: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/ftdetect/ftdetect.vim
+083.148  007.136  007.049: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/filetype.vim
+084.378  000.473  000.473: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/scripts.vim
+084.669  009.651  001.307: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/syntax/syntax.vim
+084.808  000.018  000.018: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/filetype.vim
+085.162  000.041  000.041: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/ftplugin.vim
+085.258  000.020  000.020: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/ftplugin.vim
+085.628  000.038  000.038: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/indent.vim
+086.407  000.138  000.138: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/syntax/syncolor.vim
+087.240  000.145  000.145: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/syntax/syncolor.vim
+087.916  000.128  000.128: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/syntax/syncolor.vim
+088.297  000.042  000.042: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/bluewery.vim
+089.992  004.045  003.592: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/colors/bluewery.vim
+090.249  016.367  002.554: sourcing /Users/hasu/config/vim/editor.vim
+090.692  000.349  000.349: sourcing /Users/hasu/config/vim/keymap.vim
+090.998  000.090  000.090: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/gina/custom/mapping.vim
+091.399  000.099  000.099: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/gina/custom.vim
+091.636  000.042  000.042: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/gina/custom/command.vim
+091.758  000.984  000.754: sourcing /Users/hasu/config/vim/gina.vim
+091.763  070.779  050.095: sourcing /Users/hasu/.config/nvim/init.vim
+091.767  001.099: sourcing vimrc file(s)
+095.826  002.961  002.961: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/plugin/caw.vim
+096.101  000.082  000.082: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/deoplete.vim
+096.165  000.269  000.187: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/plugin/deoplete.vim
+100.838  000.404  000.404: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/plugin/fern_hijack.vim
+100.983  000.046  000.046: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/plugin/gina.vim
+101.111  000.062  000.062: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/plugin/lexiv.vim
+101.924  000.558  000.558: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/utils.vim
+102.594  001.425  000.868: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/plugin/lsp.vim
+104.234  001.335  001.335: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp_settings.vim
+104.649  000.071  000.071: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp_settings/utils.vim
+108.387  000.101  000.101: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp_settings/profile.vim
+109.785  007.129  005.622: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/plugin/lsp_settings.vim
+109.895  000.043  000.043: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/plugin/plenary.vim
+110.328  000.380  000.380: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/plugin/telescope.vim
+110.861  000.415  000.415: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/plugin/vsnip.vim
+111.011  000.077  000.077: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/plugin/vsnip_integ.vim
+112.218  000.195  000.195: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/plugin/gzip.vim
+112.315  000.021  000.021: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/plugin/health.vim
+112.546  000.165  000.165: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/plugin/man.vim
+113.725  000.207  000.207: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+113.791  001.180  000.973: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/plugin/matchit.vim
+114.011  000.156  000.156: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/plugin/matchparen.vim
+114.489  000.414  000.414: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/plugin/netrwPlugin.vim
+115.132  000.198  000.198: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/autoload/remote/host.vim
+115.643  000.180  000.180: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/autoload/remote/define.vim
+115.835  001.049  000.671: sourcing /Users/hasu/.local/share/nvim/rplugin.vim
+115.842  001.265  000.217: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/plugin/rplugin.vim
+116.033  000.116  000.116: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/plugin/shada.vim
+116.142  000.036  000.036: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/plugin/spellfile.vim
+116.377  000.162  000.162: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/plugin/tarPlugin.vim
+116.551  000.099  000.099: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/plugin/tohtml.vim
+116.654  000.031  000.031: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/plugin/tutor.vim
+116.910  000.182  000.182: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/plugin/zipPlugin.vim
+117.134  008.133: loading plugins
+117.324  000.190: loading packages
+118.021  000.130  000.130: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/vsnip_integ/integration.vim
+118.446  000.071  000.071: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/vsnip_integ/detection.vim
+119.366  000.057  000.057: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/vsnip_integ/integration/vimlsp.vim
+120.282  002.613  002.355: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/after/plugin/vsnip_integ.vim
+120.561  000.624: loading after plugins
+120.573  000.012: inits 3
+138.742  018.169: reading ShaDa
+139.243  000.502: opening buffers
+140.787  001.544: BufEnter autocommands
+140.794  000.007: editing files in windows
+141.969  000.206  000.206: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/deoplete/util.vim
+162.875  000.196  000.196: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/autoload/provider/pythonx.vim
+211.277  047.677  047.677: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/autoload/provider/python3.vim
+211.945  000.086  000.086: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/autoload/provider.vim
+302.330  000.206  000.206: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/deoplete/mapping.vim
+303.054  000.266  000.266: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/deoplete/handler.vim
+304.697  001.076  001.076: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/callbag.vim
+306.254  002.764  001.689: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp.vim
+307.355  000.267  000.267: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/ui/vim/signature_help.vim
+308.456  000.364  000.364: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/ui/vim/completion.vim
+309.253  000.227  000.227: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/internal/document_highlight.vim
+310.819  000.063  000.063: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/internal/diagnostics.vim
+311.475  000.244  000.244: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/internal/diagnostics/state.vim
+313.096  000.087  000.087: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/internal/diagnostics/echo.vim
+313.718  000.211  000.211: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/internal/diagnostics/highlights.vim
+315.259  000.091  000.091: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/internal/diagnostics/float.vim
+316.222  000.539  000.539: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/ui/vim/output.vim
+316.832  000.190  000.190: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/internal/diagnostics/signs.vim
+318.331  000.221  000.221: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/internal/diagnostics/virtual_text.vim
+319.578  000.102  000.102: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/internal/document_code_action/signs.vim
+321.011  000.064  000.064: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/internal/show_message_request.vim
+321.835  000.073  000.073: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/internal/show_message.vim
+322.561  000.070  000.070: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/internal/work_done_progress.vim
+323.430  000.309  000.309: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/vital/lsp.vim
+323.922  000.224  000.224: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/vital/_lsp/VS/Vim/Syntax/Markdown.vim
+324.156  000.045  000.045: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/vital/_lsp.vim
+324.563  000.095  000.095: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/vital/_lsp/VS/LSP/MarkupContent.vim
+325.031  000.166  000.166: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/vital/_lsp/VS/LSP/Text.vim
+325.684  000.308  000.308: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/vital/_lsp/VS/Vim/Window/FloatingWindow.vim
+326.238  000.143  000.143: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/vital/_lsp/VS/Vim/Window.vim
+326.782  000.138  000.138: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/vital/_lsp/VS/Vim/Buffer.vim
+327.075  004.091  002.663: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/internal/completion/documentation.vim
+328.954  000.229  000.229: sourcing /Users/hasu/.cache/dein/.cache/init.vim/.dein/autoload/lsp/client.vim
+329.852  130.524: VimEnter autocommands
+329.855  000.003: UIEnter autocommands
+330.374  000.376  000.376: sourcing /usr/local/Cellar/neovim/HEAD-b227ced_2/share/nvim/runtime/autoload/provider/clipboard.vim
+330.420  000.188: before starting main loop
+881.790  551.371: first screen update
+881.797  000.006: --- NVIM STARTED ---

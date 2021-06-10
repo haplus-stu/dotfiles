@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
-
-PATH_DIR_PARENT="$(dirname "$(cd "$(dirname "${BASH_SOURCE:-$0}")" && pwd)")"
-echo "$PATH_DIR_PARENT"
-
-source ${PATH_DIR_PARENT}/scripts/utils.sh
+source $(dirname "${BASH_SOURCE[0]:-$0}")/utils.sh
 
 check_pkgmanger
 

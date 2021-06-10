@@ -24,6 +24,10 @@ fi
 echomsg "Make symlink of i3wm file..."
 
 mkdir -p $HOME/.config/i3blocks
+mkdir -p $HOME/.config/i3
+mkdir -p $HOME/.config/rofi
+
+
 ln -nfs $HOME/config/i3/config         $HOME/.config/i3/config
 ln -nfs $HOME/config/i3/i3-blocks-conf $HOME/.config/i3blocks/config
 ln -nfs $HOME/config/i3/rofi-conf      $HOME/.config/rofi/config

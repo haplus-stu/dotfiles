@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Install required packages
-        run: apt-get update && apt-get install -y git sudo
+        run: apt-get update && apt-get install -y git sudo curl
       - name: Install dotfiles
         run:  chmod +x scripts/setup.sh && scripts/setup.sh
       - uses: actions/checkout@v1
@@ -26,11 +26,11 @@ jobs:
       - name: Update packages
         run: pacman -Syyu --noconfirm
       - name: Install required packages
-        run: pacman -S --noconfirm git sudo
+        run: pacman -S --noconfirm git sudo curl
       #- name: Install vimspector required packages
       #  run: pacman -S --noconfirm tcl
       - name: Install dotfiles
-        run: scripts/setup.sh
+        run:  chmod +x scripts/setup.sh && scripts/setup.sh
       - name: Add user
         run: useradd builduser -m
       - name: Add sudoer

@@ -14,7 +14,7 @@ function main(){
 
 
   source ${current_dir}/lib/install-neovim-head.sh
-  source ${current_dir}/lib/install-zsh.sh
+
 
   ##symlink
   source ${current_dir}/lib/gitconfig.sh
@@ -27,6 +27,7 @@ function main(){
   else
     :
   fi
+  source ${current_dir}/lib/install-zsh.sh
 }
 
 main

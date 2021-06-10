@@ -11,7 +11,7 @@ jobs:
       - name: Install required packages
         run: apt-get update && apt-get install -y git sudo
       - name: Install dotfiles
-        run:  chmod +x secrets/setup.sh && scripts/setup.sh
+        run:  chmod +x scripts/setup.sh && scripts/setup.sh
       - uses: actions/checkout@v1
       - name: vint
         uses: reviewdog/action-vint@v1

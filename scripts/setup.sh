@@ -15,7 +15,7 @@ function main(){
     source ${current_dir}/lib/install-alacritty.sh
   fi
 
-  source ${current_dir}/lib/install-neovim-head.sh
+  # source ${current_dir}/lib/install-neovim-head.sh
 
 
   ##symlink

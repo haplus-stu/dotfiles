@@ -14,6 +14,7 @@ function main(){
 
 
   source ${current_dir}/lib/install-neovim-head.sh
+  source ${current_dir}/lib/install-docker.sh
 
 
   ##symlink

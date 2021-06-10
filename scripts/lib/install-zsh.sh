@@ -1,27 +1,30 @@
 #!/usr/bin/env bash
 
-PATH_DIR_PARENT="$(dirname "$(cd "$(dirname "${BASH_SOURCE:-$0}")" && pwd)")"
-echo "$PATH_DIR_PARENT"
+function install_zsh(){
+  source $(dirname "${BASH_SOURCE[0]:-$0}")/utils.sh
+  check_pkgmanger
 
-source ${PATH_DIR_PARENT}/scripts/utils.sh
+  if [[ "${PKGMANAGER}" == "apt" ]];then
+    sudo apt -y install zsh
+  elif [[ "${PKGMANAGER}" == "pacman" ]];then
+    sudo pacman -S zsh --no-confirm
+  fi
 
-check_pkgmanger
+  if [[ -e /bin/zsh ]]; then
+    chsh -s /bin/zsh
+    exec $(which zsh)
+  else
+    echomsg "zsh not found"
+    exit 1
+  fi
 
-if [[ "${PKGMANAGER}" == "apt" ]];then
-  sudo apt -y install zsh
-elif [[ "${PKGMANAGER}" == "pacman" ]];then
-  sudo pacman -S zsh --no-confirm
-fi
+  echomsg "create zsh symlink..."
+  for file in $(ls $HOME/config/shell/zsh); do
+    ln -nfs $HOME/config/shell/zsh/${file} $HOME/.${file}
+  done
 
-if [[ -e /bin/zsh ]]; then
-chsh -s /bin/zsh
-exec $(which zsh)
-else
- echomsg "zsh not found"
- exit 1
-fi
+}
 
-echomsg "create zsh symlink..."
-for file in $(ls $HOME/config/shell/zsh); do
-  ln -nfs $HOME/config/shell/zsh/${file} $HOME/.${file}
-done
+install_zsh
+
+

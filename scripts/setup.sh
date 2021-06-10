@@ -4,6 +4,7 @@ set -eu
 ########################################################
 #           main
 ########################################################
+
 flag=${@}
 
 function main(){
@@ -13,6 +14,7 @@ function main(){
 
 
   source ${current_dir}/lib/install-neovim-head.sh
+  source ${current_dir}/lib/install-zsh.sh
 
   ##symlink
   source ${current_dir}/lib/gitconfig.sh
@@ -30,14 +32,3 @@ function main(){
 main
 
 
-# #############################################
-# #
-# #  check install zsh
-# #
-# #############################################
-# if [[ ! -e /bin/zsh ]]; then
-#   echomsg "
-#   not install zsh !!! Run install zsh script!!!
-#   "
-#   source ${scripts_path}/install-zsh.sh
-# fi

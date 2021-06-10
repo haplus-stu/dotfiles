@@ -4,6 +4,11 @@ function install_zsh(){
   source $(dirname "${BASH_SOURCE[0]:-$0}")/utils.sh
   check_pkgmanger
 
+  echomsg "create zsh symlink..."
+  for file in $(ls $HOME/config/shell/zsh); do
+    ln -nfs $HOME/config/shell/zsh/${file} $HOME/.${file}
+  done
+
   if [[ "${PKGMANAGER}" == "apt" ]];then
     sudo apt -y install zsh
   elif [[ "${PKGMANAGER}" == "pacman" ]];then
@@ -17,12 +22,6 @@ function install_zsh(){
     echomsg "zsh not found"
     exit 1
   fi
-
-  echomsg "create zsh symlink..."
-  for file in $(ls $HOME/config/shell/zsh); do
-    ln -nfs $HOME/config/shell/zsh/${file} $HOME/.${file}
-  done
-
 }
 
 install_zsh

@@ -7,15 +7,14 @@ repo = 'mattn/vim-lexiv'
 [[plugins]]
 repo = 'lambdalisue/fern-hijack.vim'
 
-#Colorscheme
-# [[plugins]]
-# repo='cormacrelf/vim-colors-github'
-
-# [[plugins]]
-# repo='yous/vim-open-color'
-
 [[plugins]]
 repo='relastle/bluewery.vim'
+
+[[plugins]]
+repo='folke/tokyonight.nvim'
+hook_source="""
+let g:tokyonight_style = "storm"
+"""
 
 
 #comment out
@@ -63,16 +62,20 @@ let g:vsnip_snippet_dir = $HOME .. "/config/vim/snippets/"
 [[plugins]]
 repo='hrsh7th/vim-vsnip-integ'
 
-
-#Test
-[[plugins]]
-repo='oberblastmeister/neuron.nvim'
-
-[[plugins]]
-repo='nvim-lua/popup.nvim'
-
 [[plugins]]
 repo='nvim-lua/plenary.nvim'
 
 [[plugins]]
-repo='nvim-telescope/telescope.nvim'
+repo='folke/todo-comments.nvim'
+hook_source="""
+lua << EOF
+  require("todo-comments").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+    keywords = {
+      hasu = {icon = " ", color = "hint"}
+    }
+  }
+EOF
+"""

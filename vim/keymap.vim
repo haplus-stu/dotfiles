@@ -31,9 +31,6 @@ nnoremap <silent> <Leader>l :set number!<cr>
 "show register list
 nnoremap ;r :reg<CR>
 
-"save without extensions
-nnoremap ;s :saveas <C-R>=expand("%<")<CR>
-
 " Delete highlight
 nnoremap <silent> <Esc><Esc> :nohlsearch<cr>
 
@@ -48,6 +45,7 @@ nnoremap <Leader>w :w<cr>
 
 "Exit
 nnoremap Q :confirm qall<cr>
+
 "All delete
 noremap DD :%d<cr>
 
@@ -59,8 +57,6 @@ nnoremap <M-[> :<C-u>e #<cr>
 
 "close tab
 nnoremap <M-q> :tabclose<cr>
-
-nnoremap <C-s> :<C-u>%s___cg<Left><Left><Left><Left>
 
 "For US keyboard{{{
  noremap ; :
@@ -76,18 +72,6 @@ noremap m} ]}
  nnoremap <silent> <Space>ap  <Cmd>tabnew<Cr>]p:call deletebufline('%', 1, 1)<Cr>
  vnoremap <silent> <Space>ap y<Cmd>tabnew<Cr>]p:call deletebufline('%', 1, 1)<Cr>
 " }}}
-"
-
-"abbr{{{
-
-augroup gitabbr
-  autocmd!
-  autocmd FileType gitcommit iabbrev <buffer> add [add]
-  autocmd FileType gitcommit iabbrev <buffer> fix [fix]
-  autocmd FileType gitcommit iabbrev <buffer> feat [feat]
-augroup END
-"}}}
-
 
 "Split display{{{
 nnoremap <silent> sj <C-w>j
@@ -99,10 +83,10 @@ nnoremap <silent> sv :<C-u>vs<cr>
 "}}}
 
 
-"grep{{{
+"grep
 nnoremap <Leader>r :Rg<Space>
-nnoremap <Leader>ru :Rg<Space><C-w><C-r><cr>
-"}}}
+nnoremap <Leader>R :Rg<Space><C-w><C-r><cr>
+
 
 "Escape
 inoremap <silent> jj <ESC>
@@ -193,6 +177,10 @@ imap <expr> <C-j> vsnip#expandable() ? "<Plug>(vsnip-expand)" : "<C-j>"
 "EasyAlign{{{
 vnoremap <silent> <Enter> :LiveEasyAlign<cr>
 "}}}
-"
+"todo-comments.nvim{{{
+nnoremap <Leader>lt :TodoQuickFix cwd= execute 'pwd'<cr>
+
+"}}}
+
 nnoremap U :MundoToggle<cr>
 "}}}

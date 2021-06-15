@@ -3,6 +3,24 @@ check_OS
 
 bindkey -e
 
+#zinit{{{
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}‚ñì‚ñí‚ñë %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})‚Ä¶%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}‚ñì‚ñí‚ñë %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}‚ñì‚ñí‚ñë The clone has failed.%f%b"
+fi
+
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit's installer chunk
+zinit light zsh-users/zsh-autosuggestions
+
+#}}}
+
 #alias{{{
 alias tkill="tmux kill-server"
 alias g="git"
@@ -16,8 +34,7 @@ alias shconf="$EDITOR ~/.${SHELL##*/}rc"
 alias vim="nvim"
 alias zz="zoxide"
 alias ys="yay -S"
-alias rmd="rm -rf"
-alias gc="my_git_clone"
+alias rmd="rmdir"
 #change dir
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"
@@ -87,43 +104,3 @@ autoload -Uz compinit && compinit
 
 PS1="%n@%m:%~$ " #prompt
 
-### Added by Zinit's installer
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-        print -P "%F{160}▓▒░ The clone has failed.%f%b"
-fi
-
-source "$HOME/.zinit/bin/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-### End of Zinit's installer chunk
-zinit light zsh-users/zsh-autosuggestions
-
-
-
-my_git_clone(){
-
-  url=$1
-  repo_name=$(echo "${url##*/}")
-
-
-  if [[ ! -e $HOME/workspace ]]; then
-    mkdir $HOME/workspace
-  fi
-
-
-  if [[ ${target} = *.git* ]]; then
-   repo_name=$(echo "${repo_name%.*}")
-  fi
-
-  git clone $1 $HOME/workspace/${repo_name}
-
-  confirm "move cloned directiory?" "cd $HOME/workspace/${repo_name}"
-}
-
-if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
-    . $HOME/.nix-profile/etc/profile.d/nix.sh;
-fi

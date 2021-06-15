@@ -45,7 +45,7 @@ depends=['deoplete-zsh']
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
-on_ft = ['html','vue']
+on_ft = ['html']
 
 [[plugins]]
 repo =  'maksimr/vim-jsbeautify'
@@ -85,3 +85,15 @@ on_cmd=['PrevimOpen']
 hook_source="""
 let g:previm_open_cmd='open'
 """
+
+[[plugins]]
+repo = 'tayusa/surround.vim'
+on_cmd =['SurroundLine','SurroundWord','ChSurrounding','RmSurrounding']
+
+[[plugins]]
+repo='lambdalisue/gina.vim'
+on_cmd=['Gina']
+hook_source = """
+source ~/config/vim/gina.vim
+"""
+

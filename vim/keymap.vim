@@ -57,6 +57,7 @@ nnoremap <M-[> :<C-u>e #<cr>
 
 "close tab
 nnoremap <M-q> :tabclose<cr>
+nnoremap q <C-w>c
 
 "For US keyboard{{{
  noremap ; :
@@ -177,10 +178,14 @@ imap <expr> <C-j> vsnip#expandable() ? "<Plug>(vsnip-expand)" : "<C-j>"
 "EasyAlign{{{
 vnoremap <silent> <Enter> :LiveEasyAlign<cr>
 "}}}
+
 "todo-comments.nvim{{{
 nnoremap <Leader>lt :TodoQuickFix cwd= execute 'pwd'<cr>
 
 "}}}
 
+"vim-ipos{{{
+nmap zi <Plug>(ipos-startinsert)
+"]}}
 nnoremap U :MundoToggle<cr>
 "}}}

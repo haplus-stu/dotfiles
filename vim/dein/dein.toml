@@ -7,8 +7,8 @@ repo = 'mattn/vim-lexiv'
 [[plugins]]
 repo = 'lambdalisue/fern-hijack.vim'
 
-[[plugins]]
-repo='relastle/bluewery.vim'
+# [[plugins]]
+# repo='relastle/bluewery.vim'
 
 [[plugins]]
 repo='folke/tokyonight.nvim'
@@ -35,10 +35,6 @@ repo='prabirshrestha/vim-lsp'
 
 [[plugins]]
 repo='mattn/vim-lsp-settings'
-
-
-[[plugins]]
-repo='lambdalisue/gina.vim'
 
 # [[plugins]]
 # repo='nvim-treesitter/nvim-treesitter'
@@ -79,3 +75,17 @@ lua << EOF
   }
 EOF
 """
+
+[[plugins]]
+repo='obcat/vim-ipos'
+
+[[plugins]]
+repo='Shougo/context_filetype.vim'
+
+[[plugins]]
+repo='osyo-manga/vim-precious'
+
+
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+

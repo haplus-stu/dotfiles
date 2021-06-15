@@ -24,7 +24,6 @@ set cursorline
 " ハイライトサーチの有効化
 set hlsearch
 
-" set showtabline=2
 set laststatus=2
 set statusline=%F
 set statusline+=%m
@@ -33,8 +32,12 @@ set statusline+=%=
 set statusline+=\ %Y[%{&fileencoding}]
 
 "ミュート
-if exists('&belloff')
+if exists('+belloff')
   set belloff=all
+else
+  set noerrorbells
+  set novisualbell
+  set t_vb=
 endif
 
 " important:
@@ -42,7 +45,6 @@ set termguicolors
 set background=dark
 syntax enable
 filetype plugin indent on
-" colorscheme bluewery
 colorscheme tokyonight
 
 " swapファイルを作成しない
@@ -53,15 +55,18 @@ if has("mac") | set clipboard+=unnamed | else | set clipboard^=unnamedplus | end
 if has("unix")| set clipboard+=unnamedplus | endif
 
 "ファイルタイプごとの設定
-au FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab | set foldmethod=marker |set foldlevel=0
+au FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab | set foldmethod=marker |set foldlevel=0 |
 au FileType MAKE setlocal set noexpandtab :retab!<cr>
-au FileType zsh set foldmethod=marker
+au FileType zsh set foldmethod=marker | set foldlevel=0
+au FileType vue execute 'colorscheme off"'
+
 
 "setting indent
 set expandtab
 set tabstop=2
 set shiftwidth=2
 
+"only quickfix
 set backspace=indent,eol,start
 
 " 基本はタブで開いて、他のタブにあっても既存を使う
@@ -86,15 +91,6 @@ let &t_SI .= "\e[5 q"
 let &t_EI .= "\e[1 q"
 let &t_te .= "\e[0 q"
 
-
-
-if has('nvim')
-  augroup neovim-terminal
-    au!
-    au TermOpen * startinsert
-    au BufNewFile te* ++nested call termopen(&shell)
-  augroup END
-endif
 
 "customize highlight
 " hi Pmenu guibg=#333333

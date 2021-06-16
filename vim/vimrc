@@ -38,4 +38,3 @@ let g:dein#auto_recache = 1
 
 exec 'source' expand('~/config/vim/editor.vim')
 exec 'source' expand('~/config/vim/keymap.vim')
-exec 'source' expand('~/config/vim/gina.vim')

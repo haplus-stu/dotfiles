@@ -172,7 +172,7 @@ nnoremap <silent> ;G :<C-u>DeniteProjectDir grep<CR>
 imap <Tab> <Plug>(vsnip-expand-or-jump)
 imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
 smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-imap <expr> <C-j> vsnip#expandable() ? "<Plug>(vsnip-expand)" : "<C-j>"
+imap <expr> <C-k> vsnip#expandable() ? "<Plug>(vsnip-expand)" : "<C-k>"
 "}}}
 
 "EasyAlign{{{
@@ -188,4 +188,10 @@ nnoremap <Leader>lt :TodoQuickFix cwd= execute 'pwd'<cr>
 nmap zi <Plug>(ipos-startinsert)
 "]}}
 nnoremap U :MundoToggle<cr>
+"}}}
+
+"Gina.vim{{{
+nnoremap <M-g>l :Gina log<cr>
+nnoremap <M-g>s :Gina status<cr>
+nnoremap <M-g>ss :Gina status -s<cr>
 "}}}

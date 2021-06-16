@@ -22,6 +22,3 @@
         \'80vsplit'
         \)
 
-nnoremap <M-g>l :Gina log<cr>
-nnoremap <M-g>s :Gina status<cr>
-nnoremap <M-g>ss :Gina status -s<cr>

@@ -12,10 +12,6 @@ repo = 'junegunn/vim-easy-align'
 on_cmd = ['EasyAlign','LiveEasyAlign']
 
 [[plugins]]
-repo = 'simeji/winresizer'
-on_cmd = ['WinResizerStartResize']
-
-[[plugins]]
 repo = 'simnalamburt/vim-mundo'
 on_cmd = ['MundoToggle']
 
@@ -87,13 +83,8 @@ let g:previm_open_cmd='open'
 """
 
 [[plugins]]
-repo = 'tayusa/surround.vim'
-on_cmd =['SurroundLine','SurroundWord','ChSurrounding','RmSurrounding']
-
-[[plugins]]
 repo='lambdalisue/gina.vim'
 on_cmd=['Gina']
 hook_source = """
 source ~/config/vim/gina.vim
 """
-

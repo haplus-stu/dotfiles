@@ -13,6 +13,7 @@
 [core]
 	editor = nvim
 	quotepath = false
+  excludesfile = ~/config/git/gitignore_global
 [user]
   email = hshue83@gmail.com
 	name = Hasu

@@ -1,6 +1,7 @@
 source $HOME/config/scripts/lib/utils.sh
 check_OS
 
+#set emacs keybind
 bindkey -e
 
 #zinit{{{
@@ -28,13 +29,12 @@ alias mkdir="mkdir -p"
 alias d="docker"
 alias dc="docker-compose"
 alias ds="sh $HOME/config/scripts/docker.sh"
+# alias alldel="docker stop $(docker ps -qa) && docker rm $(docker ps -qa)"
 alias cp="cp -r"
 alias recon="source ~/.${SHELL##*/}rc"
 alias shconf="$EDITOR ~/.${SHELL##*/}rc"
 alias vim="nvim"
-alias zz="zoxide"
-alias ys="yay -S"
-alias rmd="rmdir"
+alias rmd="rm -rf"
 #change dir
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"
@@ -59,7 +59,6 @@ esac
 eval "$(zoxide init zsh)"
 
 #fzf{{{
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 function select-history() {
@@ -69,19 +68,6 @@ function select-history() {
 
 zle -N select-history
 bindkey '^r' select-history
-
-function ghq-fzf() {
-  local src=$(ghq list | fzf --preview "ls -laTp $(ghq root)/{} | tail -n+4 | awk '{print \$9\"/\"\$6\"/\"\$7 \" \" \$10}'")
-  if [ -n "$src" ]; then
-    BUFFER="cd $(ghq root)/$src && ls"
-    zle accept-line
-    zle -R -c
-  fi
-
-}
-zle -N ghq-fzf
-bindkey '^[' ghq-fzf
-
 #}}}
 
 

@@ -88,3 +88,7 @@ on_cmd=['Gina']
 hook_source = """
 source ~/config/vim/gina.vim
 """
+
+[[plugins]]
+repo='ap/vim-css-color'
+on_ft=['css']

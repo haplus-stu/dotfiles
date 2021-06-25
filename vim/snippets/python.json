@@ -1,0 +1,10 @@
+{
+  "identity_function":{
+    "prefix":["identity_function"],
+    "body":[
+      "# 恒等関数"
+       "def identity_function(x):"
+        "return x "
+    ],
+  }
+}

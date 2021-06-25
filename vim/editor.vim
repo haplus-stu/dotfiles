@@ -45,10 +45,13 @@ set termguicolors
 set background=dark
 syntax enable
 filetype plugin indent on
-colorscheme tokyonight
+" colorscheme tokyonight
 
 " swapファイルを作成しない
 set noswapfile
+
+" 他のバッファに移動する時に自動保存
+set autowrite
 
 " クリップボードを共有
 if has("mac") | set clipboard+=unnamed | else | set clipboard^=unnamedplus | endif
@@ -58,7 +61,7 @@ if has("unix")| set clipboard+=unnamedplus | endif
 au FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab | set foldmethod=marker |set foldlevel=0 |
 au FileType MAKE setlocal set noexpandtab :retab!<cr>
 au FileType zsh set foldmethod=marker | set foldlevel=0
-au FileType vue execute 'colorscheme off"'
+au FileType php syntax clear
 
 
 "setting indent

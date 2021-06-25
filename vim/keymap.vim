@@ -24,6 +24,8 @@ if has('nvim')
 endif
 "}}}
 
+"replace
+nnoremap <Leader>re :%s;\<<C-R><C-W>\>;g<Left><Left>;
 
 "toggle line number
 nnoremap <silent> <Leader>l :set number!<cr>
@@ -86,7 +88,7 @@ nnoremap <silent> sv :<C-u>vs<cr>
 
 "grep
 nnoremap <Leader>r :Rg<Space>
-nnoremap <Leader>R :Rg<Space><C-w><C-r><cr>
+nnoremap <Leader>ur :Rg<Space><C-w><C-r><cr>
 
 
 "Escape
@@ -140,6 +142,7 @@ nnoremap <Leader>j :Z<space>
   nnoremap <silent> gh :LspHover<cr>
   nnoremap <silent> gd :LspDefinition<cr>
   nnoremap <silent> gr :LspRename<cr>
+  nnoremap <silent> gf :LspDocumentFormat<cr>
 "}}}
 
 "filetype settings{{{
@@ -194,4 +197,8 @@ nnoremap U :MundoToggle<cr>
 nnoremap <M-g>l :Gina log<cr>
 nnoremap <M-g>s :Gina status<cr>
 nnoremap <M-g>ss :Gina status -s<cr>
+"}}}
+
+"sonictemplate.vim{{{
+imap <silent> <C-l> <plug>(sonictemplate-postfix)
 "}}}

@@ -92,3 +92,4 @@ source ~/config/vim/gina.vim
 [[plugins]]
 repo='ap/vim-css-color'
 on_ft=['css']
+

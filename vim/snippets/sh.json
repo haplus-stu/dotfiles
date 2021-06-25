@@ -5,5 +5,12 @@
       "\\$(dirname \"\\${BASH_SOURCE[0]:-\\$0}\")"
     ],
     "description":"get current dir path"
+  },
+  "option":{
+    "prefix":["set"],
+    "body":[
+      "set -eu"
+    ],
+    "description":"set bash option"
   }
 }

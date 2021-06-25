@@ -35,19 +35,17 @@ alias recon="source ~/.${SHELL##*/}rc"
 alias shconf="$EDITOR ~/.${SHELL##*/}rc"
 alias vim="nvim"
 alias rmd="rm -rf"
+alias cls="clear"
 #change dir
 alias cdw="cd ~/workspace/"
 alias cdv="cd ~/vagrant/"
 alias cdd="cd ~/config/"
 
-#docker{{{
-alias docker-purge="docker stop $(docker ps -qa) && docker rm $(docker ps -qa)"
-#}}}
-
 case ${OS} in
   Mac*)
        alias ls="ls -aG"
        alias ll="ls -alG"
+       alias b="brew"
   ;;
   Linux*)
        alias ls="ls -a --color"

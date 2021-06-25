@@ -1,0 +1,9 @@
+f\.\(.*\)$
+	function {{$1}}() {
+		{{_cursor_}}
+	}
+
+getid.\(.*\)
+  const {{$1}} = document.getElementById("{{$1}}")
+  {{_cursor_}}
+

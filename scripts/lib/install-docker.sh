@@ -17,4 +17,4 @@ elif [[ "${PKGMANAGER}" == "apt" ]]; then
   sudo apt-get install -y docker-ce docker-compose
 fi
 
-sudo usermod -aG docker $USER
+sudo usermod -aG docker $(printenv USER)

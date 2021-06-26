@@ -93,3 +93,9 @@ source ~/config/vim/gina.vim
 repo='ap/vim-css-color'
 on_ft=['css']
 
+[[plugins]]
+repo='mattn/vim-sonictemplate'
+hook_source="""
+let g:sonictemplate_vim_template_dir = expand('~/config/vim/template')
+"""
+on_cmd=['Template']

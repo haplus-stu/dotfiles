@@ -78,9 +78,10 @@ repo='Shougo/context_filetype.vim'
 [[plugins]]
 repo='osyo-manga/vim-precious'
 
-
 [[plugins]]
-repo='mattn/vim-sonictemplate'
-hook_source="""
-let g:sonictemplate_vim_template_dir = expand('~/config/vim/template')
-"""
+repo='machakann/vim-sandwich'
+
+# [[plugins]]
+# repo='Shougo/ddc.vim'
+[[plugins]]
+repo='vim-denops/denops.vim'

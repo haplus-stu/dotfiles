@@ -27,8 +27,8 @@ endif
 "replace
 nnoremap <Leader>re :%s;\<<C-R><C-W>\>;g<Left><Left>;
 
-"toggle line number
-nnoremap <silent> <Leader>l :set number!<cr>
+"jump next tab
+nnoremap <TAB> :tabnext<cr>
 
 "show register list
 nnoremap ;r :reg<CR>
@@ -61,9 +61,10 @@ nnoremap <M-[> :<C-u>e #<cr>
 nnoremap <M-q> :tabclose<cr>
 nnoremap q <C-w>c
 
+nnoremap <expr> <silent> == 'gg=G:call winrestview(' .. string(winsaveview()) .. ')<CR>'
+
 "For US keyboard{{{
- noremap ; :
- noremap : ;
+ nnoremap ; :|
 "}}}
 
 "more comfortable settings to use motion{{{
@@ -83,6 +84,12 @@ nnoremap <silent> sl <C-w>l
 nnoremap <silent> sh <C-w>h
 nnoremap <silent> ss :<C-u>sp<cr>
 nnoremap <silent> sv :<C-u>vs<cr>
+
+"move window layout
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
 "}}}
 
 
@@ -92,7 +99,9 @@ nnoremap <Leader>ur :Rg<Space><C-w><C-r><cr>
 
 
 "Escape
-inoremap <silent> jj <ESC>
+" inoremap <silent> jj <ESC>
+inoremap <silent> <C-]> <ESC>
+
 
 "more comfortable settings to cursor move{{{
 "based on antonk52
@@ -120,9 +129,10 @@ cnoremap <C-h> <Del>
 "}}}
 
 "settings of Plugins{{{
-"
+
 "Fern.vim{{{
 noremap <silent> <C-n> :Fern . -drawer -toggle<cr>
+nmap <buffer>e <Plug>(fern-action-open:system)
 "}}}
 
 "caw.vim{{{
@@ -163,7 +173,6 @@ au FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
 nnoremap <Space>as  :<C-u>tabnew<Cr>:pwd<Cr>:Deol -edit -start-insert -auto-cd -toggle<Cr>
 "}}}
 
-
 "denite.nvim{{{
 nnoremap <silent> ;f :<c-u>Denite -start-filter file/rec<cr>
 nnoremap <silent> ;F :<c-u>DeniteProjectDir -start-filter file/rec<cr>
@@ -173,9 +182,6 @@ nnoremap <silent> ;G :<C-u>DeniteProjectDir grep<CR>
 
 "vim-vsnip{{{
 imap <Tab> <Plug>(vsnip-expand-or-jump)
-imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-imap <expr> <C-k> vsnip#expandable() ? "<Plug>(vsnip-expand)" : "<C-k>"
 "}}}
 
 "EasyAlign{{{
@@ -184,12 +190,9 @@ vnoremap <silent> <Enter> :LiveEasyAlign<cr>
 
 "todo-comments.nvim{{{
 nnoremap <Leader>lt :TodoQuickFix cwd= execute 'pwd'<cr>
-
 "}}}
 
-"vim-ipos{{{
-nmap zi <Plug>(ipos-startinsert)
-"]}}
+"MUndo{{{
 nnoremap U :MundoToggle<cr>
 "}}}
 

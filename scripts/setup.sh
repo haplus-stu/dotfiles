@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -eu
+set -e
 
 ########################################################
 #           main
@@ -13,9 +13,12 @@ function main(){
   source ${current_dir}/lib/utils.sh
 
 
-  source ${current_dir}/lib/install-neovim-head.sh
-  source ${current_dir}/lib/install-docker.sh
+  local install_package=(neovim-head docker zsh)
 
+  for pkg in "${install_package[@]}"
+  do
+    source ${current_dir}/lib/install-"${pkg}".sh
+  done
 
   ##symlink
   source ${current_dir}/lib/gitconfig.sh
@@ -28,7 +31,6 @@ function main(){
   else
     :
   fi
-  source ${current_dir}/lib/install-zsh.sh
 }
 
 main

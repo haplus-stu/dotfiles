@@ -45,7 +45,7 @@ set termguicolors
 set background=dark
 syntax enable
 filetype plugin indent on
-" colorscheme tokyonight
+"colorscheme tokyonight
 
 " swapファイルを作成しない
 set noswapfile
@@ -88,13 +88,6 @@ if has('persistent_undo')
     set undofile "全てのファイルでundo履歴を残す
 endif
 
-"change cursor for vim like neovim
-let &t_ti .= "\e[1 q"
-let &t_SI .= "\e[5 q"
-let &t_EI .= "\e[1 q"
-let &t_te .= "\e[0 q"
-
-
 "customize highlight
-" hi Pmenu guibg=#333333
+hi Pmenu guibg=#333333
 

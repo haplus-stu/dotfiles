@@ -9,7 +9,7 @@
   "option":{
     "prefix":["set"],
     "body":[
-      "set -eu"
+      "set -e"
     ],
     "description":"set bash option"
   },

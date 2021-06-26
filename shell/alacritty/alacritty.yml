@@ -55,7 +55,7 @@ bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.88
+background_opacity: 1
 
 # All available `mods` and `action` values are documented in the key binding
 # section.

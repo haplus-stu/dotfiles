@@ -19,7 +19,6 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit's installer chunk
 zinit light zsh-users/zsh-autosuggestions
-
 #}}}
 
 #alias{{{
@@ -28,8 +27,7 @@ alias g="git"
 alias mkdir="mkdir -p"
 alias d="docker"
 alias dc="docker-compose"
-alias ds="sh $HOME/config/scripts/docker.sh"
-# alias alldel="docker stop $(docker ps -qa) && docker rm $(docker ps -qa)"
+alias ds="bash $HOME/config/shell/docker/docker.sh"
 alias cp="cp -r"
 alias recon="source ~/.${SHELL##*/}rc"
 alias shconf="$EDITOR ~/.${SHELL##*/}rc"
@@ -66,6 +64,7 @@ function select-history() {
 
 zle -N select-history
 bindkey '^r' select-history
+
 #}}}
 
 
@@ -87,4 +86,5 @@ export LESSHISTFILE=-
 autoload -Uz compinit && compinit
 
 PS1="%n@%m:%~$ " #prompt
+
 

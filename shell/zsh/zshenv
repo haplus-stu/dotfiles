@@ -35,7 +35,3 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=~/dev/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
-
-EDITOR="nvim"
-. "$HOME/.cargo/env"
-if [ -e /Users/hasu/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/hasu/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

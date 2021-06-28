@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+: "${USER:=}"
 source $(dirname "${BASH_SOURCE[0]:-$0}")/utils.sh
 
 check_pkgmanger
@@ -17,4 +18,4 @@ elif [[ "${PKGMANAGER}" == "apt" ]]; then
   sudo apt-get install -y docker-ce docker-compose
 fi
 
-sudo usermod -aG docker $USER
+sudo usermod -aG docker $(echo $USER)

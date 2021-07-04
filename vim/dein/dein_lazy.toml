@@ -99,3 +99,16 @@ hook_source="""
 let g:sonictemplate_vim_template_dir = expand('~/config/vim/template')
 """
 on_cmd=['Template']
+
+[[plugins]]
+repo = 'skanehira/preview-markdown.vim'
+on_cmd=['PreviewMarkdown']
+
+[[plugins]]
+repo='glidenote/memolist.vim'
+on_cmd=['MemoNew','MemoList','MemoGrep']
+hook_source="""
+let g:memolist_path      = "~/Dropbox/memo"
+let g:memolist_memo_date = "%Y-%m-%d"
+let g:memolist_denite    = 1
+"""

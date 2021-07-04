@@ -16,7 +16,7 @@
   "confirm":{
     "prefix":["confirm"],
     "body":[
-      "  read -p"
+      "read -p"
     ],
     "description":"Usage: read -p {question} {result}"
   }

@@ -54,6 +54,8 @@ esac
 
 eval "$(zoxide init zsh)"
 
+unalias zi
+
 #fzf{{{
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -64,6 +66,10 @@ function select-history() {
 
 zle -N select-history
 bindkey '^r' select-history
+
+function ghclone(){
+  gh repo clone $(gh repo list $1 --json nameWithOwner -q '.[].nameWithOwner' | fzf)
+}
 
 #}}}
 
@@ -85,6 +91,6 @@ export LESSHISTFILE=-
 #zsh completion
 autoload -Uz compinit && compinit
 
-PS1="%n@%m:%~$ " #prompt
-
+#prompt
+PS1="%n@%m:%~$ "
 

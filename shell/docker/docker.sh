@@ -5,13 +5,9 @@ function comp-docker-image(){
 }
 
 function exec-docker-container(){
+  local CMD
   read -p "command (press enter key to skip): " CMD
-
-  if [[ -n "${CMD}" ]]; then
-      docker exec -it  `docker ps --format "{{.Names}}" | fzf` ${CMD}
-  else
-      docker exec -it  `docker ps --format "{{.Names}}" | fzf` bash
-  fi
+  docker exec -it  `docker ps --format "{{.Names}}" | fzf` ${CMD:-bash}
 }
 
 function all-down-container(){

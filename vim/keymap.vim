@@ -28,7 +28,7 @@ endif
 nnoremap <Leader>re :%s;\<<C-R><C-W>\>;g<Left><Left>;
 
 "jump next tab
-nnoremap <TAB> :tabnext<cr>
+nnoremap <silent> <TAB> :tabnext<cr>
 
 "show register list
 nnoremap ;r :reg<CR>

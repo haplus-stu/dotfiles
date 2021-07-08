@@ -55,7 +55,7 @@ bell:
   duration: 0
 
 # Background opacity
-background_opacity: 1
+background_opacity: 0.88
 
 # All available `mods` and `action` values are documented in the key binding
 # section.
@@ -101,15 +101,10 @@ shell:
 #   - ~AppKeypad
 #   - AppKeypad
 key_bindings:
-  - { key: V,        mods: Command, action: Paste                        }
-  - { key: C,        mods: Command, action: Copy                         }
-  - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
-  - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
-  - { key: E,        mods: Alt,     chars: "\x1bOF",   mode: AppCursor   }
-  - { key: E,        mods: Alt,     chars: "\x1b[F",   mode: ~AppCursor  }
-  - { key: Key0,     mods: Command, action: ResetFontSize                }
-  - { key: Equals,   mods: Command, action: IncreaseFontSize             }
-  - { key: Minus,    mods: Command, action: DecreaseFontSize             }
+  - { key: Home,                       chars: "\x1bOH",   mode: AppCursor   }
+  - { key: Home,                       chars: "\x1b[H",   mode: ~AppCursor  }
+  - { key: E,         mods: Alt,       chars: "\x1bOF",   mode: AppCursor   }
+  - { key: E,         mods: Alt,       chars: "\x1b[F",   mode: ~AppCursor  }
   - { key: A,         mods: Alt,       chars: "\x1ba"                       }
   - { key: B,         mods: Alt,       chars: "\x1bb"                       }
   - { key: C,         mods: Alt,       chars: "\x1bc"                       }
@@ -134,3 +129,9 @@ key_bindings:
   - { key: X,         mods: Alt,       chars: "\x1bx"                       }
   - { key: Y,         mods: Alt,       chars: "\x1by"                       }
   - { key: Z,         mods: Alt,       chars: "\x1bz"                       }
+  - { key: V,         mods: Command,   action: Paste                        }
+  - { key: C,         mods: Command,   action: Copy                         }
+  - { key: Key0,      mods: Command,   action: ResetFontSize                }
+  - { key: Equals,    mods: Command,   action: IncreaseFontSize             }
+  - { key: Minus,     mods: Command,   action: DecreaseFontSize             }
+  - { key: N,         mods: Command,   action: SpawnNewInstance             }

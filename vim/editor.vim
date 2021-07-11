@@ -1,4 +1,5 @@
 set imdisable
+set encoding=utf-8
 
 "ヘルプの日本語化
 set helplang=ja
@@ -41,6 +42,7 @@ set termguicolors
 set background=dark
 syntax enable
 filetype plugin indent on
+colorscheme tokyonight
 
 " swapファイルを作成しない
 set noswapfile

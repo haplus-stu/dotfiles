@@ -7,11 +7,18 @@ repo = 'mattn/vim-lexiv'
 [[plugins]]
 repo = 'lambdalisue/fern-hijack.vim'
 
-# [[plugins]]
-# repo='folke/tokyonight.nvim'
-# hook_source="""
-# let g:tokyonight_style = "storm"
-# """
+[[plugins]]
+repo='sainnhe/edge'
+
+[[plugins]]
+repo='ntk148v/vim-horizon'
+
+[[plugins]]
+repo='ghifarit53/tokyonight-vim'
+hook_source="""
+let g:tokyonight_style = "night"
+"""
+
 
 #comment out
 [[plugins]]

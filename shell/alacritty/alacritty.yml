@@ -44,18 +44,18 @@ use_thin_strokes: false
 
 draw_bold_text_with_bright_colors: true
 
-colors:
+  #colors:
   # Default colors
-  primary:
-    background: '#07242c'
-    foreground: '#c4c7c7'
+  #  primary:
+  #    background: '#07242c'
+  #    foreground: '#c4c7c7'
 
 bell:
   animation: EaseOutExpo
   duration: 0
 
 # Background opacity
-background_opacity: 0.88
+background_opacity: 1
 
 # All available `mods` and `action` values are documented in the key binding
 # section.

@@ -1,5 +1,5 @@
 [[plugins]]
-repo = 'deoplete-plugins/deoplete-zsh'
+repo = 'Shougo/ddc-zsh'
 
 [[plugins]]
 repo = 'mattn/vim-lexiv'
@@ -16,7 +16,7 @@ repo='ntk148v/vim-horizon'
 [[plugins]]
 repo='ghifarit53/tokyonight-vim'
 hook_source="""
-let g:tokyonight_style = "night"
+let g:tokyonight_style = "storm"
 """
 
 
@@ -24,14 +24,14 @@ let g:tokyonight_style = "night"
 [[plugins]]
 repo = 'tyru/caw.vim'
 
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_source="""
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option({
-  \ 'nofile_complete_filetypes': ['zsh'],
-  \ })
-"""
+#[[plugins]]
+#repo = 'Shougo/deoplete.nvim'
+#hook_source="""
+#let g:deoplete#enable_at_startup = 1
+#call deoplete#custom#option({
+#  \ 'nofile_complete_filetypes': ['zsh'],
+#  \ })
+#"""
 
 [[plugins]]
 repo='prabirshrestha/vim-lsp'
@@ -93,3 +93,13 @@ repo='vim-denops/denops.vim'
 
 [[plugins]]
 repo='tversteeg/registers.nvim'
+
+[[plugins]]
+repo='Shougo/ddc.vim'
+hook_source="""
+source ~/config/vim/ddc.vim
+"""
+[[plugins]]
+repo='skanehira/docker.vim'
+[[plugins]]
+repo='voldikss/vim-floaterm'

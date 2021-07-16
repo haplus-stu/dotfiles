@@ -99,8 +99,7 @@ nnoremap <Leader>ur :Rg<Space><C-w><C-r><cr>
 
 
 "Escape
-" inoremap <silent> jj <ESC>
-inoremap <silent> <C-]> <ESC>
+inoremap <silent> jlj <ESC>
 
 
 "more comfortable settings to cursor move{{{

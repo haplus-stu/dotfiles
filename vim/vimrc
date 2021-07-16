@@ -1,43 +1,44 @@
- "dein Scripts-----------------------------{{{
- if &compatible
-   set nocompatible               " Be iMproved
- endif
- 
- let s:dein_repo_dir = expand('~/.cache/dein')
- 
- if !isdirectory(s:dein_repo_dir)
-   call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
- endif
- 
- " Required:
- set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
- 
- " Required:
- call dein#begin('~/.cache/dein')
- 
- " Let dein manage dein
- " Required:
- call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
- 
- 
-  call dein#load_toml('~/config/vim/dein/dein.toml')
-  call dein#load_toml('~/config/vim/dein/dein_lazy.toml')
- 
- 
- "Required:
- call dein#end()
- call dein#call_hook('source')
- 
- " If you want to install not installed plugins on startup.
- if dein#check_install()
+"dein Scripts-----------------------------{{{
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+let s:dein_repo_dir = expand('~/.cache/dein')
+
+if !isdirectory(s:dein_repo_dir)
+  call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
+endif
+
+" Required:
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin('~/.cache/dein')
+
+" Let dein manage dein
+" Required:
+call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+
+call dein#load_toml('~/config/vim/dein/dein.toml')
+call dein#load_toml('~/config/vim/dein/dein_lazy.toml')
+
+
+"Required:
+call dein#end()
+call dein#call_hook('source')
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
   call dein#install()
- endif
- 
- call map(dein#check_clean(), "delete(v:val, 'rf')")
- let g:dein#auto_recache = 1
- 
- "}}}End dein Scripts-------------------------
+endif
+
+call map(dein#check_clean(), "delete(v:val, 'rf')")
+let g:dein#auto_recache = 1
+
+"}}}End dein Scripts-------------------------
 
 exec 'source' expand('~/config/vim/editor.vim')
 exec 'source' expand('~/config/vim/keymap.vim')
 exec 'source' expand('~/config/vim/command.vim')
+

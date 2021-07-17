@@ -1,5 +1,6 @@
 set imdisable
 set encoding=utf-8
+set fileformat=unix
 
 "ヘルプの日本語化
 set helplang=ja
